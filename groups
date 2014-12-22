@@ -1,0 +1,6 @@
+# UUID                                  	Group Name
+#
+2bc97686c919003d3c5ff35bc855810b5b6c6ba8	Non-Interactive persistence users
+global:Anonymous-Users                  	Anonymous Users
+global:Registered-Users                 	Registered Users
+ldap:cn=gerrit-persistence-committers,ou=Groups,dc=opendaylight,dc=org	ldap/gerrit-persistence-committers
