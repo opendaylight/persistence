@@ -28,5 +28,5 @@ public interface Query<T, C> {
      * @return the result of the query
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    public T execute(C context) throws PersistenceException;
+    T execute(C context) throws PersistenceException;
 }

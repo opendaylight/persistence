@@ -24,5 +24,5 @@ public interface DataStore<C> {
      * @return the query's result
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    public <T> T execute(Query<T, C> query) throws PersistenceException;
+    <T> T execute(Query<T, C> query) throws PersistenceException;
 }
