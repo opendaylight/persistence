@@ -1,6 +1,7 @@
 # UUID                                  	Group Name
 #
 2bc97686c919003d3c5ff35bc855810b5b6c6ba8	Non-Interactive persistence users
+c9025ab9ddc1e3171919e085449f22c54f8f7b54	GitHub Replication
 global:Anonymous-Users                  	Anonymous Users
 global:Registered-Users                 	Registered Users
 ldap:cn=gerrit-persistence-committers,ou=Groups,dc=opendaylight,dc=org	ldap/gerrit-persistence-committers
