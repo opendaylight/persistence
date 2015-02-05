@@ -5,23 +5,18 @@
 
   <parent>
     <groupId>org.opendaylight.persistence</groupId>
-    <artifactId>persistence.project</artifactId>
+    <artifactId>persistence-util</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../persistence-parent</relativePath>
+    <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>persistence-api</artifactId>
+  <artifactId>persistence-util-test</artifactId>
   <packaging>bundle</packaging>
 
-  <name>persistence-api</name>
-  <description>Persistence API</description>
+  <name>persistence-util-test</name>
+  <description>General utility classes to write unit tests</description>
 
   <dependencies>
-    <dependency>
-      <groupId>org.opendaylight.persistence</groupId>
-      <artifactId>persistence-util-common</artifactId>
-      <version>${project.version}</version>
-    </dependency>
   </dependencies>
 
 </project>
