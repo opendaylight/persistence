@@ -5,21 +5,21 @@
 
   <parent>
     <groupId>org.opendaylight.persistence</groupId>
-    <artifactId>persistence.project</artifactId>
+    <artifactId>persistence-util</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../persistence-parent</relativePath>
+    <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>persistence-api</artifactId>
+  <artifactId>persistence-util-common</artifactId>
   <packaging>bundle</packaging>
 
-  <name>persistence-api</name>
-  <description>Persistence API</description>
+  <name>persistence-util-common</name>
+  <description>General utility classes to be used at any application level</description>
 
   <dependencies>
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
-      <artifactId>persistence-util-common</artifactId>
+      <artifactId>persistence-util-test</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
     </dependency>

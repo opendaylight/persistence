@@ -19,6 +19,7 @@
   <modules>
     <module>persistence-parent</module>
 
+    <module>persistence-util</module>
     <module>persistence-api</module>
   </modules>
 
