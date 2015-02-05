@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_c35e4f76",
+        "filename": "persistence-api/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-05T19:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a96c907_a38463d4",
+      "revId": "f68a5a0e15bc78208c114d08c46ad235a7c6ee36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_636e5b31",
         "filename": "persistence-util/pom.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-05T19:40:30Z",
       "side": 1,
       "message": "Could we confirm the snapshot versioning scheme with integration team ?",
+      "revId": "f68a5a0e15bc78208c114d08c46ad235a7c6ee36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_6355fb4e",
+        "filename": "persistence-util/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-05T19:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a96c907_636e5b31",
       "revId": "f68a5a0e15bc78208c114d08c46ad235a7c6ee36",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
