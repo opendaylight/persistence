@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_d95f22e4",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/converter/ObjectToStringConverterTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-06T02:02:00Z",
+      "side": 1,
+      "message": "Copyright is missing",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "abe6941efe4d11ba1e7311e8da1700db7b994064",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
