@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_ae70c7dc",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-06T20:07:32Z",
+      "side": 1,
+      "message": "Should we have a Resource file for these Strings ? That way the string can be changed later without having to touch the java code.",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_4e7903c7",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-06T20:07:32Z",
+      "side": 1,
+      "message": "Could we remove this unchecked warning ? What field needs this ?",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_0e7f7bac",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-06T20:07:32Z",
+      "side": 1,
+      "message": "This is the only field that might be null on execution. We could check for null on this and remove the @SuppressWarning.",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
