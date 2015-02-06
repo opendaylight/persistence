@@ -58,6 +58,12 @@
       <version>${easymock.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.opendaylight.yangtools</groupId>
+      <artifactId>concepts</artifactId>
+      <version>0.6.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>

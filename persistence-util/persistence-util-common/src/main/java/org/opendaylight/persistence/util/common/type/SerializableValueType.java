@@ -7,6 +7,7 @@
  */
 package org.opendaylight.persistence.util.common.type;
 
+import com.google.common.base.Objects;
 import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
 
 import java.io.Serializable;
@@ -82,10 +83,7 @@ public abstract class SerializableValueType<E extends Serializable> implements S
 
     @Override
     public String toString() {
-        return ObjectToStringConverter.toString(
-                this,
-                Property.valueOf("value", this.value.toString())
-        );
+        return Objects.toStringHelper(this).add("value", this.value.toString()).toString();
     }
 
     /**

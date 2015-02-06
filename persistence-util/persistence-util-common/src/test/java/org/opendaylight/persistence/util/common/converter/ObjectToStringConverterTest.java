@@ -7,12 +7,12 @@
  */
 package org.opendaylight.persistence.util.common.converter;
 
-import java.util.Arrays;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.util.common.Converter;
 import org.opendaylight.persistence.util.common.type.Property;
+
+import java.util.Arrays;
 
 /**
  * @author Fabiel Zuniga

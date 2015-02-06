@@ -7,6 +7,8 @@
  */
 package org.opendaylight.persistence.util.common.type;
 
+import com.google.common.base.Objects;
+
 import java.io.Serializable;
 
 /**
@@ -94,15 +96,8 @@ public final class Property<I, E> implements Serializable {
 
     @Override
     public String toString() {
-        // DO NOT use ObjectToStringConverter because that will create a circular dependency
-        StringBuilder str = new StringBuilder(32);
-        str.append(getClass().getSimpleName());
-        str.append("[");
-        str.append("identity=");
-        str.append(this.identity);
-        str.append(", value=");
-        str.append(this.value);
-        str.append(']');
-        return str.toString();
+        return Objects.toStringHelper(this).
+                add("identity", this.identity).
+                add("value", this.value).toString();
     }
 }
