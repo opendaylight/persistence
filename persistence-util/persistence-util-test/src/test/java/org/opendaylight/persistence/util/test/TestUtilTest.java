@@ -46,7 +46,7 @@ public class TestUtilTest {
         final Object validObject = EasyMock.createMock(Object.class);
         final Object invalidObject = null;
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(invalidFieldNameNull, validValue, validObject);
@@ -54,7 +54,8 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+		ThrowableTester.testThrows(IllegalArgumentException.class,
+				new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(invalidFieldNameEmpty, validValue, validObject);
@@ -62,7 +63,7 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(validFieldName, validValue, invalidObject);
@@ -84,7 +85,7 @@ public class TestUtilTest {
         final Class<Object> validDeclaredFieldClass = Object.class;
         final Class<Object> invalidDeclaredFieldClass = null;
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(invalidFieldNameNull, validValue, validObject, validDeclaredFieldClass);
@@ -92,7 +93,8 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+		ThrowableTester.testThrows(IllegalArgumentException.class,
+				new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(invalidFieldNameEmpty, validValue, validObject, validDeclaredFieldClass);
@@ -100,7 +102,7 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(validFieldName, validValue, invalidObject, validDeclaredFieldClass);
@@ -108,7 +110,7 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.setPrivateField(validFieldName, validValue, validObject, invalidDeclaredFieldClass);
@@ -126,7 +128,7 @@ public class TestUtilTest {
         final Object validObject = EasyMock.createMock(Object.class);
         final Object invalidObject = null;
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(invalidFieldNameNull, validObject);
@@ -134,7 +136,8 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+		ThrowableTester.testThrows(IllegalArgumentException.class,
+				new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(invalidFieldNameEmpty, validObject);
@@ -142,7 +145,7 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(validFieldName, invalidObject);
@@ -163,7 +166,7 @@ public class TestUtilTest {
         final Class<Object> validDeclaredFieldClass = Object.class;
         final Class<Object> invalidDeclaredFieldClass = null;
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(invalidFieldNameNull, validObject, validDeclaredFieldClass);
@@ -171,7 +174,8 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+		ThrowableTester.testThrows(IllegalArgumentException.class,
+				new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(invalidFieldNameEmpty, validObject, validDeclaredFieldClass);
@@ -179,14 +183,14 @@ public class TestUtilTest {
 
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(validFieldName, invalidObject, validDeclaredFieldClass);
             }
         });
 
-        ThrowableTester.testThrows(NullPointerException.class, new Instruction() {
+        ThrowableTester.testThrows(IllegalArgumentException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 TestUtil.getPrivateField(validFieldName, validObject, invalidDeclaredFieldClass);

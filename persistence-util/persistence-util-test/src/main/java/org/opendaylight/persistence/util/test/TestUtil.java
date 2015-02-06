@@ -17,6 +17,11 @@ import java.lang.reflect.Field;
  */
 public final class TestUtil {
 
+    private static final String ILLEGAL_ARGUMENT_OBJ = "obj cannot be null";
+    private static final String ILLEGAL_ARGUMENT_FIELD_NAME_NULL = "fieldName cannot be null";
+    private static final String ILLEGAL_ARGUMENT_FIELD_NAME_EMPTY = "fieldName cannot be empty";
+    private static final String ILLEGAL_ARGUMENT_DECLARED_FIELD_CLASS = "declaredFieldClass cannot be null";
+
     private TestUtil() {
 
     }
@@ -45,7 +50,7 @@ public final class TestUtil {
     public static <T> void setPrivateField(String fieldName, Object fieldValue, T obj) throws SecurityException,
             NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_OBJ);
         }
 
         @SuppressWarnings("unchecked")
@@ -71,27 +76,27 @@ public final class TestUtil {
      *             as or an ancestor of the class loader for the current class and invocation of
      *             s.checkPackageAccess() denies access to the package of this class.
      * @throws NoSuchFieldException if a field with the specified name is not found
-     * @throws IllegalArgumentException if {@code fieldName} is {@code null}
+     * @throws IllegalArgumentException if either the {@code fieldName} or {@code obj} is
+     *             {@code null}, or if {@code fieldName} is empty
      * @throws IllegalAccessException if the underlying field is inaccessible
-     * @throws NullPointerException if either the {@code fieldName} or {@code obj} is {@code null}
      */
     public static <T> void setPrivateField(String fieldName, Object fieldValue, T obj,
             Class<? super T> declaredFieldClass) throws SecurityException, NoSuchFieldException,
             IllegalArgumentException, IllegalAccessException {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_OBJ);
         }
 
         if (fieldName == null) {
-            throw new NullPointerException("fieldName cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_FIELD_NAME_NULL);
         }
 
         if (fieldName.isEmpty()) {
-            throw new NullPointerException("fieldName cannot be empty");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_FIELD_NAME_EMPTY);
         }
 
         if (declaredFieldClass == null) {
-            throw new NullPointerException("declaredFieldClass cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_DECLARED_FIELD_CLASS);
         }
 
         Field field = declaredFieldClass.getDeclaredField(fieldName);
@@ -112,14 +117,14 @@ public final class TestUtil {
      *             as or an ancestor of the class loader for the current class and invocation of
      *             s.checkPackageAccess() denies access to the package of this class.
      * @throws NoSuchFieldException if a field with the specified name is not found
-     * @throws IllegalArgumentException if {@code fieldName} is {@code null}
+     * @throws IllegalArgumentException if either the {@code fieldName} or {@code obj} is
+     *             {@code null}, or if {@code fieldName} is empty
      * @throws IllegalAccessException if the underlying field is inaccessible
-     * @throws NullPointerException if either the {@code fieldName} or {@code obj} is {@code null}
      */
     public static <T, E> E getPrivateField(String fieldName, T obj) throws SecurityException, NoSuchFieldException,
             IllegalArgumentException, IllegalAccessException {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_OBJ);
         }
 
         @SuppressWarnings("unchecked")
@@ -141,33 +146,32 @@ public final class TestUtil {
      *             as or an ancestor of the class loader for the current class and invocation of
      *             s.checkPackageAccess() denies access to the package of this class.
      * @throws NoSuchFieldException if a field with the specified name is not found
-     * @throws IllegalArgumentException if {@code fieldName} is {@code null}
+     * @throws IllegalArgumentException if either the {@code fieldName} or {@code obj} is
+     *             {@code null}, or if {@code fieldName} is {@code null}
      * @throws IllegalAccessException if the underlying field is inaccessible
-     * @throws NullPointerException if either the {@code fieldName} or {@code obj} is {@code null}
      */
+    @SuppressWarnings("unchecked")
     public static <T, E> E getPrivateField(String fieldName, T obj, Class<? super T> declaredFieldClass)
             throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_OBJ);
         }
 
         if (fieldName == null) {
-            throw new NullPointerException("fieldName cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_FIELD_NAME_NULL);
         }
 
         if (fieldName.isEmpty()) {
-            throw new NullPointerException("fieldName cannot be empty");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_FIELD_NAME_EMPTY);
         }
 
         if (declaredFieldClass == null) {
-            throw new NullPointerException("declaredFieldClass cannot be null");
+            throw new IllegalArgumentException(ILLEGAL_ARGUMENT_DECLARED_FIELD_CLASS);
         }
 
         Field field = declaredFieldClass.getDeclaredField(fieldName);
         field.setAccessible(true);
-        @SuppressWarnings("unchecked")
-        E value = (E) field.get(obj);
-        return value;
+        return (E) field.get(obj);
     }
 
     /**
