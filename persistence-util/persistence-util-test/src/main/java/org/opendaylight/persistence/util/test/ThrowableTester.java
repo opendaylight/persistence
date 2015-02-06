@@ -172,14 +172,14 @@ public final class ThrowableTester {
     /**
      * Instruction.
      */
-    public static interface Instruction {
+    public interface Instruction {
 
         /**
          * Executes instructions.
          * 
          * @throws Throwable if errors occur during execution
          */
-        public void execute() throws Throwable;
+        void execute() throws Throwable;
     }
 
     /**
@@ -188,13 +188,13 @@ public final class ThrowableTester {
      * 
      * @param <E> type of the
      */
-    public static interface Validator<E extends Throwable> {
+    public interface Validator<E extends Throwable> {
 
         /**
          * Assert the error is as expected.
          * 
          * @param throwable throwable
          */
-        public void assertThrowable(E throwable);
+        void assertThrowable(E throwable);
     }
 }

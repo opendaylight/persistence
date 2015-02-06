@@ -70,7 +70,8 @@ public final class EqualityTester {
                 && equal1.equals(equal2) && obj.equals(equal2));
 
         // Null reference
-        Assert.assertFalse("Null reference property broken for " + testedObjectClassName, obj.equals(null));
+        T nullObject = null;
+        Assert.assertFalse("Null reference property broken for " + testedObjectClassName, obj.equals(nullObject));
 
         // Different type parameter
         Assert.assertFalse("Different type parameter consideration broken for " + testedObjectClassName,
@@ -105,7 +106,7 @@ public final class EqualityTester {
      * 
      * @param <T> type of the object to exercise
      */
-    public static interface Exerciser<T> {
+    public interface Exerciser<T> {
 
         /**
          * Exercises the object without modifying fields considered on equals method. This method is
@@ -113,7 +114,7 @@ public final class EqualityTester {
          * 
          * @param obj Object to exercise
          */
-        public void exercise(T obj);
+        void exercise(T obj);
     }
 
     private static class DifferetType {

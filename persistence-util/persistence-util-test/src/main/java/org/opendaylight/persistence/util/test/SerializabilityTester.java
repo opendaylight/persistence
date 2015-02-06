@@ -180,7 +180,6 @@ public final class SerializabilityTester {
             serialization = byteArrayOutputStream.toByteArray();
         }
         catch (Exception e) {
-            // e.printStackTrace();
             Assert.fail("Serialization failure: " + e.toString());
         }
 
@@ -190,7 +189,6 @@ public final class SerializabilityTester {
             replicaObj = objectInputStream.readObject();
         }
         catch (Exception e) {
-            // e.printStackTrace();
             Assert.fail("Deserialization failure: " + e.toString());
         }
 
@@ -206,7 +204,7 @@ public final class SerializabilityTester {
      *
      * @param <T> type of the serializable class
      */
-    public static interface SemanticCompatibilityVerifier<T extends Serializable> {
+    public interface SemanticCompatibilityVerifier<T extends Serializable> {
 
         /**
          * Asserts semantic compatibility. Ensure both that the serialization-deserialization
@@ -248,6 +246,6 @@ public final class SerializabilityTester {
          * @param original original object
          * @param replica original object's replica reconstructed using deserialization
          */
-        public void assertSemanticCompatibility(T original, T replica);
+        void assertSemanticCompatibility(T original, T replica);
     }
 }

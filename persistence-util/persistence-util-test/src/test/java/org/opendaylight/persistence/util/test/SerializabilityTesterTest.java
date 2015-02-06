@@ -33,9 +33,6 @@ public class SerializabilityTesterTest {
         SemanticCompatibilityVerifier<PortableClass> semanticVerifier = new SemanticCompatibilityVerifier<PortableClass>() {
             @Override
             public void assertSemanticCompatibility(PortableClass original, PortableClass replica) {
-                // System.out.println(original);
-                // System.out.println(replica);
-
                 Assert.assertEquals(original.getAttrPreviousVersion(), replica.getAttrPreviousVersion());
                 Assert.assertEquals(original.getAttrCurrentVersion(), replica.getAttrCurrentVersion());
             }
@@ -53,7 +50,6 @@ public class SerializabilityTesterTest {
             public void assertThrowable(AssertionError error) {
                 String expectedError = "Serialization failure:";
                 AssertUtil.assertStartsWith(expectedError, error.getMessage());
-
             }
         };
 
