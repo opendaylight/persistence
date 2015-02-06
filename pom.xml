@@ -23,33 +23,6 @@
     <module>persistence-api</module>
   </modules>
 
-  <!-- public and snapshot repos are for bootstrapping odlparent -->
-  <repositories>
-    <repository>
-      <id>opendaylight-public</id>
-      <name>opendaylight-public</name>
-      <url>https://nexus.opendaylight.org/content/repositories/public/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </repository>
-    <repository>
-      <id>opendaylight-snapshot</id>
-      <name>opendaylight-snapshot</name>
-      <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-  </repositories>
-
   <!-- DO NOT deploy the repo root pom as it's only needed to initiate a build -->
   <build>
     <plugins>
