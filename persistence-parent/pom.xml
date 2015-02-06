@@ -36,6 +36,15 @@
     <hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
     <hibernate3-maven-plugin.version>3.0</hibernate3-maven-plugin.version>
     <maven-replacer-plugin.version>1.4.1</maven-replacer-plugin.version>
+
+
+    <!-- Sonar config -->
+    <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
+    <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+    <sonar.jacoco.reportPath>target/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
+    <sonar.profile>Sonar way with Findbugs</sonar.profile>
+
   </properties>
 
   <dependencies>
