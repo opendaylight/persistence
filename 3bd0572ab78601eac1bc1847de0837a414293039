@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_ae476776",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-06T20:17:06Z",
+      "side": 1,
+      "message": "Resources are commonly used for text that is meant to the user, so it can be localized. The view layer should use resources to present error messages to the user. Here, we are throwing exceptions that the view layer should translate to error messages. Errors should always be in English.",
+      "parentUuid": "7a96c907_ae70c7dc",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_4e7903c7",
         "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_2e53573a",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-06T20:17:06Z",
+      "side": 1,
+      "message": "We changed the following code because a Sonar suggestion:\n\n@SuppressWarnings(\"unchecked\")\nE value \u003d (E) field.get(obj);\nreturn value;\n\nThat line is the only one that needs the @SuppressWarnings, but we cannot add such @SuppressWarnings in a return statement.",
+      "parentUuid": "7a96c907_4e7903c7",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_0e7f7bac",
         "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-06T20:07:32Z",
       "side": 1,
       "message": "This is the only field that might be null on execution. We could check for null on this and remove the @SuppressWarning.",
+      "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_ce33d312",
+        "filename": "persistence-util/persistence-util-test/src/main/java/org/opendaylight/persistence/util/test/TestUtil.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-06T20:17:06Z",
+      "side": 1,
+      "message": "The @SuppressWarnings is for unsafe code, it is not for null check. If Field is null, the user would get a NullPointerException which will represent an error in the program and thus has to be fixed.",
+      "parentUuid": "7a96c907_0e7f7bac",
       "revId": "3bd0572ab78601eac1bc1847de0837a414293039",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
