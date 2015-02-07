@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_f196b23e",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-07T00:45:20Z",
+      "side": 1,
+      "message": "Using public modifier in interfaces generates a minor issue in Sonar.",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_91972e3a",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/MarkPageRequest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-07T00:45:20Z",
+      "side": 1,
+      "message": "Nested enum types are implicitly static. It is permissable to explicitly declare a nested enum type to be static.\n\nThis will cause a minor issue in Sonar.",
+      "range": {
+        "startLine": 141,
+        "startChar": 11,
+        "endLine": 141,
+        "endChar": 17
+      },
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
