@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a96c907_746cd035",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "Identifiable (introduced in https://git.opendaylight.org/gerrit/#/c/14943/) looks awfully lot like the Identifiable in yangtools-concepts. I think we can share the same concept. We just need a good place :)",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_f196b23e",
         "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
         "patchSetId": 1
@@ -25,6 +42,57 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_14754cf9",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "ArrayList default size is 10, which may lead to sparse arrays.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_d462843d",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "How hot is this method expected to be? It may be good to create just one view if it is hot enough.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_3472c811",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "Can you use Guava\u0027s Objects.ToStringHelper here?",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_91972e3a",
         "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/MarkPageRequest.java",
         "patchSetId": 1
@@ -42,6 +110,142 @@
         "endLine": 141,
         "endChar": 17
       },
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_b45d787b",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "What do you think about JSR305 @Nonnull? It may be useful for static analysis...",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_f467804b",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "Guava\u0027s Preconditions.checkNotNull() is nice here, as it can be used directly in initilization like ...",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_7453706b",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "this can lead to memory leak, if a user decides to use something like:\n\nPage p1 \u003d new Page(...);\nPage p2 \u003d new Page(..., p1.getData());\nPage p3 \u003d new Page(..., p2.getData());\n...\n\nGuava\u0027s ImmutableList.copyOf() checks if the input is already an Immutablelist before creating a copy. Immutability has the added benefit of making sure the caller cannot modify the list at some point in the future.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_94587c8b",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "... this:\n\nthis.request \u003d Preconditions.checkNotNull(pageRequest, \"pageRequest cannot be null\");",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_144c6cc7",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "return this.data.isEmpty()\n\ndata is already a collection, so forwarding .isEmpty() is more efficient. Note that some List implementations may not have an efficient size() method.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_344968b7",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "for this case, it would be nice if we had a Page constructor, which would perform the list allocation. I am not sure if that would be useful for a typical user.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_d4c92427",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "This could be broken into two separate text cases, without the need for ThrowableTester (unless it has some benefits I am ignorant of) with:\n\n@Test(expect\u003dNullPointerException.class)",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_f4cea02d",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-07T21:26:32Z",
+      "side": 1,
+      "message": "If this represents something a user of Page would do, then it would be nice to have a varargs constructor of Page:\n\nPage(R pageRequest, D... data) {\n    this(pageRequst, Arrays.asList(data);\n}",
       "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
