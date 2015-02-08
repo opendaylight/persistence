@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_745db046",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-08T05:19:55Z",
+      "side": 1,
+      "message": "I do agree we need a good place. Actually, all code we put in persistence.util is code that would better fit in a more general project because they represent utility classes that could be used at all application layers – not necessarily in persistence, like the Converter interface. Is the yangtools project the right one to put all general-purpose classes?\n\nThe Identifiable we propose and the one from yangtools-concepts have the same purpose, and we definitely could use the one from yangtools. I would like to describe the only difference they have to see if it is possible to bring it to the one from yangtools-concepts. However, we would benefit from the one in yangtools-concepts because if auto-generated yang-modeled objects implement Identifiable, they would already fit for persistence, which is really useful.\n\nThis Identifiable is typed with the object that is identified to add an extra layer of type safety. For example, assume we have the following objects:\n\npublic class MyObjectA implements Identifiable\u003cMyObjectA, Long\u003e {\n   …\n}\n\npublic class MyObjectB implements Identifiable\u003cMyObjectB, Long\u003e {\n   …\n}\n\nBoth objects use Long as the Id value, however we could not mistakenly mix them:\n\npublic interface MyServiceA {\n    public void doSomething(Id\u003cMyObjectA, Long\u003e id);\n}\n\nId\u003cMyObjectA, Long\u003e idA \u003d Id.valueOf(1);\nId\u003cMyObjectB, Long\u003e idB \u003d Id.valueOf(1);\nLong someNumericValue \u003d 1;\n\nmyServiceA.doSomething(someNumericValue); // This would cause a compilation error because and Id type is expected\n\nmyServiceA.doSomething(idB); // This would cause a compilation error because an Id of MyObjectB is expected.\n\nmyServiceA.doSomething(idA); // This would work.\nSo we cannot mix Id types with regular types (Like the Long in the example above) and we cannot mix Id types from different objects.\n\nDo you think it is possible to add this to Identifiable?",
+      "parentUuid": "7a96c907_746cd035",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_f196b23e",
         "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
         "patchSetId": 1
@@ -53,6 +71,24 @@
       "writtenOn": "2015-02-07T21:26:32Z",
       "side": 1,
       "message": "ArrayList default size is 10, which may lead to sparse arrays.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_1456ac2a",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-08T05:19:55Z",
+      "side": 1,
+      "message": "Are you suggesting to use a LinkedList instead? I guess LinkedList fits better when the capacity cannot be estimated.",
+      "parentUuid": "7a96c907_14754cf9",
       "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -218,6 +254,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_b43ed8d8",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-08T05:19:55Z",
+      "side": 1,
+      "message": "Since the page is immutable (It will truly be with your suggestion of making a copy of the data), allocating internally would generate an empty page. Subclases of page offer a factory method to create an empty page.",
+      "parentUuid": "7a96c907_344968b7",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_d4c92427",
         "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
         "patchSetId": 1
@@ -229,6 +283,24 @@
       "writtenOn": "2015-02-07T21:26:32Z",
       "side": 1,
       "message": "This could be broken into two separate text cases, without the need for ThrowableTester (unless it has some benefits I am ignorant of) with:\n\n@Test(expect\u003dNullPointerException.class)",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_542754ca",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/type/page/PageTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-08T05:19:55Z",
+      "side": 1,
+      "message": "These cases could be implemented as you suggest, and they would be easier to read.\nThrowableTester was introduced to narrow the lines of code that should throw the exception we expect. For example:\n\n@Test(expect\u003dNullPointerException)\npublic void myTest() {\n  prepareObjectToTest;\n  executeMethodThatShouldThrowException;\n}\n\nif \"prepareObjectToTest\" happens to throw NullPointerException, the test would pass, however that would be an error in the test that should be fixed. Using ThrowableTester adds a little bit more of lines of code but it allows the test to fail in lines we don\u0027t expect to throw exceptions.\nSo, ThrowableTester could be used when preparing the object to test requires a little bit more lines of code.",
+      "parentUuid": "7a96c907_d4c92427",
       "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
