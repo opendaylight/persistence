@@ -137,6 +137,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_1d91eff0",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-09T20:37:21Z",
+      "side": 1,
+      "message": "My suggestion would be to specify a lower initial capacity, may 2 or three. Another approach would be to create a Builder, which could perform a trimToSize() (or ImmutableList.copyOf()) when the specification is known to be complete.",
+      "parentUuid": "7a96c907_1456ac2a",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_d462843d",
         "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
         "patchSetId": 1
@@ -166,6 +184,24 @@
       "side": 1,
       "message": "Are you suggesting that we dont use Collections.unmodifiable and have a set way of ordering sort components ?",
       "parentUuid": "7a96c907_d462843d",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_3d8e2bd1",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-02-09T20:37:21Z",
+      "side": 1,
+      "message": "If this method is hot, you may want to dedicate a field which would hold the unmodifiable view, e.g. have:\n\nprivate static final List\u003cSortComponent\u003cT\u003e\u003e publicSortCompontes \u003d Collections.unmodifiableList(this.components);\n\nand then return just that here. Again, this depends wildly on the expected usage patterns.",
+      "parentUuid": "7a96c907_bdd47bbd",
       "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
