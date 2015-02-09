@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a96c907_bd5d5b7b",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-09T20:06:58Z",
+      "side": 1,
+      "message": "I could place the generic objects in a suitable place if we identify a place.",
+      "parentUuid": "7a96c907_745db046",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_f196b23e",
         "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
         "patchSetId": 1
@@ -48,6 +66,30 @@
       "writtenOn": "2015-02-07T00:45:20Z",
       "side": 1,
       "message": "Using public modifier in interfaces generates a minor issue in Sonar.",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_7d53536b",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-09T20:06:58Z",
+      "side": 1,
+      "message": "Will change.",
+      "parentUuid": "7a96c907_f196b23e",
       "range": {
         "startLine": 113,
         "startChar": 4,
@@ -106,6 +148,24 @@
       "writtenOn": "2015-02-07T21:26:32Z",
       "side": 1,
       "message": "How hot is this method expected to be? It may be good to create just one view if it is hot enough.",
+      "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_bdd47bbd",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-09T20:06:58Z",
+      "side": 1,
+      "message": "Are you suggesting that we dont use Collections.unmodifiable and have a set way of ordering sort components ?",
+      "parentUuid": "7a96c907_d462843d",
       "revId": "0823260a318e83e5dbeeba5c02dd0561d4fb3374",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
