@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_62c6406a",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "Identifiable from yangtools is used now, the example needs to be adjusted.",
+      "range": {
+        "startLine": 65,
+        "startChar": 65,
+        "endLine": 65,
+        "endChar": 77
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a2d0c81f",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "We incorporated JSR305 to use @Nonnull and @Nullable to allow static analysis.",
+      "range": {
+        "startLine": 113,
+        "startChar": 15,
+        "endLine": 113,
+        "endChar": 27
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_42a9c48f",
+        "filename": "persistence-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "persistence.util doesn\u0027t need yangtools. We should add the yangtools version as a property in the persistence\u0027s parent pom file, and add the yangtools dependency in the persistence-api project.",
+      "range": {
+        "startLine": 62,
+        "startChar": 32,
+        "endLine": 62,
+        "endChar": 41
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a2976847",
+        "filename": "persistence-util/persistence-util-common/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "These are more general dependencies and thus they should be added to the persistence\u0027s parent pom file, so all modules use them.",
+      "range": {
+        "startLine": 27,
+        "startChar": 28,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c294f444",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/Property.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "We no longer need this class since we are using Guava Objects.toStringHelper() We should remove it along with ObjectToStringConverter.java",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_228b5820",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/MarkPageRequest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "No need to pass the hashCode of the values:\n\nreturn Objects.hashCode(this.mark, this.navigation);",
+      "range": {
+        "startLine": 83,
+        "startChar": 42,
+        "endLine": 83,
+        "endChar": 50
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a27e8817",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/page/Page.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "One of Robert\u0027s comments suggested to use this.data.isEmpty()",
+      "range": {
+        "startLine": 85,
+        "startChar": 25,
+        "endLine": 85,
+        "endChar": 29
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c27b9426",
+        "filename": "persistence-util/persistence-util-common/src/test/java/org/opendaylight/persistence/util/common/converter/ObjectToStringConverterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-14T00:53:55Z",
+      "side": 1,
+      "message": "We can remove this class along with ObjectToStringConverter.java",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 40
+      },
+      "revId": "f7512a0f4500192cc5537e305ac238ae44a737bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
