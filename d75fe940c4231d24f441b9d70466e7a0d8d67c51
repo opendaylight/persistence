@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_393aaa99",
+        "filename": "persistence-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-17T18:29:49Z",
+      "side": 1,
+      "message": "\u003c!-- odl dependencies --\u003e",
+      "revId": "d75fe940c4231d24f441b9d70466e7a0d8d67c51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
