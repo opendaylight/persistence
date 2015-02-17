@@ -16,6 +16,24 @@
       "revId": "487df02c55ba2f453e5b7e6729cab27a0763e152",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_3c02980a",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-17T23:40:54Z",
+      "side": 1,
+      "message": "I agree we should remove it from BaseDao and let implementations to throw it if they support it. It is a subclass of persistence exception. However, I would leave it in the API package since multiple implementations could support integrity constraints. Moving this exception to an implementation package would cause code duplication.",
+      "parentUuid": "7a96c907_d90b8628",
+      "revId": "487df02c55ba2f453e5b7e6729cab27a0763e152",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
