@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_d90b8628",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/BaseDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-17T23:37:30Z",
+      "side": 1,
+      "message": "I think the IntegrityContstraintViolationException should not be a part of the API. Since this framework is intended to be generic and many NOSQL implementations do not necessarily adhere to all the constraints mentioned in the documentation, this exception is implementation specific.\nFor example, a business logic using Cassandra implementation of persistence does not adhere to unique primary key constraint. Two users can call add(Key1) and the last operation wins. So, that implementation will not throw Integrity exception and business logic will still have to catch it because it is in the API.\n\nMy suggestion is to put this exception in the implementation and extend PersistenceException. This way, we will get to see this exception but wrapped by the PersistenceException which is more generic and a must in the persistence layer API.",
+      "revId": "487df02c55ba2f453e5b7e6729cab27a0763e152",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
