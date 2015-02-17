@@ -110,7 +110,7 @@ public interface BaseDao<I extends Serializable, T extends Identifiable<I>, C> {
      * @return the new created object which may include auto-generated primary keys
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    T create(T identifiable, C context) throws PersistenceException;
+    T add(T identifiable, C context) throws PersistenceException;
 
     /**
      * Updates the given object in the data store
