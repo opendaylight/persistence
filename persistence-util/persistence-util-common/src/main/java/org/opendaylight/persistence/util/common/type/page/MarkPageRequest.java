@@ -7,12 +7,11 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
+import javax.annotation.Nonnull;
+
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
-
-import javax.annotation.Nonnull;
 
 /**
  * Mark based page request.
@@ -80,7 +79,7 @@ public class MarkPageRequest<M> extends PageRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.mark.hashCode(), this.navigation.hashCode());
+        return Objects.hashCode(this.mark, this.navigation);
     }
 
     @Override
@@ -116,7 +115,7 @@ public class MarkPageRequest<M> extends PageRequest {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
+        return MoreObjects.toStringHelper(this).
                 add("mark", this.mark).
                 add("navigation", this.navigation).
                 add("size", this.getSize()).toString();

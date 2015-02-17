@@ -7,12 +7,11 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
+import java.io.Serializable;
+
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
-
-import java.io.Serializable;
 
 /**
  * Page request.
@@ -47,7 +46,7 @@ public class PageRequest implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.getSize());
+        return Objects.hashCode(Integer.valueOf(this.size));
     }
 
     @Override
@@ -75,7 +74,7 @@ public class PageRequest implements Serializable {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
+        return MoreObjects.toStringHelper(this).
                 add("size", this.size).toString();
     }
 }

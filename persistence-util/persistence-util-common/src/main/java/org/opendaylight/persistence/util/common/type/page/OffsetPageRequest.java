@@ -7,10 +7,9 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
 
 /**
  * Offset based page request.
@@ -39,7 +38,7 @@ public class OffsetPageRequest extends PageRequest {
      * @param size page size or limit: Maximum number of data items per page
      * @throws IllegalArgumentException if {@code pageIndex} is less than zero
      */
-    public OffsetPageRequest(long offset, int size) throws IllegalArgumentException {
+    public OffsetPageRequest(long offset, int size) {
         super(size);
         Preconditions.checkArgument(offset >= 0, "offset must be greater or equals to zero");
         this.offset = offset;
@@ -71,7 +70,7 @@ public class OffsetPageRequest extends PageRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.offset, this.getSize());
+        return Objects.hashCode(Long.valueOf(this.offset), Integer.valueOf(this.getSize()));
     }
 
     @Override
@@ -103,7 +102,7 @@ public class OffsetPageRequest extends PageRequest {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
+        return MoreObjects.toStringHelper(this).
                 add("offset", this.offset).
                 add("size", this.getSize()).toString();
     }

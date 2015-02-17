@@ -7,11 +7,11 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
-import org.opendaylight.persistence.util.common.Converter;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.opendaylight.persistence.util.common.Converter;
 
 /**
  * Mark based data page.
@@ -23,7 +23,7 @@ import java.util.List;
 public class MarkPage<D> extends Page<MarkPageRequest<D>, D> {
     private static final long serialVersionUID = 1L;
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     private static final MarkPage EMPTY_PAGE = new MarkPage(new MarkPageRequest(1), Collections.emptyList());
 
     /**

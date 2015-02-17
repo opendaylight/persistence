@@ -7,12 +7,13 @@
  */
 package org.opendaylight.persistence.util.common.type;
 
-import com.google.common.base.Objects;
-import com.google.common.collect.ImmutableList;
-import org.opendaylight.persistence.util.common.Converter;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.opendaylight.persistence.util.common.Converter;
+
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 
 /**
  * Sort specification.
@@ -22,14 +23,14 @@ import java.util.List;
  * @author Nachiket Abhyankar
  */
 public class SortSpecification<T> {
-    private static final int initialCapacity = 2;
+    private static final int INITIAL_CAPACITY = 2;
     private List<SortComponent<T>> components;
 
     /**
      * Creates a sort specification.
      */
     public SortSpecification() {
-        this.components = new ArrayList<>(initialCapacity);
+        this.components = new ArrayList<>(INITIAL_CAPACITY);
     }
 
     /**
@@ -67,8 +68,7 @@ public class SortSpecification<T> {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
-                add("components", this.components).toString();
+        return MoreObjects.toStringHelper(this).add("components", this.components).toString();
     }
 
     /**
@@ -105,7 +105,7 @@ public class SortSpecification<T> {
 
         @Override
         public String toString() {
-            return Objects.toStringHelper(this.getClass()).
+            return MoreObjects.toStringHelper(this.getClass()).
                     add("sortBy", getSortBy()).
                     add("sortOrder", getSortOrder()).
                     toString();

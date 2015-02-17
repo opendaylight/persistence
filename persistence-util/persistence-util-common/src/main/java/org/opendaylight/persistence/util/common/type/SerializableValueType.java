@@ -7,10 +7,10 @@
  */
 package org.opendaylight.persistence.util.common.type;
 
-import com.google.common.base.Objects;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-
 import java.io.Serializable;
+
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
 /**
  * Serialized version of valuetype, however this class does not extends from
@@ -36,12 +36,8 @@ public abstract class SerializableValueType<E extends Serializable> implements S
      * @param value value
      * @throws NullPointerException if {@code value} is {@code null}
      */
-    protected SerializableValueType(E value) throws NullPointerException {
-        if (value == null) {
-            throw new NullPointerException("value cannot be null");
-        }
-
-        this.value = value;
+    protected SerializableValueType(E value) {
+        this.value = Preconditions.checkNotNull(value, "value cannot be null");
     }
 
     /**
@@ -83,7 +79,7 @@ public abstract class SerializableValueType<E extends Serializable> implements S
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("value", this.value.toString()).toString();
+        return MoreObjects.toStringHelper(this).add("value", this.value).toString();
     }
 
     /**

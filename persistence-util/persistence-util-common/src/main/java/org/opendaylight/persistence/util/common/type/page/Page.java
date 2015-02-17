@@ -7,16 +7,15 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
-
-import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.annotation.Nonnull;
+
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 
 /**
  * Data page.
@@ -54,6 +53,7 @@ public class Page<R extends PageRequest, D> implements Serializable {
      * @param pageRequest request that generated this page
      * @param data page's data as varargs
      */
+    @SafeVarargs
     public Page (R pageRequest, D... data) {
         this(pageRequest, Arrays.asList(data));
     }
@@ -87,7 +87,7 @@ public class Page<R extends PageRequest, D> implements Serializable {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
+        return MoreObjects.toStringHelper(this).
                 add("request", this.request).
                 add("data", this.data).toString();
     }
