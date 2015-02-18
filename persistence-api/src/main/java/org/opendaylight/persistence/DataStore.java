@@ -7,6 +7,8 @@
  */
 package org.opendaylight.persistence;
 
+import javax.annotation.Nonnull;
+
 /**
  * Manages the context a query is executed in. Such context provides everything the query needs to
  * execute (Database connection for example).
@@ -24,5 +26,5 @@ public interface DataStore<C> {
      * @return the query's result
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    <T> T execute(Query<T, C> query) throws PersistenceException;
+    <T> T execute(@Nonnull Query<T, C> query) throws PersistenceException;
 }

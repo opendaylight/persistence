@@ -70,7 +70,7 @@ public class OffsetPageRequest extends PageRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(Long.valueOf(this.offset), Integer.valueOf(this.getSize()));
+        return Objects.hashCode(this.offset, this.getSize());
     }
 
     @Override

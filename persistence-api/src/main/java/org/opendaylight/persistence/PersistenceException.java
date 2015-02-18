@@ -7,6 +7,8 @@
  */
 package org.opendaylight.persistence;
 
+import javax.annotation.Nullable;
+
 /**
  * Thrown by the persistence provider when a problem occurs.
  * 
@@ -28,7 +30,7 @@ public class PersistenceException extends Exception {
      * @param message the detail message. The detail message is saved for later retrieval by the
      *            {@link #getMessage()} method.
      */
-    public PersistenceException(String message) {
+    public PersistenceException(@Nullable String message) {
         super(message);
     }
 
@@ -41,7 +43,7 @@ public class PersistenceException extends Exception {
      *            method). (A <tt>null</tt> value is permitted, and indicates that the cause is
      *            nonexistent or unknown.)
      */
-    public PersistenceException(String message, Throwable cause) {
+    public PersistenceException(@Nullable String message, @Nullable Throwable cause) {
         super(message, cause);
     }
 
@@ -56,7 +58,7 @@ public class PersistenceException extends Exception {
      *            method). (A <tt>null</tt> value is permitted, and indicates that the cause is
      *            nonexistent or unknown).
      */
-    public PersistenceException(Throwable cause) {
+    public PersistenceException(@Nullable Throwable cause) {
         super(cause);
     }
 }

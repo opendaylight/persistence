@@ -31,6 +31,8 @@
     <eclipselink.version>2.5.0</eclipselink.version>
     <sqlite-jdbc.version>3.8.7</sqlite-jdbc.version>
 
+    <!-- ODL Dependencies -->
+
     <yangtools.version>0.6.0</yangtools.version>
 
     <!-- Plugins -->

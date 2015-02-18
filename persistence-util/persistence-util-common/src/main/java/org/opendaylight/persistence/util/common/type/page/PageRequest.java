@@ -46,7 +46,7 @@ public class PageRequest implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.size));
+        return Objects.hashCode(this.size);
     }
 
     @Override
