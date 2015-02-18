@@ -31,6 +31,8 @@
     <eclipselink.version>2.5.0</eclipselink.version>
     <sqlite-jdbc.version>3.8.7</sqlite-jdbc.version>
 
+    <yangtools.version>0.6.0</yangtools.version>
+
     <!-- Plugins -->
 
     <hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
@@ -59,9 +61,14 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.opendaylight.yangtools</groupId>
-      <artifactId>concepts</artifactId>
-      <version>0.6.0</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>${jsr305.api.version}</version>
     </dependency>
 
   </dependencies>

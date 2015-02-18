@@ -22,6 +22,11 @@
       <artifactId>persistence-util-common</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.opendaylight.yangtools</groupId>
+      <artifactId>concepts</artifactId>
+      <version>${yangtools.version}</version>
+    </dependency>
   </dependencies>
 
 </project>
