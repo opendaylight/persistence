@@ -7,11 +7,13 @@
  */
 package org.opendaylight.persistence.dao;
 
-import org.opendaylight.persistence.PersistenceException;
-import org.opendaylight.yangtools.concepts.Identifiable;
-
 import java.io.Serializable;
 import java.util.Collection;
+
+import javax.annotation.Nonnull;
+
+import org.opendaylight.persistence.PersistenceException;
+import org.opendaylight.yangtools.concepts.Identifiable;
 
 /**
  * Key-Value Data Access Object.
@@ -35,7 +37,7 @@ public interface KeyValueDao<I extends Serializable, T extends Identifiable<I>, 
      * @return all the objects from the data store
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    Collection<T> getAll(C context) throws PersistenceException;
+    Collection<T> getAll(@Nonnull C context) throws PersistenceException;
 
     /**
      * Returns the number of objects in the data store.
@@ -44,7 +46,7 @@ public interface KeyValueDao<I extends Serializable, T extends Identifiable<I>, 
      * @return the objects count
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    long size(C context) throws PersistenceException;
+    long size(@Nonnull C context) throws PersistenceException;
 
     /**
      * Deletes all the objects from the data store.
@@ -52,5 +54,5 @@ public interface KeyValueDao<I extends Serializable, T extends Identifiable<I>, 
      * @param context data store context
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    void clear(C context) throws PersistenceException;
+    void clear(@Nonnull C context) throws PersistenceException;
 }

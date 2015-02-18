@@ -7,12 +7,15 @@
  */
 package org.opendaylight.persistence.dao;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.util.common.type.SortSpecification;
 import org.opendaylight.yangtools.concepts.Identifiable;
-
-import java.io.Serializable;
-import java.util.List;
 
 /**
  * Data Access Object.
@@ -38,6 +41,12 @@ import java.util.List;
 public interface Dao<I extends Serializable, T extends Identifiable<I>, F, S, C> extends
         KeyValueDao<I, T, C> {
 
+    /*
+     * Filter is @Nonnull to avoid considering null as an empty filter to request all data, since
+     * some implementations may not support retrieving all objects. In case an implementation does
+     * support it, the filter should allow creating an empty one (non-null).
+     */
+
     /**
      * Gets the objects from the data store that match the given filter.
      *
@@ -47,7 +56,8 @@ public interface Dao<I extends Serializable, T extends Identifiable<I>, F, S, C>
      * @return the objects that match {@code filter} sorted as stated by {@code sortSpecification}
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    List<T> find(F filter, C context, SortSpecification<S> sortSpecification) throws PersistenceException;
+    List<T> find(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, C context)
+            throws PersistenceException;
 
     /**
      * Gets the number of objects from the data store that match the given filter.
@@ -57,7 +67,7 @@ public interface Dao<I extends Serializable, T extends Identifiable<I>, F, S, C>
      * @return the number of objects that match {@code filter}
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    long count(F filter, C context) throws PersistenceException;
+    long count(@Nonnull F filter, @Nonnull C context) throws PersistenceException;
 
     /**
      * Deletes all objects from the data store that match the given filter.
@@ -66,5 +76,5 @@ public interface Dao<I extends Serializable, T extends Identifiable<I>, F, S, C>
      * @param context data store context
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    void delete(F filter, C context) throws PersistenceException;
+    void delete(@Nonnull F filter, @Nonnull C context) throws PersistenceException;
 }
