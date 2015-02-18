@@ -51,6 +51,24 @@
       "revId": "5d265f02353e69089bfc049686760f4dcf715944",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_12af8395",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/query/QueryLoggerDecorator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-18T18:57:42Z",
+      "side": 1,
+      "message": "Thanks for the suggestion. It is definitely easier to read.\n\nAbout \"if(logger.isDebugEnabled())\", I would expect the implementation to check whether a logging level is enabled before doing any work. Otherwise consumers would end up adding \"if(logger.isDebugEnabled())\" all over the place. What do you think?",
+      "parentUuid": "7a96c907_926713b7",
+      "revId": "5d265f02353e69089bfc049686760f4dcf715944",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
