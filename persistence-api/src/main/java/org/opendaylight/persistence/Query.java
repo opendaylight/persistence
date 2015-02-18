@@ -7,6 +7,8 @@
  */
 package org.opendaylight.persistence;
 
+import javax.annotation.Nonnull;
+
 /**
  * Query to perform persistence operations.
  * 
@@ -28,5 +30,5 @@ public interface Query<T, C> {
      * @return the result of the query
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    T execute(C context) throws PersistenceException;
+    T execute(@Nonnull C context) throws PersistenceException;
 }
