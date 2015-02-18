@@ -7,13 +7,16 @@
  */
 package org.opendaylight.persistence.dao;
 
+import java.io.Serializable;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.util.common.type.SortSpecification;
 import org.opendaylight.persistence.util.common.type.page.Page;
 import org.opendaylight.persistence.util.common.type.page.PageRequest;
 import org.opendaylight.yangtools.concepts.Identifiable;
-
-import java.io.Serializable;
 
 /**
  * Data Access Object that supports paging.
@@ -51,7 +54,7 @@ public interface PagedDao<I extends Serializable, T extends Identifiable<I>, F, 
      *         {@code sortSpecification}
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    D find(F filter, SortSpecification<S> sortSpecification, R pageRequest, C context)
-            throws PersistenceException;
+    D find(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, @Nonnull R pageRequest,
+            @Nonnull C context) throws PersistenceException;
 }
 

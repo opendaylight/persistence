@@ -7,11 +7,13 @@
  */
 package org.opendaylight.persistence.dao;
 
+import java.io.Serializable;
+
+import javax.annotation.Nonnull;
+
+import org.opendaylight.persistence.IntegrityConstraintViolationException;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.yangtools.concepts.Identifiable;
-
-
-import java.io.Serializable;
 
 /**
  * Base Data Access Object.
@@ -108,18 +110,27 @@ public interface BaseDao<I extends Serializable, T extends Identifiable<I>, C> {
      * @param identifiable object to store
      * @param context data store context
      * @return the new created object which may include auto-generated primary keys
+     * @throws IntegrityConstraintViolationException if an integrity constraint defined in the
+     *             underlying database or data store provider is violated, for example:
+     *             "Primary Key Integrity Constraint", "Unique Fields", "Non-nullable Fields", etc.
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    T add(T identifiable, C context) throws PersistenceException;
+    T add(@Nonnull T identifiable, @Nonnull C context) throws IntegrityConstraintViolationException,
+            PersistenceException;
 
     /**
      * Updates the given object in the data store
      *
      * @param identifiable object to store
      * @param context data store context
+     * @return the object updated which may include auto-generated values (a version for example)
+     * @throws IntegrityConstraintViolationException if an integrity constraint defined in the
+     *             underlying database or data store provider is violated, for example:
+     *             "Unique Fields", "Non-nullable Fields", etc.
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    void update(T identifiable, C context) throws PersistenceException;
+    T update(@Nonnull T identifiable, @Nonnull C context) throws IntegrityConstraintViolationException,
+            PersistenceException;
 
     /*
      * Note: Delete methods don't return anything (nor boolean nor count of deleted items) because
@@ -135,7 +146,7 @@ public interface BaseDao<I extends Serializable, T extends Identifiable<I>, C> {
      * @param context data store context
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    void delete(I id, C context) throws PersistenceException;
+    void delete(@Nonnull I id, @Nonnull C context) throws PersistenceException;
 
     /**
      * Loads the object with the given id from the data store.
@@ -145,7 +156,7 @@ public interface BaseDao<I extends Serializable, T extends Identifiable<I>, C> {
      * @return the object if found, {@code null} otherwise
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    T get(I id, C context) throws PersistenceException;
+    T get(@Nonnull I id, @Nonnull C context) throws PersistenceException;
 
     /**
      * Verifies if an object with the given id exists in the data store.
@@ -155,5 +166,5 @@ public interface BaseDao<I extends Serializable, T extends Identifiable<I>, C> {
      * @return {@code true} if an object with the given id already exists, {@code false} otherwise
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    boolean exist(I id, C context) throws PersistenceException;
+    boolean exist(@Nonnull I id, @Nonnull C context) throws PersistenceException;
 }
