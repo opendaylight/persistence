@@ -7,15 +7,14 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
-import org.opendaylight.persistence.util.common.Converter;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.opendaylight.persistence.util.common.Converter;
+
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
 /**
  * Offset based data page.
@@ -177,7 +176,7 @@ public class OffsetPage<D> extends Page<OffsetPageRequest, D> {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).
+        return MoreObjects.toStringHelper(this).
                 add("pageRequest", getRequest()).
                 add("totalRecordCount", this.totalRecordCount).
                 add("data", getData()).toString();

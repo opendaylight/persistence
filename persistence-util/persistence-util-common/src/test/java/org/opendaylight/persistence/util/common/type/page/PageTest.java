@@ -7,13 +7,13 @@
  */
 package org.opendaylight.persistence.util.common.type.page;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.util.test.SerializabilityTester;
 import org.opendaylight.persistence.util.test.SerializabilityTester.SemanticCompatibilityVerifier;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Fabiel Zuniga
@@ -28,6 +28,7 @@ public class PageTest {
         Assert.assertEquals(new PageRequest(10), page.getRequest());
     }
 
+    @SuppressWarnings("unused")
     @Test (expected = NullPointerException.class)
     public void testInvalidPageRequest() {
         final PageRequest invalidPageRequest = null;
@@ -35,6 +36,7 @@ public class PageTest {
         new Page<PageRequest, String>(invalidPageRequest, validData);
     }
 
+    @SuppressWarnings("unused")
     @Test(expected = NullPointerException.class)
     public void testValidPageRequestInvalidData() {
         final PageRequest validPageRequest = new PageRequest(10);
