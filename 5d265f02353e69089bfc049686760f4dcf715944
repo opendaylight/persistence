@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_dccdb486",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/query/DeleteQuery.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-18T06:40:39Z",
+      "side": 1,
+      "message": "why return null ? Can we change the return type to void instead ?",
+      "revId": "5d265f02353e69089bfc049686760f4dcf715944",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
