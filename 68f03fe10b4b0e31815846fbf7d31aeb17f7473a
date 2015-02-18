@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_5268ab1c",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/query/QueryLoggerDecorator.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-02-18T21:13:17Z",
+      "side": 1,
+      "message": "Do we want this final also ?",
+      "revId": "68f03fe10b4b0e31815846fbf7d31aeb17f7473a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
