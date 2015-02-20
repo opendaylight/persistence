@@ -44,5 +44,5 @@ public interface Procedure<T> {
      * 
      * @return the procedure result
      */
-    public T execute();
+    T execute();
 }

@@ -24,7 +24,7 @@ import org.opendaylight.persistence.dao.BaseDao;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class ExistQuery<I extends Serializable, C> implements Query<Boolean, C> {
+public final class ExistQuery<I extends Serializable, C> implements Query<Boolean, C> {
 
     private I id;
     private BaseDao<I, ?, C> dao;

@@ -25,7 +25,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class GetAllQuery<T extends Identifiable<?>, C> implements Query<Collection<T>, C> {
+public final class GetAllQuery<T extends Identifiable<?>, C> implements Query<Collection<T>, C> {
 
     private KeyValueDao<?, T, C> dao;
 

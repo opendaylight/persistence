@@ -32,8 +32,8 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class PagedFindQuery<T extends Identifiable<?>, F, S, R extends PageRequest, D extends Page<R, T>, C> implements
-        Query<D, C> {
+public final class PagedFindQuery<T extends Identifiable<?>, F, S, R extends PageRequest, D extends Page<R, T>, C>
+        implements Query<D, C> {
 
     private F filter;
     private SortSpecification<S> sortSpecification;

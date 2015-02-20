@@ -22,7 +22,7 @@ import org.opendaylight.persistence.dao.Dao;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class CountQuery<F, C> implements Query<Long, C> {
+public final class CountQuery<F, C> implements Query<Long, C> {
 
     private F filter;
     private Dao<?, ?, F, ?, C> dao;

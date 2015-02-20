@@ -46,5 +46,5 @@ public interface Subroutine<I> {
      *
      * @param input input
      */
-    public void execute(@Nullable I input);
+    void execute(@Nullable I input);
 }

@@ -26,7 +26,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class GetQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<T, C> {
+public final class GetQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<T, C> {
 
     private I id;
     private BaseDao<I, T, C> dao;

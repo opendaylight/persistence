@@ -32,7 +32,7 @@ import org.opendaylight.persistence.util.common.Subroutine;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class QueryModelDecorator<T, C> implements Query<T, C> {
+public final class QueryModelDecorator<T, C> implements Query<T, C> {
 
     private Instruction preProcessing;
     private Subroutine<T> postProcessing;

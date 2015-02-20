@@ -21,7 +21,7 @@ import org.opendaylight.persistence.dao.KeyValueDao;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class ClearQuery<C> implements Query<Void, C> {
+public final class ClearQuery<C> implements Query<Void, C> {
 
     private KeyValueDao<?, ?, C> dao;
 

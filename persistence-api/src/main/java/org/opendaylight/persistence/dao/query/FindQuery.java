@@ -30,7 +30,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class FindQuery<T extends Identifiable<?>, F, S, C> implements Query<List<T>, C> {
+public final class FindQuery<T extends Identifiable<?>, F, S, C> implements Query<List<T>, C> {
 
     private F filter;
     private SortSpecification<S> sortSpecification;

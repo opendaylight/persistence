@@ -24,8 +24,8 @@ import org.slf4j.LoggerFactory;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class QueryLoggerDecorator<T, C> implements Query<T, C> {
-    private static Logger LOGGER = LoggerFactory.getLogger(QueryLoggerDecorator.class);
+public final class QueryLoggerDecorator<T, C> implements Query<T, C> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(QueryLoggerDecorator.class);
 
     private Query<T, C> delegate;
 

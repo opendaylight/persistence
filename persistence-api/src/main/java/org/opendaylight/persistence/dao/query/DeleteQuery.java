@@ -26,7 +26,7 @@ import com.google.common.base.Preconditions;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class DeleteQuery<F, C> implements Query<Void, C> {
+public final class DeleteQuery<F, C> implements Query<Void, C> {
 
     private F filter;
     private Dao<?, ?, F, ?, C> dao;

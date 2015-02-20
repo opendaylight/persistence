@@ -26,7 +26,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class DeleteByIdQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<Void, C> {
+public final class DeleteByIdQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<Void, C> {
 
     private I id;
     private BaseDao<I, T, C> dao;

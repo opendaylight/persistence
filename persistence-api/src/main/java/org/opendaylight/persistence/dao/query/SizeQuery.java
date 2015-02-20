@@ -21,7 +21,7 @@ import org.opendaylight.persistence.dao.KeyValueDao;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class SizeQuery<C> implements Query<Long, C> {
+public final class SizeQuery<C> implements Query<Long, C> {
 
     private KeyValueDao<?, ?, C> dao;
 

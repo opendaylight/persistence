@@ -41,5 +41,5 @@ public interface Instruction {
     /**
      * Executes the instructions.
      */
-    public void execute();
+    void execute();
 }

@@ -48,5 +48,5 @@ public interface Executor<T, I> {
      * @param input input
      * @return execution result
      */
-    public T execute(@Nullable I input);
+    T execute(@Nullable I input);
 }

@@ -23,7 +23,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class UpdateQuery<T extends Identifiable<?>, C> implements Query<T, C> {
+public final class UpdateQuery<T extends Identifiable<?>, C> implements Query<T, C> {
 
     private T identifiable;
     private BaseDao<?, T, C> dao;
