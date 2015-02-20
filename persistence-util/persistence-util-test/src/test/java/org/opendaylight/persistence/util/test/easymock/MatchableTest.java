@@ -7,9 +7,6 @@
  */
 package org.opendaylight.persistence.util.test.easymock;
 
-import java.io.PrintStream;
-
-import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.util.test.ThrowableTester;
@@ -58,24 +55,11 @@ public class MatchableTest {
     }
 
     @Test
-    public void testPrintMismatch() {
-        @SuppressWarnings("resource")
-        PrintStream streamMock = EasyMock.createMock(PrintStream.class);
-
+    public void testToString() {
         final String name = "property name";
         final String expected = "property value";
         final String actual = "property different value";
-
-        streamMock.println(EasyMock.contains(name));
-        streamMock.println(EasyMock.contains(expected));
-        streamMock.println(EasyMock.contains(actual));
-
-        EasyMock.replay(streamMock);
-
         Matchable<String> matchable = Matchable.valueOf(name, expected, actual);
-
-        matchable.printMismatch(streamMock);
-
-        EasyMock.verify(streamMock);
+        Assert.assertFalse(matchable.toString().isEmpty());
     }
 }

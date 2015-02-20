@@ -7,10 +7,10 @@
  */
 package org.opendaylight.persistence.util.test.easymock;
 
-import java.io.PrintStream;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import com.google.common.base.MoreObjects;
 
 /**
  * Matchable property.
@@ -61,12 +61,10 @@ public final class Matchable<T> {
         return this.matches;
     }
 
-    void printMismatch(PrintStream stream) {
-        if (!this.matches) {
-            stream.println("Mismatch on : " + this.name);
-            stream.println("expected: " + this.expected);
-            stream.println("Actual: " + this.actual);
-        }
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this).add("name", this.name).add("expected", this.expected)
+                .add("actual", this.actual).toString();
     }
 
     private static <T> boolean matches(T expected, T actual) {

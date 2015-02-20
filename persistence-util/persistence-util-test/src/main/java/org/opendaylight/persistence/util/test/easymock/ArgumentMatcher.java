@@ -8,6 +8,7 @@
 package org.opendaylight.persistence.util.test.easymock;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.NotThreadSafe;
 
 import org.easymock.EasyMock;
 import org.easymock.IArgumentMatcher;
@@ -23,9 +24,11 @@ import org.easymock.IArgumentMatcher;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
+@NotThreadSafe
 public abstract class ArgumentMatcher<T> implements IArgumentMatcher {
 
-    private String name;
+    private final String name;
+    private String mismatchDescription;
 
     /**
      * Creates an argument matcher.
@@ -38,7 +41,16 @@ public abstract class ArgumentMatcher<T> implements IArgumentMatcher {
 
     @Override
     public void appendTo(StringBuffer buffer) {
-        buffer.append("<" + this.name + ">");
+        buffer.append('<');
+        buffer.append(this.name);
+        if (this.mismatchDescription != null) {
+            buffer.append(' ');
+            buffer.append('[');
+            buffer.append(this.mismatchDescription);
+            buffer.append(']');
+        }
+        buffer.append('>');
+        this.mismatchDescription = null;
     }
 
     @Override
@@ -59,6 +71,9 @@ public abstract class ArgumentMatcher<T> implements IArgumentMatcher {
 
     /**
      * Verifies the argument matches.
+     * <p>
+     * It is recommended to use {@link #verify(Matchable...)} in the implementation of this method
+     * since it adds more description to the error in case the argument doesn't match.
      *
      * @param argument argument
      * @return {@code true} if {@code argument} matches expectations, {@code false} otherwise
@@ -75,8 +90,7 @@ public abstract class ArgumentMatcher<T> implements IArgumentMatcher {
     protected final boolean verify(@Nonnull Matchable<?>... properties) {
         for (Matchable<?> property : properties) {
             if (!property.matches()) {
-                System.err.println("Property mismatch: " + getClass().getName() + " <" + this.name + ">");
-                property.printMismatch(System.err);
+                this.mismatchDescription = property.toString();
                 return false;
             }
         }

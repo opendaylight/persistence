@@ -12,6 +12,9 @@ import org.easymock.IArgumentMatcher;
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.util.test.AssertUtil;
+import org.opendaylight.persistence.util.test.ThrowableTester;
+import org.opendaylight.persistence.util.test.ThrowableTester.Instruction;
+import org.opendaylight.persistence.util.test.ThrowableTester.Validator;
 
 /**
  * @author Fabiel Zuniga
@@ -19,23 +22,9 @@ import org.opendaylight.persistence.util.test.AssertUtil;
  */
 @SuppressWarnings({ "javadoc", "static-method" })
 public class ArgumentMatcherTest {
-    @Test
-    public void testName() {
-        final String name = "MyArgumentMatcher";
-        ArgumentMatcher<MyArgument<String>> matcher = new ArgumentMatcher<MyArgument<String>>(name) {
-            @Override
-            public boolean verifyMatch(MyArgument<String> argument) {
-                return true;
-            }
-        };
-
-        StringBuffer stringBuffer = new StringBuffer();
-        matcher.appendTo(stringBuffer);
-        AssertUtil.assertContains(name, stringBuffer.toString());
-    }
 
     @Test
-    public void testNotNullMatch() {
+    public void testNullMatch() {
         ArgumentMatcher<MyArgument<String>> matcher = new ArgumentMatcher<MyArgument<String>>("MyArgumentMatcher") {
             @Override
             public boolean verifyMatch(MyArgument<String> argument) {
@@ -87,7 +76,69 @@ public class ArgumentMatcherTest {
     }
 
     @Test
-    public void testEasyMockMatch() {
+    public void testMatch() {
+        final String argumentName = "MyArgumentMatcher";
+        final String argumentPropertyName = "property";
+        final String argumentPropertyExpectedValue = "expected-value";
+        final String argumentPropertyActualValue = "expected-value";
+
+        Mockable mockable = EasyMock.createMock(Mockable.class);
+
+        ArgumentMatcher<MyArgument<String>> matcher = new ArgumentMatcher<MyArgument<String>>(argumentName) {
+
+            @Override
+            public boolean verifyMatch(MyArgument<String> argument) {
+                return verify(Matchable.<String> valueOf(argumentPropertyName, argumentPropertyExpectedValue,
+                        argument.getValue()));
+            }
+        };
+
+        mockable.myMethod(matcher.match());
+        EasyMock.replay(mockable);
+        mockable.myMethod(new MyArgument<String>(argumentPropertyActualValue));
+        EasyMock.verify(mockable);
+    }
+
+    @Test
+    public void testMatchFail() {
+        final String argumentName = "MyArgumentMatcher";
+        final String argumentPropertyName = "property";
+        final String argumentPropertyExpectedValue = "expected-value";
+        final String argumentPropertyActualValue = "different-value";
+
+        final Mockable mockable = EasyMock.createMock(Mockable.class);
+
+        ArgumentMatcher<MyArgument<String>> matcher = new ArgumentMatcher<MyArgument<String>>(argumentName) {
+
+            @Override
+            public boolean verifyMatch(MyArgument<String> argument) {
+                return verify(Matchable.<String> valueOf(argumentPropertyName, argumentPropertyExpectedValue,
+                        argument.getValue()));
+            }
+        };
+
+        mockable.myMethod(matcher.match());
+        EasyMock.replay(mockable);
+
+        ThrowableTester.testThrows(AssertionError.class, new Instruction() {
+            @Override
+            public void execute() throws Throwable {
+                mockable.myMethod(new MyArgument<String>(argumentPropertyActualValue));
+                EasyMock.verify(mockable);
+            }
+        }, new Validator<AssertionError>() {
+            @Override
+            public void assertThrowable(AssertionError throwable) {
+                AssertUtil.assertContains(argumentName, throwable.getMessage());
+                AssertUtil.assertContains(argumentPropertyName, throwable.getMessage());
+                AssertUtil.assertContains(argumentPropertyExpectedValue, throwable.getMessage());
+                AssertUtil.assertContains(argumentPropertyActualValue, throwable.getMessage());
+            }
+        });
+    }
+
+    @Test
+    public void testIArgumentMatcherMatch() {
         Mockable mockable = EasyMock.createMock(Mockable.class);
 
         IArgumentMatcher matcher = new IArgumentMatcher() {
@@ -129,27 +180,9 @@ public class ArgumentMatcherTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidEasyMockMatch() {
+    public void testIArgumentMatcherMatchInvalid() {
         IArgumentMatcher invalidMatcher = null;
         ArgumentMatcher.<MyArgument<String>> match(invalidMatcher);
-    }
-
-    @Test
-    public void testTypeSafeEasyMockMatch() {
-        Mockable mockable = EasyMock.createMock(Mockable.class);
-
-        ArgumentMatcher<MyArgument<String>> matcher = new ArgumentMatcher<MyArgument<String>>("MyArgumentMatcher") {
-
-            @Override
-            public boolean verifyMatch(MyArgument<String> argument) {
-                return verify(Matchable.<String> valueOf("property", "Hello World", argument.getValue()));
-            }
-        };
-
-        mockable.myMethod(matcher.match());
-        EasyMock.replay(mockable);
-        mockable.myMethod(new MyArgument<String>("Hello World"));
-        EasyMock.verify(mockable);
     }
 
     private static interface Mockable {
