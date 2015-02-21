@@ -8,6 +8,7 @@
 package org.opendaylight.persistence.dao.query;
 
 import java.util.Collections;
+import java.util.List;
 
 import org.easymock.EasyMock;
 import org.junit.Assert;
@@ -18,7 +19,7 @@ import org.opendaylight.persistence.dao.query.TestCase.Context;
 import org.opendaylight.persistence.dao.query.TestCase.Filter;
 import org.opendaylight.persistence.dao.query.TestCase.MyIdentifiable;
 import org.opendaylight.persistence.dao.query.TestCase.SortKey;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.persistence.util.common.type.page.Page;
 import org.opendaylight.persistence.util.common.type.page.PageRequest;
 
@@ -35,7 +36,7 @@ public class PagedFindQueryTest {
         Page<PageRequest, MyIdentifiable> expectedResult = new Page<PageRequest, MyIdentifiable>(pageRequest,
                 Collections.<MyIdentifiable> emptyList());
         Filter filter = new Filter();
-        SortSpecification<SortKey> sortSpec = new SortSpecification<SortKey>();
+        List<Sort<SortKey>> sort = Collections.emptyList();
         Context context = new Context();
 
         @SuppressWarnings("unchecked")
@@ -43,12 +44,12 @@ public class PagedFindQueryTest {
                 .createMock(PagedDao.class);
 
         EasyMock.expect(
-                daoMock.find(EasyMock.same(filter), EasyMock.same(sortSpec), EasyMock.same(pageRequest),
+                daoMock.find(EasyMock.same(filter), EasyMock.same(sort), EasyMock.same(pageRequest),
                         EasyMock.same(context))).andReturn(expectedResult);
 
         EasyMock.replay(daoMock);
 
-        Query<Page<PageRequest, MyIdentifiable>, Context> query = PagedFindQuery.createQuery(filter, sortSpec,
+        Query<Page<PageRequest, MyIdentifiable>, Context> query = PagedFindQuery.createQuery(filter, sort,
                 pageRequest, daoMock);
         Assert.assertSame(expectedResult, query.execute(context));
 

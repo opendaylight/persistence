@@ -8,6 +8,7 @@
 package org.opendaylight.persistence.dao.query;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.easymock.EasyMock;
@@ -19,7 +20,7 @@ import org.opendaylight.persistence.dao.query.TestCase.Context;
 import org.opendaylight.persistence.dao.query.TestCase.Filter;
 import org.opendaylight.persistence.dao.query.TestCase.MyIdentifiable;
 import org.opendaylight.persistence.dao.query.TestCase.SortKey;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 
 /**
  * @author Fabiel Zuniga
@@ -32,18 +33,18 @@ public class FindQueryTest {
     public void testExecute() throws Exception {
         List<MyIdentifiable> expectedResult = new ArrayList<MyIdentifiable>();
         Filter filter = new Filter();
-        SortSpecification<SortKey> sortSpec = new SortSpecification<SortKey>();
+        List<Sort<SortKey>> sort = Collections.emptyList();
         Context context = new Context();
 
         @SuppressWarnings("unchecked")
         Dao<?, MyIdentifiable, Filter, SortKey, Context> daoMock = EasyMock.createMock(Dao.class);
 
-        EasyMock.expect(daoMock.find(EasyMock.same(filter), EasyMock.same(sortSpec), EasyMock.same(context)))
+        EasyMock.expect(daoMock.find(EasyMock.same(filter), EasyMock.same(sort), EasyMock.same(context)))
                 .andReturn(expectedResult);
 
         EasyMock.replay(daoMock);
 
-        Query<List<MyIdentifiable>, Context> query = FindQuery.createQuery(filter, sortSpec, daoMock);
+        Query<List<MyIdentifiable>, Context> query = FindQuery.createQuery(filter, sort, daoMock);
 
         List<MyIdentifiable> result = query.execute(context);
         Assert.assertSame(expectedResult, result);

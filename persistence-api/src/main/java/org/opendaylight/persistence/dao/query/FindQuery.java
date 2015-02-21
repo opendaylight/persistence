@@ -16,7 +16,7 @@ import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.Dao;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.yangtools.concepts.Identifiable;
 
 /**
@@ -33,13 +33,12 @@ import org.opendaylight.yangtools.concepts.Identifiable;
 public final class FindQuery<T extends Identifiable<?>, F, S, C> implements Query<List<T>, C> {
 
     private F filter;
-    private SortSpecification<S> sortSpecification;
+    private List<Sort<S>> sort;
     private Dao<?, T, F, S, C> dao;
 
-    private FindQuery(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification,
-            @Nonnull Dao<?, T, F, S, C> dao) {
+    private FindQuery(@Nonnull F filter, @Nullable List<Sort<S>> sort, @Nonnull Dao<?, T, F, S, C> dao) {
         this.filter = filter;
-        this.sortSpecification = sortSpecification;
+        this.sort = sort;
         this.dao = dao;
     }
 
@@ -49,17 +48,17 @@ public final class FindQuery<T extends Identifiable<?>, F, S, C> implements Quer
      * This method is a convenience to infer the generic types.
      * 
      * @param filter filter
-     * @param sortSpecification sort specification
+     * @param sort sort specification
      * @param dao DAO to assist the query
      * @return the query
      */
     public static <T extends Identifiable<?>, F, S, C> Query<List<T>, C> createQuery(@Nonnull F filter,
-            @Nullable SortSpecification<S> sortSpecification, @Nonnull Dao<?, T, F, S, C> dao) {
-        return new FindQuery<T, F, S, C>(filter, sortSpecification, dao);
+            @Nullable List<Sort<S>> sort, @Nonnull Dao<?, T, F, S, C> dao) {
+        return new FindQuery<T, F, S, C>(filter, sort, dao);
     }
 
     @Override
     public List<T> execute(C context) throws PersistenceException {
-        return this.dao.find(this.filter, this.sortSpecification, context);
+        return this.dao.find(this.filter, this.sort, context);
     }
 }

@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.opendaylight.persistence.PersistenceException;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.yangtools.concepts.Identifiable;
 
 /**
@@ -51,13 +51,12 @@ public interface Dao<I extends Serializable, T extends Identifiable<I>, F, S, C>
      * Gets the objects from the data store that match the given filter.
      *
      * @param filter filter to apply, {@code null} to retrieve all objects
-     * @param sortSpecification sort specification
+     * @param sort sort specification
      * @param context data store context
      * @return the objects that match {@code filter} sorted as stated by {@code sortSpecification}
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    List<T> find(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, C context)
-            throws PersistenceException;
+    List<T> find(@Nonnull F filter, @Nullable List<Sort<S>> sort, C context) throws PersistenceException;
 
     /**
      * Gets the number of objects from the data store that match the given filter.

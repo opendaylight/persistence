@@ -8,12 +8,13 @@
 package org.opendaylight.persistence.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.opendaylight.persistence.PersistenceException;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.persistence.util.common.type.page.Page;
 import org.opendaylight.persistence.util.common.type.page.PageRequest;
 import org.opendaylight.yangtools.concepts.Identifiable;
@@ -47,14 +48,14 @@ public interface PagedDao<I extends Serializable, T extends Identifiable<I>, F, 
      * Gets a page of objects from the data store that match the given filter.
      *
      * @param filter filter to apply, {@code null} to consider all objects
-     * @param sortSpecification sort specification
+     * @param sort sort specification
      * @param pageRequest page request
      * @param context data store context
      * @return a page of objects that match {@code filter} sorted as stated by
      *         {@code sortSpecification}
      * @throws PersistenceException if persistence errors occur while executing the operation
      */
-    D find(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, @Nonnull R pageRequest,
-            @Nonnull C context) throws PersistenceException;
+    D find(@Nonnull F filter, @Nullable List<Sort<S>> sort, @Nonnull R pageRequest, @Nonnull C context)
+            throws PersistenceException;
 }
 

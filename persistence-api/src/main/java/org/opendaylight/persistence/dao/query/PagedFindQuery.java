@@ -7,6 +7,8 @@
  */
 package org.opendaylight.persistence.dao.query;
 
+import java.util.List;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -14,7 +16,7 @@ import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.PagedDao;
-import org.opendaylight.persistence.util.common.type.SortSpecification;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.persistence.util.common.type.page.Page;
 import org.opendaylight.persistence.util.common.type.page.PageRequest;
 import org.opendaylight.yangtools.concepts.Identifiable;
@@ -36,14 +38,14 @@ public final class PagedFindQuery<T extends Identifiable<?>, F, S, R extends Pag
         implements Query<D, C> {
 
     private F filter;
-    private SortSpecification<S> sortSpecification;
+    private List<Sort<S>> sort;
     private R pageRequest;
     private PagedDao<?, T, F, S, R, D, C> dao;
 
-    private PagedFindQuery(@Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, @Nonnull R pageRequest,
+    private PagedFindQuery(@Nonnull F filter, @Nullable List<Sort<S>> sort, @Nonnull R pageRequest,
             @Nonnull PagedDao<?, T, F, S, R, D, C> dao) {
         this.filter = filter;
-        this.sortSpecification = sortSpecification;
+        this.sort = sort;
         this.pageRequest = pageRequest;
         this.dao = dao;
     }
@@ -54,19 +56,19 @@ public final class PagedFindQuery<T extends Identifiable<?>, F, S, R extends Pag
      * This method is a convenience to infer the generic types.
      * 
      * @param filter filter
-     * @param sortSpecification sort specification
+     * @param sort sort specification
      * @param pageRequest page request
      * @param dao DAO to assist the query
      * @return the query
      */
     public static <T extends Identifiable<?>, F, S, R extends PageRequest, D extends Page<R, T>, C> Query<D, C> createQuery(
-            @Nonnull F filter, @Nullable SortSpecification<S> sortSpecification, @Nonnull R pageRequest,
+            @Nonnull F filter, @Nullable List<Sort<S>> sort, @Nonnull R pageRequest,
             @Nonnull PagedDao<?, T, F, S, R, D, C> dao) {
-        return new PagedFindQuery<T, F, S, R, D, C>(filter, sortSpecification, pageRequest, dao);
+        return new PagedFindQuery<T, F, S, R, D, C>(filter, sort, pageRequest, dao);
     }
 
     @Override
     public D execute(C context) throws PersistenceException {
-        return this.dao.find(this.filter, this.sortSpecification, this.pageRequest, context);
+        return this.dao.find(this.filter, this.sort, this.pageRequest, context);
     }
 }
