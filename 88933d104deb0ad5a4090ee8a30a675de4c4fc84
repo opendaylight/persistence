@@ -34,6 +34,24 @@
       "revId": "88933d104deb0ad5a4090ee8a30a675de4c4fc84",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c79070ef",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/store/KeyValueObjectStore.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2508
+      },
+      "writtenOn": "2015-02-23T19:49:24Z",
+      "side": 1,
+      "message": "Thanks for the details and it makes sense.  I am having a hard time proposing an appropriate alternative name so since you discussed it already I won\u0027t push for a change at this time. Maybe after other use it we will have changes that would promote a change.",
+      "parentUuid": "7a96c907_074178a8",
+      "revId": "88933d104deb0ad5a4090ee8a30a675de4c4fc84",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
