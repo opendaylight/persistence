@@ -5,23 +5,25 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import org.easymock.EasyMock;
+import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.Dao;
-import org.opendaylight.persistence.dao.query.TestCase.Context;
-import org.opendaylight.persistence.dao.query.TestCase.Filter;
+import org.opendaylight.persistence.query.TestCase.Context;
+import org.opendaylight.persistence.query.TestCase.Filter;
 
 /**
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
 @SuppressWarnings({ "javadoc", "static-method" })
-public class DeleteQueryTest {
+public class CountQueryTest {
 
     @Test
+    @SuppressWarnings("boxing")
     public void testExecute() throws Exception {
         Filter filter = new Filter();
         Context context = new Context();
@@ -29,12 +31,13 @@ public class DeleteQueryTest {
         @SuppressWarnings("unchecked")
         Dao<?, ?, Filter, ?, Context> daoMock = EasyMock.createMock(Dao.class);
 
-        daoMock.delete(EasyMock.same(filter), EasyMock.same(context));
+        Long result = Long.valueOf(10);
+        EasyMock.expect(daoMock.count(EasyMock.same(filter), EasyMock.same(context))).andReturn(result);
 
         EasyMock.replay(daoMock);
 
-        Query<Void, Context> query = DeleteQuery.createQuery(filter, daoMock);
-        query.execute(context);
+        Query<Long, Context> query = CountQuery.createQuery(filter, daoMock);
+        Assert.assertEquals(result, query.execute(context));
 
         EasyMock.verify(daoMock);
     }

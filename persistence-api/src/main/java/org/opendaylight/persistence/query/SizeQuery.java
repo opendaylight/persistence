@@ -5,30 +5,27 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import javax.annotation.Nonnull;
 
 import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.Query;
-import org.opendaylight.persistence.dao.Dao;
+import org.opendaylight.persistence.dao.KeyValueDao;
 
 /**
- * Query to get the number of objects from the data store that match the given filter.
+ * Query that returns the number of objects from the data store.
  * 
- * @param <F> type of the associated filter
  * @param <C> type of the query's execution context; the context managed by the {@link DataStore}
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public final class CountQuery<F, C> implements Query<Long, C> {
+public final class SizeQuery<C> implements Query<Long, C> {
 
-    private F filter;
-    private Dao<?, ?, F, ?, C> dao;
+    private KeyValueDao<?, ?, C> dao;
 
-    private CountQuery(@Nonnull F filter, @Nonnull Dao<?, ?, F, ?, C> dao) {
-        this.filter = filter;
+    private SizeQuery(@Nonnull KeyValueDao<?, ?, C> dao) {
         this.dao = dao;
     }
 
@@ -37,16 +34,15 @@ public final class CountQuery<F, C> implements Query<Long, C> {
      * <p>
      * This method is a convenience to infer the generic types.
      * 
-     * @param filter filter
      * @param dao DAO to assist the query
      * @return the query
      */
-    public static <F, C> Query<Long, C> createQuery(@Nonnull F filter, @Nonnull Dao<?, ?, F, ?, C> dao) {
-        return new CountQuery<F, C>(filter, dao);
+    public static <C> Query<Long, C> createQuery(@Nonnull KeyValueDao<?, ?, C> dao) {
+        return new SizeQuery<C>(dao);
     }
 
     @Override
     public Long execute(C context) throws PersistenceException {
-        return Long.valueOf(this.dao.count(this.filter, context));
+        return Long.valueOf(this.dao.size(context));
     }
 }

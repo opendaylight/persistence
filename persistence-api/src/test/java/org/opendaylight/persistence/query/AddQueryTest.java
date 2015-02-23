@@ -5,16 +5,16 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.BaseDao;
-import org.opendaylight.persistence.dao.query.TestCase.Context;
-import org.opendaylight.persistence.dao.query.TestCase.Key;
-import org.opendaylight.persistence.dao.query.TestCase.MyIdentifiable;
+import org.opendaylight.persistence.query.TestCase.Context;
+import org.opendaylight.persistence.query.TestCase.Key;
+import org.opendaylight.persistence.query.TestCase.MyIdentifiable;
 
 /**
  * @author Fabiel Zuniga

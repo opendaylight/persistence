@@ -5,7 +5,9 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
+
+import java.io.Serializable;
 
 import javax.annotation.Nonnull;
 
@@ -13,23 +15,22 @@ import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.BaseDao;
-import org.opendaylight.yangtools.concepts.Identifiable;
 
 /**
- * Query to update the given object in the data store.
+ * Query to verify if an object with the given id exists in the data store.
  * 
- * @param <T> type of the identifiable object (object to store in the data store)
+ * @param <I> type of the identifiable object's id
  * @param <C> type of the query's execution context; the context managed by the {@link DataStore}
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public final class UpdateQuery<T extends Identifiable<?>, C> implements Query<T, C> {
+public final class ExistQuery<I extends Serializable, C> implements Query<Boolean, C> {
 
-    private T identifiable;
-    private BaseDao<?, T, C> dao;
+    private I id;
+    private BaseDao<I, ?, C> dao;
 
-    private UpdateQuery(@Nonnull T identifiable, @Nonnull BaseDao<?, T, C> dao) {
-        this.identifiable = identifiable;
+    private ExistQuery(@Nonnull I id, @Nonnull BaseDao<I, ?, C> dao) {
+        this.id = id;
         this.dao = dao;
     }
 
@@ -38,17 +39,16 @@ public final class UpdateQuery<T extends Identifiable<?>, C> implements Query<T,
      * <p>
      * This method is a convenience to infer the generic types.
      * 
-     * @param identifiable object to update
+     * @param id the object's id
      * @param dao DAO to assist the query
      * @return the query
      */
-    public static <T extends Identifiable<?>, C> Query<T, C> createQuery(@Nonnull T identifiable,
-            @Nonnull BaseDao<?, T, C> dao) {
-        return new UpdateQuery<T, C>(identifiable, dao);
+    public static <I extends Serializable, C> Query<Boolean, C> createQuery(@Nonnull I id, @Nonnull BaseDao<I, ?, C> dao) {
+        return new ExistQuery<I, C>(id, dao);
     }
 
     @Override
-    public T execute(C context) throws PersistenceException {
-        return this.dao.update(this.identifiable, context);
+    public Boolean execute(C context) throws PersistenceException {
+        return Boolean.valueOf(this.dao.exist(this.id, context));
     }
 }

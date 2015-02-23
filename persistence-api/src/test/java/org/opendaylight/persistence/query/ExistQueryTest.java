@@ -5,39 +5,39 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.Query;
-import org.opendaylight.persistence.dao.Dao;
-import org.opendaylight.persistence.dao.query.TestCase.Context;
-import org.opendaylight.persistence.dao.query.TestCase.Filter;
+import org.opendaylight.persistence.dao.BaseDao;
+import org.opendaylight.persistence.query.TestCase.Context;
+import org.opendaylight.persistence.query.TestCase.Key;
+import org.opendaylight.persistence.query.TestCase.MyIdentifiable;
 
 /**
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
 @SuppressWarnings({ "javadoc", "static-method" })
-public class CountQueryTest {
+public class ExistQueryTest {
 
-    @Test
     @SuppressWarnings("boxing")
+    @Test
     public void testExecute() throws Exception {
-        Filter filter = new Filter();
+        Key id = new Key();
         Context context = new Context();
 
         @SuppressWarnings("unchecked")
-        Dao<?, ?, Filter, ?, Context> daoMock = EasyMock.createMock(Dao.class);
+        BaseDao<Key, MyIdentifiable, Context> daoMock = EasyMock.createMock(BaseDao.class);
 
-        Long result = Long.valueOf(10);
-        EasyMock.expect(daoMock.count(EasyMock.same(filter), EasyMock.same(context))).andReturn(result);
+        EasyMock.expect(daoMock.exist(EasyMock.same(id), EasyMock.same(context))).andReturn(Boolean.TRUE);
 
         EasyMock.replay(daoMock);
 
-        Query<Long, Context> query = CountQuery.createQuery(filter, daoMock);
-        Assert.assertEquals(result, query.execute(context));
+        Query<Boolean, Context> query = ExistQuery.createQuery(id, daoMock);
+        Assert.assertTrue(query.execute(context).booleanValue());
 
         EasyMock.verify(daoMock);
     }

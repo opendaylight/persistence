@@ -5,40 +5,39 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.BaseDao;
-import org.opendaylight.persistence.dao.query.TestCase.Context;
-import org.opendaylight.persistence.dao.query.TestCase.Key;
-import org.opendaylight.persistence.dao.query.TestCase.MyIdentifiable;
+import org.opendaylight.persistence.query.TestCase.Context;
+import org.opendaylight.persistence.query.TestCase.Key;
+import org.opendaylight.persistence.query.TestCase.MyIdentifiable;
 
 /**
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
 @SuppressWarnings({ "javadoc", "static-method" })
-public class GetQueryTest {
+public class UpdateQueryTest {
 
     @Test
     public void testExecute() throws Exception {
-        MyIdentifiable expected = new MyIdentifiable();
+        MyIdentifiable toUpdate = new MyIdentifiable();
+        MyIdentifiable updated = new MyIdentifiable();
         Context context = new Context();
 
         @SuppressWarnings("unchecked")
         BaseDao<Key, MyIdentifiable, Context> daoMock = EasyMock.createMock(BaseDao.class);
 
-        Key id = new Key();
-
-        EasyMock.expect(daoMock.get(EasyMock.same(id), EasyMock.same(context))).andReturn(expected);
+        EasyMock.expect(daoMock.update(EasyMock.same(toUpdate), EasyMock.same(context))).andReturn(updated);
 
         EasyMock.replay(daoMock);
 
-        Query<MyIdentifiable, Context> query = GetQuery.createQuery(id, daoMock);
-        Assert.assertSame(expected, query.execute(context));
+        Query<MyIdentifiable, Context> query = UpdateQuery.createQuery(toUpdate, daoMock);
+        Assert.assertSame(updated, query.execute(context));
 
         EasyMock.verify(daoMock);
     }

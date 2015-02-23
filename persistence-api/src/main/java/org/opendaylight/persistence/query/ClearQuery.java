@@ -5,31 +5,27 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import javax.annotation.Nonnull;
 
 import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.Query;
-import org.opendaylight.persistence.dao.BaseDao;
-import org.opendaylight.yangtools.concepts.Identifiable;
+import org.opendaylight.persistence.dao.KeyValueDao;
 
 /**
- * Query to add an object to the data store.
+ * Query to delete all objects from the data store.
  * 
- * @param <T> type of the identifiable object (object to store in the data store)
  * @param <C> type of the query's execution context; the context managed by the {@link DataStore}
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class AddQuery<T extends Identifiable<?>, C> implements Query<T, C> {
+public final class ClearQuery<C> implements Query<Void, C> {
 
-    private T identifiable;
-    private BaseDao<?, T, C> dao;
+    private KeyValueDao<?, ?, C> dao;
 
-    private AddQuery(@Nonnull T identifiable, @Nonnull BaseDao<?, T, C> dao) {
-        this.identifiable = identifiable;
+    private ClearQuery(@Nonnull KeyValueDao<?, ?, C> dao) {
         this.dao = dao;
     }
 
@@ -38,17 +34,16 @@ public class AddQuery<T extends Identifiable<?>, C> implements Query<T, C> {
      * <p>
      * This method is a convenience to infer the generic types.
      * 
-     * @param identifiable object to add
      * @param dao DAO to assist the query
      * @return the query
      */
-    public static <T extends Identifiable<?>, C> Query<T, C> createQuery(@Nonnull T identifiable,
-            @Nonnull BaseDao<?, T, C> dao) {
-        return new AddQuery<T, C>(identifiable, dao);
+    public static <C> Query<Void, C> createQuery(@Nonnull KeyValueDao<?, ?, C> dao) {
+        return new ClearQuery<C>(dao);
     }
 
     @Override
-    public T execute(C context) throws PersistenceException {
-        return this.dao.add(this.identifiable, context);
+    public Void execute(C context) throws PersistenceException {
+        this.dao.clear(context);
+        return null;
     }
 }

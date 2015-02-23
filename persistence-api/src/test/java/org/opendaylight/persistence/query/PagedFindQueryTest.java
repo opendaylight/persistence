@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.persistence.dao.query;
+package org.opendaylight.persistence.query;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,10 +15,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.opendaylight.persistence.Query;
 import org.opendaylight.persistence.dao.PagedDao;
-import org.opendaylight.persistence.dao.query.TestCase.Context;
-import org.opendaylight.persistence.dao.query.TestCase.Filter;
-import org.opendaylight.persistence.dao.query.TestCase.MyIdentifiable;
-import org.opendaylight.persistence.dao.query.TestCase.SortKey;
+import org.opendaylight.persistence.query.TestCase.Context;
+import org.opendaylight.persistence.query.TestCase.Filter;
+import org.opendaylight.persistence.query.TestCase.MyIdentifiable;
+import org.opendaylight.persistence.query.TestCase.SortKey;
 import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.persistence.util.common.type.page.Page;
 import org.opendaylight.persistence.util.common.type.page.PageRequest;
