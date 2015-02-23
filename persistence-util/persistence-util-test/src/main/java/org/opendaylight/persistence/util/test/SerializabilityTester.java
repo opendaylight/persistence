@@ -16,8 +16,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import org.junit.Assert;
-
 /**
  * Tester to test objects which implement Serializable.
  * <p>
@@ -180,7 +178,7 @@ public final class SerializabilityTester {
             serialization = byteArrayOutputStream.toByteArray();
         }
         catch (Exception e) {
-            Assert.fail("Serialization failure: " + e.toString());
+            throw new RuntimeException("Serialization failure: " + e.getMessage(), e);
         }
 
         Object replicaObj = null;
@@ -189,7 +187,7 @@ public final class SerializabilityTester {
             replicaObj = objectInputStream.readObject();
         }
         catch (Exception e) {
-            Assert.fail("Deserialization failure: " + e.toString());
+            throw new RuntimeException("Deserialization failure: " + e.getMessage(), e);
         }
 
         if (semanticCompatibilityVerifier != null) {

@@ -45,15 +45,15 @@ public class SerializabilityTesterTest {
     public void testTestSerializationFailure() {
         final InvalidSerializable serializable = new InvalidSerializable();
 
-        Validator<AssertionError> errorValidator = new Validator<AssertionError>() {
+        Validator<RuntimeException> errorValidator = new Validator<RuntimeException>() {
             @Override
-            public void assertThrowable(AssertionError error) {
+            public void assertThrowable(RuntimeException error) {
                 String expectedError = "Serialization failure:";
                 AssertUtil.assertStartsWith(expectedError, error.getMessage());
             }
         };
 
-        ThrowableTester.testThrowsAny(AssertionError.class, new Instruction() {
+        ThrowableTester.testThrowsAny(RuntimeException.class, new Instruction() {
             @Override
             public void execute() throws Throwable {
                 SerializabilityTester.testSerialization(serializable, null);
