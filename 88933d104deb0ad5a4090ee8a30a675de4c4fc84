@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_2794b441",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/store/KeyValueObjectStore.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2508
+      },
+      "writtenOn": "2015-02-23T18:18:12Z",
+      "side": 1,
+      "message": "This question probably goes back to the current KeyValyeDao DAO interface but:\n\nAny particular reason these methods wouldn\u0027t be part of the parent interface (BaseObjectStore, and BaseDAO?) since there is nothing specific in these methods that are valid only for a Key-Value object store? I understand separating functionality to keep interfaces simple but I am not sure about the naming \"KeyValue\".",
+      "revId": "88933d104deb0ad5a4090ee8a30a675de4c4fc84",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
