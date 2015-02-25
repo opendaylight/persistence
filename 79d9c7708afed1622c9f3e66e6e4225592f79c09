@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_23aee181",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/UpdateStrategy.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "public is not needed. This causes an issue in Sonar.",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 10
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_43b3ede8",
+        "filename": "persistence-api/src/main/java/org/opendaylight/persistence/dao/UpdateStrategy.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "public is not needed. This causes an issue in Sonar.",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a373d14c",
+        "filename": "persistence-jpa-impl/src/main/java/org/opendaylight/persistence/jpa/impl/JpaDataStore.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "We could remove UnitOfWork and move te implementation directly to this method. In this way we wouldn\u0027t need to create an extra object every time a query is executed. UnitOfWork was added to abstract the implementation when we had WriteQuery and ReadQuery, but now it is only Query.",
+      "range": {
+        "startLine": 120,
+        "startChar": 39,
+        "endLine": 120,
+        "endChar": 49
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_e3a479a7",
+        "filename": "persistence-jpa-impl/src/main/java/org/opendaylight/persistence/jpa/impl/dao/JpaDao.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "Unsafe code is being used here. In order to solve this unsafety delegate conversion to the Sort class.\n\nAdd the following method to Sort.java:\n\n\npublic \u003cE\u003e Sort\u003cE\u003e convert(Converter\u003cT, E\u003e converter) {\n    return new Sort\u003cE\u003e(converter.convert(this.sortBy), this.sortOrder);\n}\n\nAnd then replace this implementation as this:\n\nprotected List\u003cSort\u003cSingularAttribute\u003c? super P, ?\u003e\u003e\u003e convertSort(@Nullable List\u003cSort\u003cS\u003e\u003e source) {\n    if (source \u003d\u003d null) {\n        return null;\n    }\n\n    List\u003cSort\u003cSingularAttribute\u003c? super P, ?\u003e\u003e\u003e converted \u003d new ArrayList\u003cSort\u003cSingularAttribute\u003c? super P, ?\u003e\u003e\u003e(source.size());\n    for (Sort\u003cS\u003e original : source) {\n        converted.add(original.convert(this.sortKeyConverter));\n    }\n\n    return converted;\n}",
+      "range": {
+        "startLine": 110,
+        "startChar": 9,
+        "endLine": 110,
+        "endChar": 25
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_03a2c598",
+        "filename": "persistence-jpa-impl/src/main/java/org/opendaylight/persistence/jpa/impl/dao/JpaQueryPredicateGenerator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "This method is not needed any more. It was needed when the id was an Id class, for example Id\u003cMyObject, Long\u003e. Now an EqualityCondition could be applied directly since the Id is stored as Long in the previous example.",
+      "range": {
+        "startLine": 485,
+        "startChar": 49,
+        "endLine": 485,
+        "endChar": 66
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a3aaf16e",
+        "filename": "persistence-jpa-impl/src/main/java/org/opendaylight/persistence/jpa/impl/dao/JpaQueryPredicateGenerator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "Same comment than above. This method is no longer needed.",
+      "range": {
+        "startLine": 511,
+        "startChar": 52,
+        "endLine": 511,
+        "endChar": 80
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c3a7fda5",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Container.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "public is not needed. This causes an issue in Sonar.",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 10
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_83bd75b9",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/ParameterizedFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "public is not needed. This causes an issue in Sonar.",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 10
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_e3cb1951",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-02-25T23:32:48Z",
+      "side": 1,
+      "message": "We can use Objects.equal(...) from Guava instead and thus we can remove this class.",
+      "range": {
+        "startLine": 32,
+        "startChar": 30,
+        "endLine": 32,
+        "endChar": 36
+      },
+      "revId": "79d9c7708afed1622c9f3e66e6e4225592f79c09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
