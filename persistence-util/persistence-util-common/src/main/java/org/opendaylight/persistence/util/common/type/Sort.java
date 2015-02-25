@@ -9,6 +9,8 @@ package org.opendaylight.persistence.util.common.type;
 
 import javax.annotation.Nonnull;
 
+import org.opendaylight.persistence.util.common.Converter;
+
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -16,7 +18,8 @@ import com.google.common.base.Preconditions;
 /**
  * Sort component.
  *
- * @param <T> type of the attribute to sort by
+ * @param <T>
+ *            type of the attribute to sort by
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
@@ -32,7 +35,8 @@ public final class Sort<T> {
     /**
      * Creates an ascending sort component.
      * 
-     * @param sortBy attribute to sort by
+     * @param sortBy
+     *            attribute to sort by
      * @return a sort component
      */
     public static <T> Sort<T> ascending(@Nonnull T sortBy) {
@@ -42,7 +46,8 @@ public final class Sort<T> {
     /**
      * Creates a descending sort component.
      * 
-     * @param sortBy attribute to sort by
+     * @param sortBy
+     *            attribute to sort by
      * @return a sort component
      */
     public static <T> Sort<T> descending(@Nonnull T sortBy) {
@@ -65,6 +70,16 @@ public final class Sort<T> {
      */
     public SortOrder order() {
         return this.sortOrder;
+    }
+
+    /**
+     * Converts Sort to a different sort by type.
+     * 
+     * @param converter
+     * @return Sort type
+     */
+    public <E> Sort<E> convert(Converter<T, E> converter) {
+        return new Sort<E>(converter.convert(this.sortBy), this.sortOrder);
     }
 
     @Override
@@ -101,6 +116,7 @@ public final class Sort<T> {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("by", this.sortBy).add("order", this.sortOrder).toString();
+        return MoreObjects.toStringHelper(this).add("by", this.sortBy)
+                .add("order", this.sortOrder).toString();
     }
 }
