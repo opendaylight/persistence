@@ -10,19 +10,15 @@
     <version>1.5.0-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.opendaylight.persistence</groupId>
-  <artifactId>persistence-root</artifactId>
+  <groupId>org.opendaylight.testapp</groupId>
+  <artifactId>test-app-root</artifactId>
   <packaging>pom</packaging>
   <version>1.0.0-SNAPSHOT</version>
-  <name>persistence</name> <!-- Used by Sonar to set project name -->
 
   <modules>
-    <module>persistence-parent</module>
+    <module>test-app-parent</module>
 
-    <module>persistence-util</module>
-    <module>persistence-api</module>
-
-    <module>test-app</module>
+    <module>test-app-common</module>
   </modules>
 
   <!-- DO NOT deploy the repo root pom as it's only needed to initiate a build -->
