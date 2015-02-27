@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.opendaylight.persistence</groupId>
+    <artifactId>persistence.project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../persistence-parent</relativePath>
+  </parent>
+
+  <artifactId>persistence-test-framework</artifactId>
+  <packaging>bundle</packaging>
+
+  <name>persistence-test-framework</name>
+  <description>General utility classes to write integration tests for the persistence layer. Applications using the persistence API should import this project to test DAOs.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>${easymock.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>persistence-util-test</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>persistence-util-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
