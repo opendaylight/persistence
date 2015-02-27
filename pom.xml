@@ -21,6 +21,7 @@
 
     <module>persistence-util</module>
     <module>persistence-api</module>
+    <module>persistence-test-framework</module>
 
     <module>test-app</module>
   </modules>
