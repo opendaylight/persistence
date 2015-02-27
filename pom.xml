@@ -21,6 +21,7 @@
 
     <module>persistence-util</module>
     <module>persistence-api</module>
+    <module>persistence-test-framework</module>
   </modules>
 
   <!-- DO NOT deploy the repo root pom as it's only needed to initiate a build -->
