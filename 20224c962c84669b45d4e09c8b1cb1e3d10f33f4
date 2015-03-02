@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_aa971aeb",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Util.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-02T23:10:16Z",
+      "side": 1,
+      "message": "Que can remove this class since Guava already provides this method. Objects.equal(...). We can use Objects directly.",
+      "range": {
+        "startLine": 18,
+        "startChar": 19,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "20224c962c84669b45d4e09c8b1cb1e3d10f33f4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_6a9d9209",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/converter/CollectionConverter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-02T23:10:16Z",
+      "side": 1,
+      "message": "We can use Preconditions.checkNotNull(...)",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 53,
+        "endChar": 21
+      },
+      "revId": "20224c962c84669b45d4e09c8b1cb1e3d10f33f4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_8aa25e49",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/converter/CollectionConverter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-02T23:10:16Z",
+      "side": 1,
+      "message": "We can use Preconditions.checkNotNull(...)",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "20224c962c84669b45d4e09c8b1cb1e3d10f33f4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
