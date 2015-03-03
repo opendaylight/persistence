@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vi: set et smarttab sw=4 tabstop=4: -->
+<!--
+  Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others. All rights reserved.
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v1.0 which accompanies this distribution,
+  and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<features name="odl-persistence-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+    <repository>mvn:org.opendaylight.persistence/features/${project.version}/xml/features</repository>
+    
+    <feature name='odl-persistence-all' version='${project.version}' description='OpenDaylight :: persistence :: All'>
+            <feature version='${project.version}'>odl-persistence-api</feature>
+            <feature version='${project.version}'>odl-persistence-test-app</feature>
+            <feature version='${project.version}'>odl-persistence-jpa-impl</feature>
+    </feature>
+    <feature name='odl-persistence-api' version='${project.version}' description='Opendaylight :: persistence :: API '>
+            <bundle>mvn:org.opendaylight.persistence/persistence-api/${project.version}</bundle>
+            <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
+            <bundle>mvn:org.opendaylight.persistence/persistence-util-common/${project.version}</bundle>
+            <bundle>mvn:org.opendaylight.yangtools/concepts/${yangtools.version}</bundle>
+    </feature>
+    <feature name='odl-persistence-test-app' version='${project.version}' description='Opendaylight :: persistence :: Test App '>
+    </feature>
+    <feature name='odl-persistence-jpa-impl' version='${project.version}' description='Opendaylight :: persistene :: JPA implementation '>
+    </feature>
+</features>
