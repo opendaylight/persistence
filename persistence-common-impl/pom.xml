@@ -10,11 +10,11 @@
     <relativePath>../persistence-parent</relativePath>
   </parent>
 
-  <artifactId>persistence-api</artifactId>
+  <artifactId>persistence-common-impl</artifactId>
   <packaging>bundle</packaging>
 
-  <name>persistence-api</name>
-  <description>Persistence API</description>
+  <name>persistence-common-impl</name>
+  <description>Implementation of the persistence API that is common to any database or datastore implementation</description>
 
   <dependencies>
     <dependency>
@@ -29,9 +29,9 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.opendaylight.yangtools</groupId>
-      <artifactId>concepts</artifactId>
-      <version>${yangtools.version}</version>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 
