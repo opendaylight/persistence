@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_2027a9cb",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/store/DaoBasedKeyValueObjectStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-03-03T20:41:00Z",
+      "side": 1,
+      "message": "This probably should be common.store too",
+      "revId": "7cc9fc861756d846a1f1b84e9c05f88f8371b4a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_402435c4",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/store/DaoBasedMarkPageObjectStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-03-03T20:41:00Z",
+      "side": 1,
+      "message": "Same as previous comment.",
+      "revId": "7cc9fc861756d846a1f1b84e9c05f88f8371b4a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
