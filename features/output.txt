@@ -1,0 +1,913 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building features 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ features ---
+[INFO] Deleting /home/nachiket331/dev/persistence/features/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ features ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (filter) @ features ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ features ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ features ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ features ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/nachiket331/dev/persistence/features/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ features ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ features ---
+[INFO] Surefire report directory: /home/nachiket331/dev/persistence/features/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.opendaylight.yangtools.featuretest.SingleFeatureTest
+2015-03-03 01:46:55,494 | WARN  | Event Dispatcher | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.eclipse.equinox:region:jar:1.0.0.v20110506:Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at java.net.URL.openStream(URL.java:1037)[:1.7.0_75]
+	at org.apache.karaf.features.internal.BundleManager.getInputStreamForBundle(BundleManager.java:173)
+	at org.apache.karaf.features.internal.BundleManager.doInstallBundleIfNeeded(BundleManager.java:92)
+	at org.apache.karaf.features.internal.BundleManager.installBundleIfNeeded(BundleManager.java:86)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeature(FeaturesServiceImpl.java:529)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeatures(FeaturesServiceImpl.java:393)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.installBootFeatures(BootFeaturesInstaller.java:92)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.start(BootFeaturesInstaller.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.apache.aries.blueprint.utils.ReflectionUtils.invoke(ReflectionUtils.java:297)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.invoke(BeanRecipe.java:958)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.runBeanProcInit(BeanRecipe.java:712)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:824)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:787)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)[19:org.apache.aries.blueprint.core:1.4.0]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)[:1.7.0_75]
+	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:681)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:378)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:269)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:276)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.modifiedBundle(BlueprintExtender.java:235)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:500)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:433)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$AbstractTracked.track(BundleHookBundleTracker.java:725)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.bundleChanged(BundleHookBundleTracker.java:463)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$BundleEventHook.event(BundleHookBundleTracker.java:422)[13:org.apache.aries.util:1.1.0]
+	at org.eclipse.osgi.framework.internal.core.Framework$10.call(Framework.java:1605)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHookPrivileged(ServiceRegistry.java:1239)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHooksPrivileged(ServiceRegistry.java:1222)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.notifyEventHooksPrivileged(Framework.java:1602)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEventPrivileged(Framework.java:1557)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1504)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1499)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:391)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+2015-03-03 01:46:55,513 | WARN  | Event Dispatcher | FeaturesServiceImpl              | 24 - org.apache.karaf.features.core - 3.0.1 | Error when installing feature region: java.io.IOException: Error resolving artifact org.eclipse.equinox:region:jar:1.0.0.v20110506: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+2015-03-03 01:46:59,573 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to add repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:46:59,586 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Successfully loaded repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:46:59,587 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to install feature odl-persistence-all 1.0.0-SNAPSHOT
+2015-03-03 01:46:59,904 | WARN  | ion(3)-127.0.0.1 | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT:Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxyf446326e_6983_4725_9a3a_40e51665496f.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	... 3 more
+2015-03-03 01:47:05,162 | WARN  | Event Dispatcher | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.eclipse.equinox:region:jar:1.0.0.v20110506:Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at java.net.URL.openStream(URL.java:1037)[:1.7.0_75]
+	at org.apache.karaf.features.internal.BundleManager.getInputStreamForBundle(BundleManager.java:173)
+	at org.apache.karaf.features.internal.BundleManager.doInstallBundleIfNeeded(BundleManager.java:92)
+	at org.apache.karaf.features.internal.BundleManager.installBundleIfNeeded(BundleManager.java:86)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeature(FeaturesServiceImpl.java:529)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeatures(FeaturesServiceImpl.java:393)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.installBootFeatures(BootFeaturesInstaller.java:92)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.start(BootFeaturesInstaller.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.apache.aries.blueprint.utils.ReflectionUtils.invoke(ReflectionUtils.java:297)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.invoke(BeanRecipe.java:958)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.runBeanProcInit(BeanRecipe.java:712)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:824)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:787)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)[19:org.apache.aries.blueprint.core:1.4.0]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)[:1.7.0_75]
+	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:681)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:378)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:269)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:276)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.modifiedBundle(BlueprintExtender.java:235)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:500)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:433)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$AbstractTracked.track(BundleHookBundleTracker.java:725)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.bundleChanged(BundleHookBundleTracker.java:463)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$BundleEventHook.event(BundleHookBundleTracker.java:422)[13:org.apache.aries.util:1.1.0]
+	at org.eclipse.osgi.framework.internal.core.Framework$10.call(Framework.java:1605)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHookPrivileged(ServiceRegistry.java:1239)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHooksPrivileged(ServiceRegistry.java:1222)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.notifyEventHooksPrivileged(Framework.java:1602)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEventPrivileged(Framework.java:1557)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1504)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1499)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:391)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+2015-03-03 01:47:05,177 | WARN  | Event Dispatcher | FeaturesServiceImpl              | 24 - org.apache.karaf.features.core - 3.0.1 | Error when installing feature region: java.io.IOException: Error resolving artifact org.eclipse.equinox:region:jar:1.0.0.v20110506: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+2015-03-03 01:47:08,703 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to add repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:08,717 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Successfully loaded repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:08,718 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to install feature odl-persistence-api 1.0.0-SNAPSHOT
+2015-03-03 01:47:09,018 | WARN  | ion(3)-127.0.0.1 | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT:Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxyeb8eb72c_3132_4c68_848e_dbf634196af2.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	... 3 more
+2015-03-03 01:47:14,612 | WARN  | Event Dispatcher | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.eclipse.equinox:region:jar:1.0.0.v20110506:Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at java.net.URL.openStream(URL.java:1037)[:1.7.0_75]
+	at org.apache.karaf.features.internal.BundleManager.getInputStreamForBundle(BundleManager.java:173)
+	at org.apache.karaf.features.internal.BundleManager.doInstallBundleIfNeeded(BundleManager.java:92)
+	at org.apache.karaf.features.internal.BundleManager.installBundleIfNeeded(BundleManager.java:86)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeature(FeaturesServiceImpl.java:529)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeatures(FeaturesServiceImpl.java:393)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.installBootFeatures(BootFeaturesInstaller.java:92)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.start(BootFeaturesInstaller.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.apache.aries.blueprint.utils.ReflectionUtils.invoke(ReflectionUtils.java:297)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.invoke(BeanRecipe.java:958)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.runBeanProcInit(BeanRecipe.java:712)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:824)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:787)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)[19:org.apache.aries.blueprint.core:1.4.0]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)[:1.7.0_75]
+	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:681)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:378)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:269)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:276)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.modifiedBundle(BlueprintExtender.java:235)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:500)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:433)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$AbstractTracked.track(BundleHookBundleTracker.java:725)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.bundleChanged(BundleHookBundleTracker.java:463)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$BundleEventHook.event(BundleHookBundleTracker.java:422)[13:org.apache.aries.util:1.1.0]
+	at org.eclipse.osgi.framework.internal.core.Framework$10.call(Framework.java:1605)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHookPrivileged(ServiceRegistry.java:1239)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHooksPrivileged(ServiceRegistry.java:1222)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.notifyEventHooksPrivileged(Framework.java:1602)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEventPrivileged(Framework.java:1557)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1504)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1499)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:391)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+2015-03-03 01:47:14,626 | WARN  | Event Dispatcher | FeaturesServiceImpl              | 24 - org.apache.karaf.features.core - 3.0.1 | Error when installing feature region: java.io.IOException: Error resolving artifact org.eclipse.equinox:region:jar:1.0.0.v20110506: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+2015-03-03 01:47:18,250 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to add repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:18,270 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Successfully loaded repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:18,271 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to install feature odl-persistence-test-app 1.0.0-SNAPSHOT
+2015-03-03 01:47:18,640 | WARN  | ion(3)-127.0.0.1 | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT:Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxybae653fe_9f85_415d_8974_6e6014d4c595.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	... 3 more
+2015-03-03 01:47:24,573 | WARN  | Event Dispatcher | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.eclipse.equinox:region:jar:1.0.0.v20110506:Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at java.net.URL.openStream(URL.java:1037)[:1.7.0_75]
+	at org.apache.karaf.features.internal.BundleManager.getInputStreamForBundle(BundleManager.java:173)
+	at org.apache.karaf.features.internal.BundleManager.doInstallBundleIfNeeded(BundleManager.java:92)
+	at org.apache.karaf.features.internal.BundleManager.installBundleIfNeeded(BundleManager.java:86)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeature(FeaturesServiceImpl.java:529)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeatures(FeaturesServiceImpl.java:393)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.installBootFeatures(BootFeaturesInstaller.java:92)
+	at org.apache.karaf.features.internal.BootFeaturesInstaller.start(BootFeaturesInstaller.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.apache.aries.blueprint.utils.ReflectionUtils.invoke(ReflectionUtils.java:297)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.invoke(BeanRecipe.java:958)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.runBeanProcInit(BeanRecipe.java:712)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate2(BeanRecipe.java:824)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BeanRecipe.internalCreate(BeanRecipe.java:787)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.di.AbstractRecipe$1.call(AbstractRecipe.java:79)[19:org.apache.aries.blueprint.core:1.4.0]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)[:1.7.0_75]
+	at org.apache.aries.blueprint.di.AbstractRecipe.create(AbstractRecipe.java:88)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createInstances(BlueprintRepository.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintRepository.createAll(BlueprintRepository.java:183)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.instantiateEagerComponents(BlueprintContainerImpl.java:681)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.doRun(BlueprintContainerImpl.java:378)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintContainerImpl.run(BlueprintContainerImpl.java:269)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:276)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.createContainer(BlueprintExtender.java:245)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.blueprint.container.BlueprintExtender.modifiedBundle(BlueprintExtender.java:235)[19:org.apache.aries.blueprint.core:1.4.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:500)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.customizerModified(BundleHookBundleTracker.java:433)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$AbstractTracked.track(BundleHookBundleTracker.java:725)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$Tracked.bundleChanged(BundleHookBundleTracker.java:463)[13:org.apache.aries.util:1.1.0]
+	at org.apache.aries.util.tracker.hook.BundleHookBundleTracker$BundleEventHook.event(BundleHookBundleTracker.java:422)[13:org.apache.aries.util:1.1.0]
+	at org.eclipse.osgi.framework.internal.core.Framework$10.call(Framework.java:1605)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHookPrivileged(ServiceRegistry.java:1239)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.notifyHooksPrivileged(ServiceRegistry.java:1222)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.notifyEventHooksPrivileged(Framework.java:1602)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEventPrivileged(Framework.java:1557)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1504)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1499)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:391)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)[org.eclipse.osgi-3.8.2.v20130124-134944.jar:]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+2015-03-03 01:47:24,587 | WARN  | Event Dispatcher | FeaturesServiceImpl              | 24 - org.apache.karaf.features.core - 3.0.1 | Error when installing feature region: java.io.IOException: Error resolving artifact org.eclipse.equinox:region:jar:1.0.0.v20110506: Could not find artifact org.eclipse.equinox:region:jar:1.0.0.v20110506 in defaultlocal (file:/home/nachiket331/.m2/repository/)
+2015-03-03 01:47:28,552 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to add repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:28,573 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Successfully loaded repository file:/home/nachiket331/dev/persistence/features/target/classes/features.xml
+2015-03-03 01:47:28,573 | INFO  | ion(3)-127.0.0.1 | SingleFeatureTest                | 95 - PAXEXAM-PROBE-81f399e5-51d1-4be5-ba91-66c6fee2f8ac - 0.0.0 | Attempting to install feature odl-persistence-jpa-impl 1.0.0-SNAPSHOT
+2015-03-03 01:47:28,977 | WARN  | ion(3)-127.0.0.1 | AetherBasedResolver              | 5 - org.ops4j.pax.url.mvn - 1.6.0 | Error resolving artifactorg.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT:Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+org.sonatype.aether.resolution.ArtifactResolutionException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:538)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:216)
+	at org.sonatype.aether.impl.internal.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:193)
+	at org.sonatype.aether.impl.internal.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:286)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:250)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxy29e2ab41_1fe6_4e69_b5fd_7943190bfd42.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.7.0_75]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)[:1.7.0_75]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[:1.7.0_75]
+	at java.lang.reflect.Method.invoke(Method.java:606)[:1.7.0_75]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)[:1.7.0_75]
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.security.AccessController.doPrivileged(Native Method)[:1.7.0_75]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)[:1.7.0_75]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)[:1.7.0_75]
+	at java.lang.Thread.run(Thread.java:745)[:1.7.0_75]
+Caused by: org.sonatype.aether.transfer.ArtifactNotFoundException: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:947)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$4.wrap(WagonRepositoryConnector.java:941)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run(WagonRepositoryConnector.java:669)[5:org.ops4j.pax.url.mvn:1.6.0]
+	at org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:60)[5:org.ops4j.pax.url.mvn:1.6.0]
+	... 3 more
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 39.859 sec <<< FAILURE! - in org.opendaylight.yangtools.featuretest.SingleFeatureTest
+installFeature(org.opendaylight.yangtools.featuretest.SingleFeatureTest)[repoUrl: file:/home/nachiket331/dev/persistence/features/target/classes/features.xml, Feature: odl-persistence-all 1.0.0-SNAPSHOT]  Time elapsed: 10.279 sec  <<< ERROR!
+java.io.IOException: Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:258)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxyf446326e_6983_4725_9a3a_40e51665496f.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+installFeature(org.opendaylight.yangtools.featuretest.SingleFeatureTest)[repoUrl: file:/home/nachiket331/dev/persistence/features/target/classes/features.xml, Feature: odl-persistence-api 1.0.0-SNAPSHOT]  Time elapsed: 9.262 sec  <<< ERROR!
+java.io.IOException: Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:258)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxyeb8eb72c_3132_4c68_848e_dbf634196af2.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+installFeature(org.opendaylight.yangtools.featuretest.SingleFeatureTest)[repoUrl: file:/home/nachiket331/dev/persistence/features/target/classes/features.xml, Feature: odl-persistence-test-app 1.0.0-SNAPSHOT]  Time elapsed: 10.353 sec  <<< ERROR!
+java.io.IOException: Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:258)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxybae653fe_9f85_415d_8974_6e6014d4c595.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+installFeature(org.opendaylight.yangtools.featuretest.SingleFeatureTest)[repoUrl: file:/home/nachiket331/dev/persistence/features/target/classes/features.xml, Feature: odl-persistence-jpa-impl 1.0.0-SNAPSHOT]  Time elapsed: 9.485 sec  <<< ERROR!
+java.io.IOException: Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:258)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolveFile(AetherBasedResolver.java:239)
+	at org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:223)
+	at org.ops4j.pax.url.mvn.internal.Connection.getInputStream(Connection.java:122)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.load(FeatureValidationUtil.java:85)
+	at org.apache.karaf.features.internal.FeatureValidationUtil.validate(FeatureValidationUtil.java:56)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.validateRepository(FeaturesServiceImpl.java:161)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.internalAddRepository(FeaturesServiceImpl.java:232)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeatures(FeaturesServiceImpl.java:811)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.getFeature(FeaturesServiceImpl.java:769)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:357)
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.installFeature(FeaturesServiceImpl.java:345)
+	at Proxy29e2ab41_1fe6_4e69_b5fd_7943190bfd42.installFeature(Unknown Source)
+	at org.opendaylight.yangtools.featuretest.SingleFeatureTest.installFeature(SingleFeatureTest.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:68)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:97)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.ops4j.pax.exam.rbc.internal.RemoteBundleContextImpl.remoteCall(RemoteBundleContextImpl.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+Results :
+
+Tests in error: 
+  Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+  Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+  Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+  Error resolving artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT: Could not find artifact org.opendaylight.persistence:features:xml:features:1.0.0-SNAPSHOT in defaultlocal (file:/home/nachiket331/.m2/repository/)
+
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 44.707 s
+[INFO] Finished at: 2015-03-03T01:47:30-08:00
+[INFO] Final Memory: 22M/194M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.16:test (default-test) on project features: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/nachiket331/dev/persistence/features/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
