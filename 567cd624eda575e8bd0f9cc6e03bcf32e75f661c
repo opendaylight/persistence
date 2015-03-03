@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_80b31de8",
+        "filename": "features/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-03T16:23:20Z",
+      "side": 1,
+      "message": "A minor comment. This file sometime uses 2 spaces for indentation and sometimes 4. We have been using 2 spaces in POM/XML files. We could change this to 4 if you like it more, but it would be more consistent if we use only one.",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "567cd624eda575e8bd0f9cc6e03bcf32e75f661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
