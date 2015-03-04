@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_60124cb6",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Container.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2211
+      },
+      "writtenOn": "2015-03-04T20:51:00Z",
+      "side": 1,
+      "message": "This file is from a previous patch. Please review this file again.",
+      "revId": "20758b8ee13b700e3c637219355e763c1e3ad590",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
