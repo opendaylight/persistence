@@ -392,73 +392,57 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
     public static enum Type {
 
         /**
-         * An open interval does not include its end points, and is indicated
-         * with parentheses. For example {@code (0,1)} means greater than
-         * {@code 0} and less than {@code 1}.
+         * An open interval does not include its end points, and is indicated with parentheses. For
+         * example {@code (0,1)} means greater than {@code 0} and less than {@code 1}.
          */
         OPEN {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
-                Preconditions.checkArgument(
-                        leftEndpoint.compareTo(rightEndpoint) < 0,
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
+                Preconditions.checkArgument(leftEndpoint.compareTo(rightEndpoint) <= 0,
                         "leftEndpoint cannot be greater than rightEndpoint");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
-                return element.compareTo(leftEndpoint) > 0
-                        && element.compareTo(rightEndpoint) < 0;
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
+                return element.compareTo(leftEndpoint) > 0 && element.compareTo(rightEndpoint) < 0;
             }
         },
 
         /**
-         * A closed interval includes its end points, and is denoted with square
-         * brackets. For example {@code [0,1]} means greater than or equal to
-         * {@code 0} and less than or equal to {@code 1}.
+         * A closed interval includes its end points, and is denoted with square brackets. For
+         * example {@code [0,1]} means greater than or equal to {@code 0} and less than or equal to
+         * {@code 1}.
          */
         CLOSED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
-                Preconditions.checkArgument(
-                        leftEndpoint.compareTo(rightEndpoint) < 0,
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
+                Preconditions.checkArgument(leftEndpoint.compareTo(rightEndpoint) <= 0,
                         "leftEndpoint cannot be greater than rightEndpoint");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
-                return element.compareTo(leftEndpoint) >= 0
-                        && element.compareTo(rightEndpoint) <= 0;
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
+                return element.compareTo(leftEndpoint) >= 0 && element.compareTo(rightEndpoint) <= 0;
             }
         },
 
         /**
-         * An interval is said to be left-bounded or right-bounded if there is
-         * some real number that is, respectively, smaller than or larger than
-         * all its elements. An interval is said to be bounded if it is both
-         * left- and right-bounded; and is said to be unbounded otherwise.
+         * An interval is said to be left-bounded or right-bounded if there is some real number that
+         * is, respectively, smaller than or larger than all its elements. An interval is said to be
+         * bounded if it is both left- and right-bounded; and is said to be unbounded otherwise.
          */
         UNBOUNDED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
 
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
                 return true;
             }
         },
@@ -466,59 +450,44 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
         /** Left closed right open */
         LEFT_CLOSED_RIGHT_OPEN {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
-                Preconditions.checkArgument(
-                        leftEndpoint.compareTo(rightEndpoint) < 0,
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
+                Preconditions.checkArgument(leftEndpoint.compareTo(rightEndpoint) <= 0,
                         "leftEndpoint cannot be greater than rightEndpoint");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
-                return element.compareTo(leftEndpoint) >= 0
-                        && element.compareTo(rightEndpoint) < 0;
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
+                return element.compareTo(leftEndpoint) >= 0 && element.compareTo(rightEndpoint) < 0;
             }
         },
 
         /** Left open right closed. */
         LEFT_OPEN_RIGHT_CLOSED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
-                Preconditions.checkArgument(
-                        leftEndpoint.compareTo(rightEndpoint) < 0,
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
+                Preconditions.checkArgument(leftEndpoint.compareTo(rightEndpoint) <= 0,
                         "leftEndpoint cannot be greater than rightEndpoint");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
-                return element.compareTo(leftEndpoint) > 0
-                        && element.compareTo(rightEndpoint) <= 0;
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
+                return element.compareTo(leftEndpoint) > 0 && element.compareTo(rightEndpoint) <= 0;
             }
         },
 
         /** Left open right unbounded */
         LEFT_OPEN_RIGHT_UNBOUNDED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
                 return element.compareTo(leftEndpoint) > 0;
             }
         },
@@ -526,15 +495,12 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
         /** Left closed right unbounded */
         LEFT_CLOSED_RIGHT_UNBOUNDED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(leftEndpoint != null,
-                        "leftEndpoint cannot be null");
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(leftEndpoint != null, "leftEndpoint cannot be null");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
                 return element.compareTo(leftEndpoint) >= 0;
             }
         },
@@ -542,15 +508,12 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
         /** Left unbounded right open */
         LEFT_UNBOUNDED_RIGHT_OPEN {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
                 return element.compareTo(rightEndpoint) < 0;
             }
         },
@@ -558,25 +521,20 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
         /** Left unbounded right closed */
         LEFT_UNBOUNDED_RIGHT_CLOSED {
             @Override
-            <C extends Comparable<C>> void validate(C leftEndpoint,
-                    C rightEndpoint) {
-                Preconditions.checkArgument(rightEndpoint != null,
-                        "rightEndpoint cannot be null");
+            <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint) {
+                Preconditions.checkArgument(rightEndpoint != null, "rightEndpoint cannot be null");
             }
 
             @Override
-            <C extends Comparable<C>> boolean contains(C element,
-                    C leftEndpoint, C rightEndpoint) {
+            <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint) {
                 return element.compareTo(rightEndpoint) <= 0;
             }
         }
 
         ;
 
-        abstract <C extends Comparable<C>> void validate(C leftEndpoint,
-                C rightEndpoint);
+        abstract <C extends Comparable<C>> void validate(C leftEndpoint, C rightEndpoint);
 
-        abstract <C extends Comparable<C>> boolean contains(C element,
-                C leftEndpoint, C rightEndpoint);
+        abstract <C extends Comparable<C>> boolean contains(C element, C leftEndpoint, C rightEndpoint);
     }
 }

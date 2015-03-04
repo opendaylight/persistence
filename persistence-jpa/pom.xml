@@ -10,10 +10,10 @@
     <relativePath>../persistence-parent</relativePath>
   </parent>
 
-  <artifactId>persistence-jpa-impl</artifactId>
+  <artifactId>persistence-jpa</artifactId>
   <packaging>bundle</packaging>
 
-  <name>persistence-jpa-impl</name>
+  <name>persistence-jpa</name>
   <description>Persistence JPA implementation</description>
 
   <dependencies>

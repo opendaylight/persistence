@@ -7,11 +7,12 @@
  */
 package org.opendaylight.persistence.util.common;
 
+import javax.annotation.Nullable;
+
 /**
  * Container.
  * 
- * @param <T>
- *            type of the elements
+ * @param <T> type of the elements
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
@@ -20,9 +21,8 @@ public interface Container<T> {
     /**
      * Verifies whether the given element is contained.
      * 
-     * @param element
-     *            element to verify
+     * @param element element to verify
      * @return {@code true} if {@code element} is contained, {@code false} otherwise
      */
-    boolean contains(T element);
+    public boolean contains(@Nullable T element);
 }
