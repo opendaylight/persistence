@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_e04adc26",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/Location.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2508
+      },
+      "writtenOn": "2015-03-04T18:06:25Z",
+      "side": 1,
+      "message": "Are you planning to use this with new test cases (since it is currently uncovered?)",
+      "revId": "bff04218ad71a466f7ace52384132ef25872a47c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0048282c",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/ReachabilityStatus.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2508
+      },
+      "writtenOn": "2015-03-04T18:06:25Z",
+      "side": 1,
+      "message": "Are you planning to use this with new test cases (since it is currently uncovered?)",
+      "revId": "bff04218ad71a466f7ace52384132ef25872a47c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
