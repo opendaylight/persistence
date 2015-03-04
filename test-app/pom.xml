@@ -16,6 +16,10 @@
 
   <modules>
     <module>test-app-common</module>
+    <module>test-app-persistence-api</module>
+    <module>test-app-bl-api</module>
+    <module>test-app-persistence-jpa-impl</module>
+    <module>test-app-bl-impl</module>
   </modules>
 
 </project>
