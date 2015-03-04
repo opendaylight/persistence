@@ -64,18 +64,18 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     /**
      * Method executed before running each test.
      *
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Before
-    public void beforeTest() throws Exception {
+    public void beforeTest() throws PersistenceException {
         clear();
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testAdd() throws Exception {
+    public void testAdd() throws PersistenceException {
         final T original = createIdentifiables(1).get(0);
 
         T stored = execute(new DaoQuery<T>() {
@@ -92,10 +92,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testAddInvalid() throws Exception {
+    public void testAddInvalid() throws PersistenceException {
         final T invalidIdentifiable = null;
         AbstractBaseDaoTest.this.execute(new DaoQuery<T>() {
             @Override
@@ -106,10 +106,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testPrimaryKeyIntegrityConstraintViolation() throws Exception {
+    public void testPrimaryKeyIntegrityConstraintViolation() throws PersistenceException {
         /*
          * This test is run just in cases where the primary key is not auto-generated - natural
          * keys.
@@ -138,10 +138,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testUpdate() throws Exception {
+    public void testUpdate() throws PersistenceException {
         final T identifiable = createIdentifiables(1).get(0);
 
         final T expected = execute(new DaoQuery<T>() {
@@ -175,10 +175,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testUpdateNotFound() throws Exception {
+    public void testUpdateNotFound() throws PersistenceException {
         Assume.assumeTrue(isNotFoundExceptionOnUpdateSuitable());
 
         final T identifiable = createIdentifiables(1).get(0);
@@ -217,10 +217,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testUpdateInvalid() throws Exception {
+    public void testUpdateInvalid() throws PersistenceException {
         final T invalidIdentifiable = null;
         AbstractBaseDaoTest.this.execute(new DaoQuery<Void>() {
             @Override
@@ -232,10 +232,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testUpdateWithVersionConflict() throws Exception {
+    public void testUpdateWithVersionConflict() throws PersistenceException {
         Assume.assumeTrue(isVersioned());
 
         final T old = store(createIdentifiables(1).get(0));
@@ -274,10 +274,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testDeleteWithId() throws Exception {
+    public void testDeleteWithId() throws PersistenceException {
         final T identifiable = createIdentifiables(1).get(0);
         final I id = store(identifiable).getIdentifier();
         Assert.assertEquals(1, size());
@@ -294,10 +294,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testDeleteWithIdInvalid() throws Exception {
+    public void testDeleteWithIdInvalid() throws PersistenceException {
         final I invalidId = null;
         AbstractBaseDaoTest.this.execute(new DaoQuery<Void>() {
             @Override
@@ -309,10 +309,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testGet() throws Exception {
+    public void testGet() throws PersistenceException {
         final T identifiable = createIdentifiables(1).get(0);
         final T original = store(identifiable);
 
@@ -328,10 +328,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testGetInvalid() throws Exception {
+    public void testGetInvalid() throws PersistenceException {
         final I invalidId = null;
         AbstractBaseDaoTest.this.execute(new DaoQuery<T>() {
             @Override
@@ -342,10 +342,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testExist() throws Exception {
+    public void testExist() throws PersistenceException {
         final T identifiable = createIdentifiables(1).get(0);
         final T stored = store(identifiable);
 
@@ -362,10 +362,10 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testExistInvalid() throws Exception {
+    public void testExistInvalid() throws PersistenceException {
         final I invalidId = null;
         AbstractBaseDaoTest.this.execute(new DaoQuery<Boolean>() {
             @Override
@@ -380,9 +380,9 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
      * 
      * @param query query to execute
      * @return result
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
-    protected <R> R execute(@Nonnull Query<R, C> query) throws Exception {
+    protected <R> R execute(@Nonnull Query<R, C> query) throws PersistenceException {
         return this.dataStore.execute(query);
     }
 
@@ -391,9 +391,9 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
      * 
      * @param identifiable object to add
      * @return the object added as it is in the data store
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
-    protected T store(@Nonnull final T identifiable) throws Exception {
+    protected T store(@Nonnull final T identifiable) throws PersistenceException {
         return execute(new DaoQuery<T>() {
             @Override
             protected T execute(D dao, C context) throws PersistenceException {
@@ -412,9 +412,9 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
      * 
      * @param original identifiables to store
      * @return persisted objects
-     * @throws Exception if errors occur during execution
+     * @throws PersistenceException if errors occur during execution
      */
-    protected Map<I, StoredObject<T>> store(@Nonnull Collection<T> original) throws Exception {
+    protected Map<I, StoredObject<T>> store(@Nonnull Collection<T> original) throws PersistenceException {
         Map<I, StoredObject<T>> persistedObjects = new HashMap<I, StoredObject<T>>();
         for (final T identifiable : original) {
             T stored = execute(new DaoQuery<T>() {
@@ -517,9 +517,9 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
     /**
      * Removes all persisted objects.
      * 
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
-    protected abstract void clear() throws Exception;
+    protected abstract void clear() throws PersistenceException;
 
     /**
      * Creates a transfer object with the given id. This method is called to assist
@@ -588,9 +588,9 @@ public abstract class AbstractBaseDaoTest<I extends Serializable, T extends Iden
      * Calculate the number of persisted objects.
      * 
      * @return the number of persisted objects
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
-    protected abstract long size() throws Exception;
+    protected abstract long size() throws PersistenceException;
 
     /**
      * Modifies the object with valid random data.

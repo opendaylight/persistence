@@ -34,33 +34,33 @@ import com.google.common.base.Objects;
  * other hand, the tuple Tuple&lt;String, String, Integer&gt; makes hard to figure out what each
  * element represents.
  * 
- * @param <T1> Type for the first element of the tuple
+ * @param <T> Type for the first element of the tuple
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class UnaryTuple<T1> implements Serializable {
+public class UnaryTuple<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private T1 first;
+    private T first;
 
     /**
      * Constructs a 1-tuple.
      * 
      * @param first First element in the tuple
      */
-    protected UnaryTuple(@Nullable T1 first) {
+    protected UnaryTuple(@Nullable T first) {
         this.first = first;
     }
 
     /**
      * Creates a new 1-tuple using the given values.
      * 
-     * @param <T1> the type for the first element of the tuple
+     * @param <T> the type for the first element of the tuple
      * @param first First element in the tuple
      * @return a new 1-tuple using the given values
      */
-    public static <T1> UnaryTuple<T1> valueOf(@Nullable T1 first) {
-        return new UnaryTuple<T1>(first);
+    public static <T> UnaryTuple<T> valueOf(@Nullable T first) {
+        return new UnaryTuple<T>(first);
     }
 
     /**
@@ -68,7 +68,7 @@ public class UnaryTuple<T1> implements Serializable {
      *
      * @return The first element
      */
-    public T1 getFirst() {
+    public T getFirst() {
         return this.first;
     }
 
@@ -77,7 +77,7 @@ public class UnaryTuple<T1> implements Serializable {
      *
      * @param first The first element
      */
-    public void setFirst(@Nullable T1 first) {
+    public void setFirst(@Nullable T first) {
         this.first = first;
     }
 

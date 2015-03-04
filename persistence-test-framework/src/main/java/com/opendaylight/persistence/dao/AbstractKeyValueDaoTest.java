@@ -45,10 +45,10 @@ public abstract class AbstractKeyValueDaoTest<I extends Serializable, T extends 
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testGetAll() throws Exception {
+    public void testGetAll() throws PersistenceException {
         List<T> expected = createIdentifiables(5);
         final Map<I, StoredObject<T>> searchSpace = store(expected);
         Assert.assertEquals(expected.size(), size());
@@ -64,20 +64,20 @@ public abstract class AbstractKeyValueDaoTest<I extends Serializable, T extends 
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testSize() throws Exception {
+    public void testSize() throws PersistenceException {
         List<T> expected = createIdentifiables(5);
         store(expected);
         Assert.assertEquals(expected.size(), size());
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testClear() throws Exception {
+    public void testClear() throws PersistenceException {
         List<T> expected = createIdentifiables(5);
         store(expected);
         Assert.assertEquals(expected.size(), size());
@@ -86,7 +86,7 @@ public abstract class AbstractKeyValueDaoTest<I extends Serializable, T extends 
     }
 
     @Override
-    protected void clear() throws Exception {
+    protected void clear() throws PersistenceException {
         execute(new DaoQuery<Void>() {
             @Override
             protected Void execute(D dao, C context) throws PersistenceException {
@@ -99,7 +99,7 @@ public abstract class AbstractKeyValueDaoTest<I extends Serializable, T extends 
     }
 
     @Override
-    protected long size() throws Exception {
+    protected long size() throws PersistenceException {
         return execute(new DaoQuery<Long>() {
             @Override
             protected Long execute(D dao, C context) throws PersistenceException {

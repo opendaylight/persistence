@@ -20,17 +20,17 @@ import com.google.common.base.Objects;
  * other hand, the tuple Tuple&lt;String, String, Integer&gt; makes hard to figure out what each
  * element represents.
  * 
- * @param <T1> Type for the first element of the tuple
- * @param <T2> Type for the second element of the tuple
- * @param <T3> Type for the third element of the tuple
- * @param <T4> Type for the fourth element of the tuple
+ * @param <T> Type for the first element of the tuple
+ * @param <E> Type for the second element of the tuple
+ * @param <S> Type for the third element of the tuple
+ * @param <V> Type for the fourth element of the tuple
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class Quadruplet<T1, T2, T3, T4> extends Triplet<T1, T2, T3> {
+public class Quadruplet<T, E, S, V> extends Triplet<T, E, S> {
     private static final long serialVersionUID = 1L;
 
-    private T4 fourth;
+    private V fourth;
 
     /**
      * Constructs a 4-tuple.
@@ -40,7 +40,7 @@ public class Quadruplet<T1, T2, T3, T4> extends Triplet<T1, T2, T3> {
      * @param third Third element in the tuple
      * @param fourth Fourth element in the tuple
      */
-    protected Quadruplet(@Nullable T1 first, @Nullable T2 second, @Nullable T3 third, @Nullable T4 fourth) {
+    protected Quadruplet(@Nullable T first, @Nullable E second, @Nullable S third, @Nullable V fourth) {
         super(first, second, third);
         this.fourth = fourth;
     }
@@ -48,19 +48,19 @@ public class Quadruplet<T1, T2, T3, T4> extends Triplet<T1, T2, T3> {
     /**
      * Creates a new 4-tuple using the given values.
      * 
-     * @param <T1> the type for the first element of the tuple
-     * @param <T2> the type for the second element of the tuple
-     * @param <T3> the type for the third element of the tuple
-     * @param <T4> the type for the fourth element of the tuple
+     * @param <T> the type for the first element of the tuple
+     * @param <E> the type for the second element of the tuple
+     * @param <S> the type for the third element of the tuple
+     * @param <V> the type for the fourth element of the tuple
      * @param first First element in the tuple
      * @param second Second element in the tuple
      * @param third Third element in the tuple
      * @param fourth Fourth element in the tuple
      * @return a new 4-tuple using the given values
      */
-    public static <T1, T2, T3, T4> Quadruplet<T1, T2, T3, T4> valueOf(@Nullable T1 first, @Nullable T2 second,
-            @Nullable T3 third, @Nullable T4 fourth) {
-        return new Quadruplet<T1, T2, T3, T4>(first, second, third, fourth);
+    public static <T, E, S, V> Quadruplet<T, E, S, V> valueOf(@Nullable T first, @Nullable E second, @Nullable S third,
+            @Nullable V fourth) {
+        return new Quadruplet<T, E, S, V>(first, second, third, fourth);
     }
 
     /**
@@ -68,7 +68,7 @@ public class Quadruplet<T1, T2, T3, T4> extends Triplet<T1, T2, T3> {
      * 
      * @return The fourth element
      */
-    public T4 getFourth() {
+    public V getFourth() {
         return this.fourth;
     }
 
@@ -77,7 +77,7 @@ public class Quadruplet<T1, T2, T3, T4> extends Triplet<T1, T2, T3> {
      * 
      * @param fourth The fourth element
      */
-    public void setFourth(@Nullable T4 fourth) {
+    public void setFourth(@Nullable V fourth) {
         this.fourth = fourth;
     }
 

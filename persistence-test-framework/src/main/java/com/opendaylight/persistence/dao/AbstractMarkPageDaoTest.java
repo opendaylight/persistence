@@ -50,10 +50,10 @@ public abstract class AbstractMarkPageDaoTest<I extends Serializable, T extends 
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testPagedFind() throws Exception {
+    public void testPagedFind() throws PersistenceException {
         List<SearchCase<T, F, S>> searchCases = getSearchCases();
         Assume.assumeNotNull(searchCases);
 

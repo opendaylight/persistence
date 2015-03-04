@@ -20,15 +20,15 @@ import com.google.common.base.Objects;
  * other hand, the tuple Tuple&lt;String, String, Integer&gt; makes hard to figure out what each
  * element represents.
  * 
- * @param <T1> Type for the first element of the tuple
- * @param <T2> Type for the second element of the tuple
+ * @param <T> Type for the first element of the tuple
+ * @param <E> Type for the second element of the tuple
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class Pair<T1, T2> extends UnaryTuple<T1> {
+public class Pair<T, E> extends UnaryTuple<T> {
     private static final long serialVersionUID = 1L;
 
-    private T2 second;
+    private E second;
 
     /**
      * Constructs a 2-tuple.
@@ -36,7 +36,7 @@ public class Pair<T1, T2> extends UnaryTuple<T1> {
      * @param first First element in the tuple
      * @param second Second element in the tuple
      */
-    protected Pair(@Nullable T1 first, @Nullable T2 second) {
+    protected Pair(@Nullable T first, @Nullable E second) {
         super(first);
         this.second = second;
     }
@@ -44,14 +44,14 @@ public class Pair<T1, T2> extends UnaryTuple<T1> {
     /**
      * Creates a new 2-tuple using the given values.
      * 
-     * @param <T1> the type for the first element of the tuple
-     * @param <T2> the type for the second element of the tuple
+     * @param <T> the type for the first element of the tuple
+     * @param <E> the type for the second element of the tuple
      * @param first First element in the tuple
      * @param second Second element in the tuple
      * @return a new 2-tuple using the given values
      */
-    public static <T1, T2> Pair<T1, T2> valueOf(@Nullable T1 first, @Nullable T2 second) {
-        return new Pair<T1, T2>(first, second);
+    public static <T, E> Pair<T, E> valueOf(@Nullable T first, @Nullable E second) {
+        return new Pair<T, E>(first, second);
     }
 
     /**
@@ -59,7 +59,7 @@ public class Pair<T1, T2> extends UnaryTuple<T1> {
      *
      * @return The second element
      */
-    public T2 getSecond() {
+    public E getSecond() {
         return this.second;
     }
 
@@ -68,7 +68,7 @@ public class Pair<T1, T2> extends UnaryTuple<T1> {
      *
      * @param second The Second element
      */
-    public void setSecond(@Nullable T2 second) {
+    public void setSecond(@Nullable E second) {
         this.second = second;
     }
 

@@ -20,16 +20,16 @@ import com.google.common.base.Objects;
  * other hand, the tuple Tuple&lt;String, String, Integer&gt; makes hard to figure out what each
  * element represents.
  * 
- * @param <T1> Type for the first element of the tuple
- * @param <T2> Type for the second element of the tuple
- * @param <T3> Type for the third element of the tuple
+ * @param <T> Type for the first element of the tuple
+ * @param <E> Type for the second element of the tuple
+ * @param <S> Type for the third element of the tuple
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public class Triplet<T1, T2, T3> extends Pair<T1, T2> {
+public class Triplet<T, E, S> extends Pair<T, E> {
     private static final long serialVersionUID = 1L;
 
-    private T3 third;
+    private S third;
 
     /**
      * Constructs a 3-tuple.
@@ -38,7 +38,7 @@ public class Triplet<T1, T2, T3> extends Pair<T1, T2> {
      * @param second Second element in the tuple
      * @param third Third element in the tuple
      */
-    protected Triplet(@Nullable T1 first, @Nullable T2 second, @Nullable T3 third) {
+    protected Triplet(@Nullable T first, @Nullable E second, @Nullable S third) {
         super(first, second);
         this.third = third;
     }
@@ -46,16 +46,16 @@ public class Triplet<T1, T2, T3> extends Pair<T1, T2> {
     /**
      * Creates a new 3-tuple using the given values.
      * 
-     * @param <T1> the type for the first element of the tuple
-     * @param <T2> the type for the second element of the tuple
-     * @param <T3> the type for the third element of the tuple
+     * @param <T> the type for the first element of the tuple
+     * @param <E> the type for the second element of the tuple
+     * @param <S> the type for the third element of the tuple
      * @param first First element in the tuple
      * @param second Second element in the tuple
      * @param third Third element in the tuple
      * @return a new 3-tuple using the given values
      */
-    public static <T1, T2, T3> Triplet<T1, T2, T3> valueOf(@Nullable T1 first, @Nullable T2 second, @Nullable T3 third) {
-        return new Triplet<T1, T2, T3>(first, second, third);
+    public static <T, E, S> Triplet<T, E, S> valueOf(@Nullable T first, @Nullable E second, @Nullable S third) {
+        return new Triplet<T, E, S>(first, second, third);
     }
 
     /**
@@ -63,7 +63,7 @@ public class Triplet<T1, T2, T3> extends Pair<T1, T2> {
      *
      * @return The third element.
      */
-    public T3 getThird() {
+    public S getThird() {
         return this.third;
     }
 
@@ -72,7 +72,7 @@ public class Triplet<T1, T2, T3> extends Pair<T1, T2> {
      *
      * @param third The third element
      */
-    public void setThird(@Nullable T3 third) {
+    public void setThird(@Nullable S third) {
         this.third = third;
     }
 

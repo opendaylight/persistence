@@ -47,10 +47,10 @@ public abstract class AbstractDaoTest<I extends Serializable, T extends Identifi
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testFind() throws Exception {
+    public void testFind() throws PersistenceException {
         List<SearchCase<T, F, S>> searchCases = getSearchCases();
         Assume.assumeNotNull(searchCases);
 
@@ -71,10 +71,10 @@ public abstract class AbstractDaoTest<I extends Serializable, T extends Identifi
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testCount() throws Exception {
+    public void testCount() throws PersistenceException {
         List<SearchCase<T, F, S>> searchCases = getSearchCases();
         Assume.assumeNotNull(searchCases);
 
@@ -94,10 +94,10 @@ public abstract class AbstractDaoTest<I extends Serializable, T extends Identifi
     }
 
     /**
-     * @throws Exception if any errors occur during execution
+     * @throws PersistenceException if any errors occur during execution
      */
     @Test
-    public void testDelete() throws Exception {
+    public void testDelete() throws PersistenceException {
         List<SearchCase<T, F, S>> searchCases = getSearchCases();
         Assume.assumeNotNull(searchCases);
 
