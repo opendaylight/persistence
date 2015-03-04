@@ -14,7 +14,7 @@
         <branding.version>1.0.0-SNAPSHOT</branding.version>
         <karaf.resources.version>1.4.2-SNAPSHOT</karaf.resources.version>
         <karaf.version>3.0.1</karaf.version>
-        <feature.test.version>0.6.2-SNAPSHOT</feature.test.version>
+        <feature.test.version>1.5.0-SNAPSHOT</feature.test.version>
         <karaf.empty.version>1.4.2-SNAPSHOT</karaf.empty.version>
         <surefire.version>2.16</surefire.version>
         <yangtools.version>0.6.0</yangtools.version>
@@ -22,7 +22,7 @@
 
   <dependencies>
     <dependency>
-        <groupId>org.opendaylight.yangtools</groupId>
+        <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>features-test</artifactId>
         <version>${feature.test.version}</version>
         <scope>test</scope>
@@ -79,6 +79,27 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                  <systemPropertyVariables>
+                      <karaf.distro.groupId>org.opendaylight.controller</karaf.distro.groupId>
+                      <karaf.distro.artifactId>opendaylight-karaf-empty</karaf.distro.artifactId>
+                      <karaf.distro.version>${karaf.empty.version}</karaf.distro.version>
+                  </systemPropertyVariables>
+                  <dependenciesToScan>
+                      <dependency>org.opendaylight.odlparent:features-test</dependency>
+                  </dependenciesToScan>
+              </configuration>
+      </plugin>
     </plugins>
   </build>
+  <scm>
+        <connection>scm:git:ssh://git.opendaylight.org:29418/persistence.git</connection>
+        <developerConnection>scm:git:ssh://git.opendaylight.org:29418/persistence.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://git.opendaylight.org/gerrit/gitweb?p=persistence.git;a=summary</url>
+    </scm>
+  
 </project>
