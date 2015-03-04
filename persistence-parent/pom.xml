@@ -26,6 +26,7 @@
     <!-- Dependencies -->
 
     <easymock.version>3.0</easymock.version>
+    <jscience.version>4.3.1</jscience.version>
     <hsqldb.version>2.0.0</hsqldb.version>
     <hibernate.version>4.1.11.Final</hibernate.version>
     <eclipselink.version>2.5.0</eclipselink.version>
@@ -76,6 +77,11 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jscience</groupId>
+      <artifactId>jscience</artifactId>
+      <version>${jscience.version}</version>
     </dependency>
   </dependencies>
 
