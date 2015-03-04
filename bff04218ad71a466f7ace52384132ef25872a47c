@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a93c517_e0c97c5b",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/Location.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-04T20:11:24Z",
+      "side": 1,
+      "message": "It is par of NetworkDevice. It will be covered when we write the DAO and we test it. I will add unit test to the DTOs too.",
+      "parentUuid": "5a93c517_e04adc26",
+      "revId": "bff04218ad71a466f7ace52384132ef25872a47c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_0048282c",
         "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/ReachabilityStatus.java",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T18:06:25Z",
       "side": 1,
       "message": "Are you planning to use this with new test cases (since it is currently uncovered?)",
+      "revId": "bff04218ad71a466f7ace52384132ef25872a47c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_00c7c846",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/ReachabilityStatus.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-03-04T20:11:24Z",
+      "side": 1,
+      "message": "It is the same case than Location. I will add unit test.",
+      "parentUuid": "5a93c517_0048282c",
       "revId": "bff04218ad71a466f7ace52384132ef25872a47c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
