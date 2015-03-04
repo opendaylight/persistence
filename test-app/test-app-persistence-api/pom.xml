@@ -17,7 +17,16 @@
   <description>Application's persistence layer API</description>
 
   <dependencies>
-
+    <dependency>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.persistence</groupId>
+      <artifactId>test-app-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 
 </project>
