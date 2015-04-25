@@ -18,7 +18,7 @@ import org.opendaylight.persistence.util.common.Converter;
  * <p>
  * Examples:
  * <p>
- * <table border="1">
+ * <table border="1" summary="Related types">
  * <tr>
  * <th>Set</th>
  * <th>Operand</th>

@@ -21,7 +21,7 @@ import org.opendaylight.yangtools.concepts.Identifiable;
  * <p>
  * This class must remain state-less so it is thread safe.
  * <p>
- * A DAO should be used by {@link Query queries}.
+ * A DAO should be used by {@link org.opendaylight.persistence.Query} queries.
  * 
  * @param <I>
  *            type of the identifiable object's id. This type should be immutable and it is critical it implements

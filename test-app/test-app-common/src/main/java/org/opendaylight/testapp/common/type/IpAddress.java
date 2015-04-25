@@ -118,7 +118,7 @@ public final class IpAddress extends SerializableValueType<String> {
     /**
      * Constructs an IP address from its octet components.
      * <p>
-     * 255.255.255.255 -> octet1.octet2.octet3.octet4
+     * 255.255.255.255 -&gt; octet1.octet2.octet3.octet4
      *
      * @param octet1 first octet (The most significant)
      * @param octet2 second octet

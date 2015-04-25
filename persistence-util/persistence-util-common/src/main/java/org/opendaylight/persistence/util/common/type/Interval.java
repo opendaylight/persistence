@@ -25,16 +25,16 @@ import com.google.common.base.Preconditions;
  * <LI>Empty: <code> (a, a) = (a, a] = [a, a) = {} = empty</code>.
  * {@code [b, a]} is considered as an empty interval in the literature, but this
  * class do not support it
- * <LI>Degenerate: <code>[a, a] = {a}<code>
- * <LI> Open: <code>(a, b) = {x | a < x < b}<code>
- * <LI> Closed: <code>[a, b] = {x | a <= x <= b}<code>
- * <LI> Left-open, right-closed: <code>(a, b] = {x | a < x <= b}<code>
- * <LI> Left-closed, right-open: <code>[a, b) = {x | a <= x < b}<code>
- * <LI> Left open right unbounded: <code>(a, infinite) = {x | x > a}<code>
- * <LI> Left closed right unbounded: <code>[a, infinite) = {x | x >= a}<code>
- * <LI> Left unbounded right open: <code>(infinite, b) = {x | x < b}<code>
- * <LI> Left unbounded right closed: <code>(infinite, b] = {x | x <= b}<code>
- * <LI> Unbounded: <code>(infinite, infinite) = {x | x is a real number}<code>
+ * <LI>Degenerate: <code>[a, a] = {a}</code>
+ * <LI> Open: <code>(a, b) = {x | a &lt; x &lt; b}</code>
+ * <LI> Closed: <code>[a, b] = {x | a &lt;= x &lt;= b}</code>
+ * <LI> Left-open, right-closed: <code>(a, b] = {x | a &lt; x &lt;= b}</code>
+ * <LI> Left-closed, right-open: <code>[a, b) = {x | a &lt;= x &lt; b}</code>
+ * <LI> Left open right unbounded: <code>(a, infinite) = {x | x &gt; a}</code>
+ * <LI> Left closed right unbounded: <code>[a, infinite) = {x | x &gt;= a}</code>
+ * <LI> Left unbounded right open: <code>(infinite, b) = {x | x &lt; b}</code>
+ * <LI> Left unbounded right closed: <code>(infinite, b] = {x | x &lt;= b}</code>
+ * <LI> Unbounded: <code>(infinite, infinite) = {x | x is a real number}</code>
  * </UL>
  * 
  * @param <C>
@@ -51,7 +51,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
     private final Type type;
 
     /**
-     * Creates a open interval: <code>(a, b) = {x | a < x < b}<code>
+     * Creates a open interval: <code>(a, b) = {x | a &lt; x &lt; b}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -65,7 +65,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
     }
 
     /**
-     * Creates a closed interval: <code>[a, b] = {x | a <= x <= b}<code>
+     * Creates a closed interval: <code>[a, b] = {x | a &lt;= x &lt;= b}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -80,7 +80,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a left-open right-closed interval:
-     * <code>(a, b] = {x | a <= x < b}<code>
+     * <code>(a, b] = {x | a &lt;= x &lt; b}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -96,7 +96,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a left-closed right-open interval:
-     * <code>(a, b] = {x | a < x <= b}<code>
+     * <code>(a, b] = {x | a &lt; x &lt;= b}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -112,7 +112,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a left open right unbounded interval:
-     * <code>(a, infinite) = {x | x > a}<code>
+     * <code>(a, infinite) = {x | x &gt; a}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -126,7 +126,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a Left closed right unbounded interval:
-     * <code>[a, infinite) = {x | x >= a}<code>
+     * <code>[a, infinite) = {x | x &gt;= a}</code>
      *
      * @param leftEndpoint
      *            Left endpoint
@@ -140,7 +140,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a left unbounded right open interval:
-     * <code>(infinite, b) = {x | x < b}<code>
+     * <code>(infinite, b) = {x | x &lt; b}</code>
      *
      * @param rightEndpoint
      *            Right endpoint
@@ -154,7 +154,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates a left unbounded right closed interval:
-     * <code>(infinite, b] = {x | x <= b}<code>
+     * <code>(infinite, b] = {x | x &lt;= b}</code>
      *
      * @param rightEndpoint
      *            Right endpoint
@@ -168,7 +168,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
 
     /**
      * Creates an unbounded interval:
-     * <code>(infinite, infinite) = {x | x is comparable}<code>
+     * <code>(infinite, infinite) = {x | x is comparable}</code>
      *
      * @return interval
      */
@@ -300,7 +300,7 @@ public final class Interval<C extends Comparable<C>> implements Container<C>,
     /**
      * Verifies whether this interval is empty:
      * <p>
-     * a, b are real numbers with a < b
+     * a, b are real numbers with a &lt; b
      * <p>
      * empty: [b, a] = (a, a) = [a, a) = (a, a] = {}
      *

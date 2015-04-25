@@ -75,8 +75,6 @@ public class JpaDataStore implements DataStore<JpaContext> {
      *
      * @param persistenceUnitName
      *            persistence unit name.
-     * @param loggerProvider
-     *            logger provider
      */
     public JpaDataStore(String persistenceUnitName) {
         this.entityManagerFactory = Persistence

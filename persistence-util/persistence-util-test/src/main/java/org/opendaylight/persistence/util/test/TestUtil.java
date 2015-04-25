@@ -188,7 +188,7 @@ public final class TestUtil {
      *     }
      * }
      *
-     * <pre>
+     * </pre>
      *
      * @return the current method name
      */

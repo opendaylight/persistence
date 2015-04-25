@@ -341,7 +341,7 @@ public class JpaQueryPredicateGenerator<P> {
     /**
      * Generates predicates to satisfy the given time period condition.
      * <p>
-     * NOTE: {@link TimePeriodCondition} uses {@link com.hp.util.common.type} but the {@link SingularAttribute} must be
+     * NOTE: {@link TimePeriodCondition} uses <code>com.hp.util.common.type</code> but the {@link SingularAttribute} must be
      * of type {@link Date}. This because entities uses {@link Date} because JPA understands it.
      * 
      * @param condition

@@ -56,7 +56,7 @@ public final class MacAddress extends SerializableValueType<String> {
     /**
      * Constructs a MAC address from its octet components.
      * <p>
-     * 01:23:45:67:89:AB -> octet1.octet2.octet3.octet4.octet5.octet6
+     * 01:23:45:67:89:AB -&gt; octet1.octet2.octet3.octet4.octet5.octet6
      *
      * @param octet1 first octet (The most significant)
      * @param octet2 second octet

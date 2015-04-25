@@ -28,7 +28,7 @@ import com.google.common.base.Preconditions;
  * <p>
  * This class must remain state-less so it is thread safe.
  * <p>
- * A DAO should be used by {@link Query queries}.
+ * A DAO should be used by {@link org.opendaylight.persistence.Query} queries.
  * <p>
  * This implementation follows the data transfer pattern. Data Transfer Object Pattern: Provides the ability for the
  * transport objects to carry the data between application layers (DTO). A DTO (Here, {@link Identifiable}) should be a
