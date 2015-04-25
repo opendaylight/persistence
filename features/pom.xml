@@ -11,12 +11,12 @@
 
     <properties>
         <features.file>features.xml</features.file>
-        <branding.version>1.0.0-SNAPSHOT</branding.version>
-        <karaf.resources.version>1.4.2-SNAPSHOT</karaf.resources.version>
+        <branding.version>1.2.0-SNAPSHOT</branding.version>
+        <karaf.resources.version>1.5.0-SNAPSHOT</karaf.resources.version>
         <feature.test.version>1.5.0-SNAPSHOT</feature.test.version>
-        <karaf.empty.version>1.4.2-SNAPSHOT</karaf.empty.version>
+        <karaf.empty.version>1.5.0-SNAPSHOT</karaf.empty.version>
         <surefire.version>2.16</surefire.version>
-        <yangtools.version>0.6.0</yangtools.version>
+        <yangtools.version>0.7.0-SNAPSHOT</yangtools.version>
     </properties>
 
   <dependencies>

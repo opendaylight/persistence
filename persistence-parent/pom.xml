@@ -35,7 +35,7 @@
 
     <!-- ODL Dependencies -->
 
-    <yangtools.version>0.6.0</yangtools.version>
+    <yangtools.version>0.7.0-SNAPSHOT</yangtools.version>
 
     <!-- Plugins -->
 
