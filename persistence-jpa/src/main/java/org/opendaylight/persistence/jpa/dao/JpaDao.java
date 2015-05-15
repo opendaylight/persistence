@@ -158,15 +158,18 @@ public abstract class JpaDao<I extends Serializable, T extends Identifiable<I>, 
 
     protected List<Sort<SingularAttribute<? super P, ?>>> convertSort(
             @Nullable List<Sort<S>> source) {
-        Preconditions.checkNotNull(source, "source");
+        //Preconditions.checkNotNull(source, "source");
 
-        List<Sort<SingularAttribute<? super P, ?>>> converted = new ArrayList<Sort<SingularAttribute<? super P, ?>>>(
-                source.size());
-        for (Sort<S> sortElement : source) {
-            converted.add(sortElement.convert(this.sortKeyConverter));
-        }
+		if (source != null) {
+			List<Sort<SingularAttribute<? super P, ?>>> converted = new ArrayList<Sort<SingularAttribute<? super P, ?>>>(
+					source.size());
+			for (Sort<S> sortElement : source) {
+				converted.add(sortElement.convert(this.sortKeyConverter));
+			}
 
-        return converted;
+			return converted;
+		}
+        return null;
     }
 
     /**

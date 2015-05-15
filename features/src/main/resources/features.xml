@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vi: set et smarttab sw=4 tabstop=4: -->
 <!--
@@ -9,20 +10,55 @@
 <features name="odl-persistence-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+          
+          <!-- <repository>mvn:org.opendaylight.yangtools/features-yangtools/${yangtools.version}/xml/features</repository> -->
+		  <!-- <repository>mvn:org.opendaylight.controller/features-mdsal/${mdsal.version}/xml/features</repository> -->
+		  <!-- <repository>mvn:org.opendaylight.controller/features-restconf/${mdsal.version}/xml/features</repository> -->
     
     <feature name='odl-persistence-all' version='${project.version}' description='OpenDaylight :: persistence :: All'>
             <feature version='${project.version}'>odl-persistence-api</feature>
+            <feature version='${project.version}'>odl-persistence-util-common</feature>
             <feature version='${project.version}'>odl-persistence-test-app</feature>
             <feature version='${project.version}'>odl-persistence-jpa-impl</feature>
     </feature>
+    
     <feature name='odl-persistence-api' version='${project.version}' description='Opendaylight :: persistence :: API '>
             <bundle>mvn:org.opendaylight.persistence/persistence-api/${project.version}</bundle>
             <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
             <bundle>mvn:org.opendaylight.persistence/persistence-util-common/${project.version}</bundle>
             <bundle>mvn:org.opendaylight.yangtools/concepts/${yangtools.version}</bundle>
     </feature>
+    
+    <!-- <feature name='odl-persistence-api' version='${project.version}' description='Opendaylight :: persistence :: API '>
+    	<bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
+    	<bundle>mvn:org.opendaylight.yangtools/concepts/${yangtools.version}</bundle>
+    </feature>-->
+    <feature name='odl-persistence-util-common' version='${project.version}' description='Opendaylight :: persistence :: API '>
+    </feature>
     <feature name='odl-persistence-test-app' version='${project.version}' description='Opendaylight :: persistence :: Test App '>
     </feature>
     <feature name='odl-persistence-jpa-impl' version='${project.version}' description='Opendaylight :: persistene :: JPA implementation '>
+    </feature> 
+    
+    <!-- <feature name='odl-persistence-root' version='${project.version}' description='Opendaylight :: persistene :: Root '>
     </feature>
+     -->
+     <!-- <feature name='odl-hello-api' version='${project.version}' description='OpenDaylight :: hello :: api'>
+    	<feature version='${yangtools.version}'>odl-yangtools-models</feature>
+    	<bundle>mvn:org.opendaylight.hello/hello-api/${project.version}</bundle>
+ 	 </feature>
+     
+     <feature name='odl-hello' version='${project.version}' description='OpenDaylight :: hello'>
+    	<feature version='${mdsal.version}'>odl-mdsal-broker</feature>
+    	<feature version='${project.version}'>odl-hello-api</feature>
+    	<bundle>mvn:org.opendaylight.hello/hello-impl/${project.version}</bundle>
+    	<configfile finalname="${configfile.directory}/hello.xml">mvn:org.opendaylight.hello/hello-impl/${project.version}/xml/config</configfile>
+  	</feature>
+     
+     
+    <feature name='odl-hello-rest' version='${project.version}' description='OpenDaylight :: hello :: REST'>
+   	 <feature version="${project.version}">odl-hello</feature>
+   	 <feature version="${mdsal.version}">odl-restconf</feature>
+ 	 </feature> -->
+    
 </features>

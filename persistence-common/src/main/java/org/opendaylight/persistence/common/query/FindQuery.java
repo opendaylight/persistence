@@ -56,6 +56,11 @@ public final class FindQuery<T extends Identifiable<?>, F, S, C> implements Quer
             @Nullable List<Sort<S>> sort, @Nonnull Dao<?, T, F, S, C> dao) {
         return new FindQuery<T, F, S, C>(filter, sort, dao);
     }
+    
+    /*public static <T extends Identifiable<? super T>, F, S, C> Query<List<T>, C> createQuery(F filter,
+            SortSpecification<S> sortSpecification, Dao<?, T, F, S, C> dao) {
+        return new FindQuery<T, F, S, C>(filter, sortSpecification, dao);
+    }*/
 
     @Override
     public List<T> execute(C context) throws PersistenceException {

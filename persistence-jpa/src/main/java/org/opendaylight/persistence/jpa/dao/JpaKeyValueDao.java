@@ -247,7 +247,7 @@ public abstract class JpaKeyValueDao<I extends Serializable, T extends Identifia
 
     @Override
     public boolean exist(I id, JpaContext context) throws PersistenceException {
-        return JpaUtil.exist(this.entityClass, id, context);
+        return JpaUtil.exist(this.entityClass, getEntityId(id), context);
     }
 
     @Override
@@ -312,6 +312,17 @@ public abstract class JpaKeyValueDao<I extends Serializable, T extends Identifia
         Preconditions.checkNotNull(id, "id");
         return JpaUtil.get(this.entityClass, id, context);
     }
+    
+    /**
+     * Gets the entity Id.
+     * 
+     * @param id the corresponding identifiable object's id
+     * @return the entity's id
+     */
+    protected Object getEntityId(I id) {
+        return id;
+    }
+    
 
     /**
      * Deletes the entity from the data store. Subclasses could override this method to do any pre-processing /
