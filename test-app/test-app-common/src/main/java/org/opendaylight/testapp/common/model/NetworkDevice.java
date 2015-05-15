@@ -12,9 +12,13 @@ import java.io.Serializable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
+import org.opendaylight.persistence.util.common.model.SerializableAbstractIdentifiable;
+import org.opendaylight.persistence.util.common.type.Id;
 import org.opendaylight.testapp.common.type.IpAddress;
 import org.opendaylight.testapp.common.type.Location;
 import org.opendaylight.testapp.common.type.MacAddress;
+import org.opendaylight.testapp.common.type.Property;
 import org.opendaylight.testapp.common.type.ReachabilityStatus;
 import org.opendaylight.testapp.common.type.SerialNumber;
 import org.opendaylight.yangtools.concepts.Identifiable;
@@ -28,7 +32,7 @@ import com.google.common.base.Preconditions;
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
-public final class NetworkDevice implements Identifiable<SerialNumber>, Serializable {
+public final class NetworkDevice extends SerializableAbstractIdentifiable<NetworkDevice, SerialNumber> implements Identifiable<SerialNumber>, Serializable {
     private static final long serialVersionUID = 1L;
 
     private final SerialNumber serialNumber;
@@ -45,23 +49,24 @@ public final class NetworkDevice implements Identifiable<SerialNumber>, Serializ
      * @param macAddress device's MAC address
      * @param reachabilityStatus reachability status
      */
-    public NetworkDevice(@Nonnull SerialNumber serialNumber, @Nonnull MacAddress macAddress,
+    public NetworkDevice(Id<NetworkDevice, SerialNumber> id, @Nonnull SerialNumber serialNumber, @Nonnull MacAddress macAddress,
             @Nonnull ReachabilityStatus reachabilityStatus) {
+    	super(id);
         this.serialNumber = Preconditions.checkNotNull(serialNumber, "serialNumber");
 
-        /*
-         * In reality MAC Address may change, for for illustration purposes it is assumed it never
-         * changes.
-         */
+        
+         /** In reality MAC Address may change, for for illustration purposes it is assumed it never
+         * changes.*/
+         
         this.macAddress = Preconditions.checkNotNull(macAddress, "macAddress");
 
-        /*
-         * setReachabilityStatus is final and thus it is no longer a foreign method. So it is safe
-         * to be called in a constructor.
-         */
+        
+         /** setReachabilityStatus is final and thus it is no longer a foreign method. So it is safe
+         * to be called in a constructor.*/
+         
         setReachabilityStatus(reachabilityStatus);
     }
-
+    
     @Override
     public SerialNumber getIdentifier() {
         return this.serialNumber;
@@ -132,8 +137,9 @@ public final class NetworkDevice implements Identifiable<SerialNumber>, Serializ
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("serialNumber", this.serialNumber)
+        return MoreObjects.toStringHelper(this).add("id", this.getId().getValue())
                 .add("macAddress", this.macAddress).add("ipAddress", this.ipAddress).add("location", this.location)
                 .add("friendlyName", this.friendlyName).add("reachabilityStatus", this.reachabilityStatus).toString();
     }
+
 }

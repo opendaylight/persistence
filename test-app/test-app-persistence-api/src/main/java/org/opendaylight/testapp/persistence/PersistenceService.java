@@ -6,7 +6,12 @@
  */
 package org.opendaylight.testapp.persistence;
 
+import java.util.List;
+
+import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.store.ObjectStore;
+import org.opendaylight.persistence.util.common.type.Id;
+import org.opendaylight.persistence.util.common.type.Sort;
 import org.opendaylight.testapp.common.model.NetworkDevice;
 import org.opendaylight.testapp.common.model.NetworkDeviceFilter;
 import org.opendaylight.testapp.common.model.NetworkDeviceSortKey;
@@ -53,15 +58,82 @@ public interface PersistenceService {
     public interface NetworkDevicePersistenceService extends
             ObjectStore<SerialNumber, NetworkDevice, NetworkDeviceFilter, NetworkDeviceSortKey> {
 
-        // Define custom persistence functionality here
+        /**
+         * Stores a network device.
+         * 
+         * @param device device to store
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public void store(NetworkDevice device) throws PersistenceException;
+
+        /**
+         * Loads a network device.
+         * 
+         * @param id device's id
+         * @return the device if found, {@code null} otherwise
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public NetworkDevice get(Id<NetworkDevice, SerialNumber> id) throws PersistenceException; //Id<NetworkDevice, SerialNumber> id
+
+        /**
+         * Finds network devices.
+         * 
+         * @param filter filter
+         * @param sortSpecification sort specification
+         * @return found devices
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        //revisted later to implement
+        public List<NetworkDevice> find(NetworkDeviceFilter filter,
+        		List<Sort<NetworkDeviceSortKey>> sort) throws PersistenceException;
+
+        /**
+         * Deletes a network device.
+         * 
+         * @param id device's id
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public void delete(Id<NetworkDevice, SerialNumber> id) throws PersistenceException;
     }
 
     /**
      * User persistence service.
      */
     public interface UserPersistenceService extends ObjectStore<Username, User, UserFilter, Void> {
+        
+        /**
+         * Stores a user.
+         * 
+         * @param user user to store
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public void store(User user) throws PersistenceException;
 
-        // Define custom persistence functionality here
+        /**
+         * Loads a user.
+         * 
+         * @param id user's id
+         * @return the user if found, {@code null} otherwise
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public User get(Id<User, Username> id) throws PersistenceException;
+
+        /**
+         * Find users.
+         * 
+         * @param filter filter
+         * @return found users
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public List<User> find(UserFilter filter) throws PersistenceException;
+
+        /**
+         * Deletes a user.
+         * 
+         * @param id user's id
+         * @throws PersistenceException if persistence errors occur while executing the operation
+         */
+        public void delete(Id<User, Username> id) throws PersistenceException;
     }
 
     /**

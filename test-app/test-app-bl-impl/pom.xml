@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.opendaylight.persistence</groupId>
-    <artifactId>test-app</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../</relativePath>
-  </parent>
+	<parent>
+		<groupId>org.opendaylight.persistence</groupId>
+		<artifactId>test-app</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
 
-  <artifactId>test-app-bl-impl</artifactId>
-  <packaging>bundle</packaging>
+	<artifactId>test-app-bl-impl</artifactId>
+	<packaging>bundle</packaging>
 
-  <name>test-app-bl-impl</name>
-  <description>Application's business logic implementation</description>
+	<name>test-app-bl-impl</name>
+	<description>Application's business logic implementation</description>
 
-  <dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>test-app-bl-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
-  </dependencies>
+
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>test-app-persistence-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+
+	</dependencies>
+	
+	<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<extensions>true</extensions>
+			<configuration>
+				<instructions>
+					<!-- <DynamicImport-Package>org.opendaylight.testapp.persistence.bl.impl.*;org.opendaylight.testapp.persistence.impl.*;*</DynamicImport-Package> -->
+					<Export-Package>org.opendaylight.testapp.persistence.bl.impl.*</Export-Package>
+				</instructions>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 
 </project>

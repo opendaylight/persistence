@@ -1,23 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.opendaylight.persistence</groupId>
-    <artifactId>test-app</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../</relativePath>
-  </parent>
+	<parent>
+		<groupId>org.opendaylight.persistence</groupId>
+		<artifactId>test-app</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
 
-  <artifactId>test-app-persistence-jpa-impl</artifactId>
-  <packaging>bundle</packaging>
+	<artifactId>test-app-persistence-jpa-impl</artifactId>
+	<packaging>bundle</packaging>
 
-  <name>test-app-persistence-jpa-impl</name>
-  <description>Application's persistence layer implementation</description>
+	<name>test-app-persistence-jpa-impl</name>
+	<description>Application's persistence layer implementation</description>
+	<properties>
+		<hsqldb.version>2.0.0</hsqldb.version>
+		 <maven-processor-plugin.version>2.2.0</maven-processor-plugin.version>
+		 <generated.sources.location>target/src-generated</generated.sources.location>
+		  <hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
+		  <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
+	</properties>
 
-  <dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>persistence-jpa</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>test-app-persistence-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
-  </dependencies>
+		<dependency>
+			<groupId>org.opendaylight.persistence</groupId>
+			<artifactId>test-app-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.version}</version>
+		</dependency>
+
+<!-- Added Following 2 dependencies -->
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.core</artifactId>
+		</dependency>
+
+	<dependency>
+		<groupId>org.opendaylight.persistence</groupId>
+		<artifactId>test-app-bl-impl</artifactId>
+		<version>${project.version}</version>
+	</dependency>
+
+	</dependencies>
+	
+	
+	 <build>
+    <plugins>
+      <plugin>
+        <groupId>org.bsc.maven</groupId>
+        <artifactId>maven-processor-plugin</artifactId>
+        <version>${maven-processor-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>process</id>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <outputDirectory>${generated.sources.location}</outputDirectory>                          	
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>${hibernate-jpamodelgen.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <!-- 
+            This plugin configures "${generated.sources.location}" as a source folder so it is recognized by Eclipse.
+            Adds more source directories to the project, since pom.xml only allows one source directory.
+            This folder is configured when "mvn eclipse:eclipse" is executed.
+        -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${generated.sources.location}</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <extensions>true</extensions>
+            <configuration>
+                <instructions>
+                	<DynamicImport-Package>*</DynamicImport-Package>
+                    <Export-Package>org.opendaylight.testapp.persistence.*</Export-Package>
+                    <Private-Package>org.opendaylight.testapp.persistence.model.persistence.jpa.query.*</Private-Package>
+                    <Export-Service>org.opendaylight.testapp.persistence.bl.NetworkDeviceService</Export-Service>
+                    <Bundle-Activator>org.opendaylight.testapp.persistence.model.persistence.jpa.query.PersistenceActivator</Bundle-Activator>
+                </instructions>
+            </configuration>
+        </plugin>
+      
+      
+    </plugins>
+  </build>
 
 </project>

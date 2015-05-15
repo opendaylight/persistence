@@ -96,7 +96,7 @@ public class JpaDataStore implements DataStore<JpaContext> {
                     .createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
-            T result = queryDecorator.execute(new JpaContext(entityManager));
+            T result = queryDecorator.execute(new JpaContext(entityManager));//problem
             entityTransaction.commit();
             entityManager.close();
             return result;

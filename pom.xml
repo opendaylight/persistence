@@ -25,6 +25,8 @@
     <module>persistence-jpa</module>
     <module>test-app</module>
     <module>features</module>
+<!--    <module>example</module>
+    <module>hello</module> -->
   </modules>
 
   <!-- DO NOT deploy the repo root pom as it's only needed to initiate a build -->
@@ -37,7 +39,14 @@
         <configuration>
           <skip>true</skip>
         </configuration>
-      </plugin>
+    </plugin>
+    <plugin>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.1</version>
+       <configuration>
+               <fork>true</fork>
+               <executable>/usr/lib/jvm/java-7-openjdk-amd64/bin/java</executable>
+       </configuration>                                                                             </plugin>
     </plugins>
   </build>
 </project>
