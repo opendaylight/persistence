@@ -1,0 +1,13 @@
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+    <bean id="networkDeviceServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.NetworkDeviceServiceImpl" />
+
+    <service id="networkDeviceService" ref="networkDeviceServiceImpl" interface="org.opendaylight.testapp.persistence.bl.NetworkDeviceService" />
+
+    <bean id="userServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.UserServiceImpl" />
+
+    <service id="userService" ref="userServiceImpl" interface="org.opendaylight.testapp.persistence.bl.UserService" />
+
+</blueprint>

@@ -9,8 +9,13 @@ package org.opendaylight.persistence.jpa.dao;
 
 import java.io.Serializable;
 
+import org.opendaylight.persistence.PersistenceException;
 import org.opendaylight.persistence.dao.UpdateStrategy;
+import org.opendaylight.persistence.jpa.JpaContext;
+import org.opendaylight.persistence.util.common.type.Id;
 import org.opendaylight.yangtools.concepts.Identifiable;
+
+import com.google.common.base.Preconditions;
 
 /**
  * JPA {@link JpaOffsetPageDao} where the primary key is a mapped to a different type (MacAddress, IpAddress, etc) that
@@ -66,6 +71,18 @@ public abstract class JpaMappedKeyDao<I extends Serializable, T extends Identifi
         super(entityClass, updateStrategy);
     }
 
+    
+    @Override
+    protected Object getEntityId(I id) {
+        return mapKey(id);
+    }
+    
+    @Override
+    protected P getEntity(I id, JpaContext context) throws PersistenceException {
+        Preconditions.checkNotNull(id, "id");
+        return JpaUtil.get(this.getEntityClass(), getEntityId(id), context);
+    }
+    
     /**
      * Maps the custom key to the type that JPA understands.
      * 

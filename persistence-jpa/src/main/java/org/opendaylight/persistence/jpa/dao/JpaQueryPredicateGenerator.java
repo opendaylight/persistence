@@ -25,6 +25,8 @@ import org.opendaylight.persistence.util.common.filter.StringCondition;
 import org.opendaylight.persistence.util.common.filter.TimePeriodCondition;
 import org.opendaylight.persistence.util.common.type.Interval;
 
+
+
 /**
  * Query predicate generator.
  * 

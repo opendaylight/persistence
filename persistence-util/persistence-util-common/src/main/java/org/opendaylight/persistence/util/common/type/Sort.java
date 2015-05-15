@@ -27,7 +27,7 @@ public final class Sort<T> {
     private T sortBy;
     private SortOrder sortOrder;
 
-    private Sort(@Nonnull T sortBy, @Nonnull SortOrder sortOrder) {
+    Sort(@Nonnull T sortBy, @Nonnull SortOrder sortOrder) {
         this.sortBy = Preconditions.checkNotNull(sortBy, "sortBy");
         this.sortOrder = Preconditions.checkNotNull(sortOrder, "sortOrder");
     }
