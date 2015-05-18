@@ -1,0 +1,1016 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_e47d0bb3",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/query/FindQuery.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "There is no need to keep commented code; GIT will have a history in case we need to pull it back. I would suggest removing it.",
+      "range": {
+        "startLine": 60,
+        "startChar": 6,
+        "endLine": 60,
+        "endChar": 12
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_844a0782",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/query/QueryModelDecorator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "There is no apparent change in this file. I would revert it.",
+      "range": {
+        "startLine": 35,
+        "startChar": 19,
+        "endLine": 35,
+        "endChar": 38
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_245bf355",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/query/StoreQuery.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "This query was not included because of the following reason:\n\n\"It might seem tempting to replace add(Identifiable, Object) and update(Identifiable, Object) by a single store(Identifiable, Object) operation that verifies whether the object exists to determine the actual operation: add or update. This only works for providers that do not support integrity constraints (Like non-relational databases). It is valid to assume that the persistence logic\u0027s consumer has enough context to determine whether an object needs to be added or updated. For example, imagine a user registration application where the e-mail is a natural primary key. A sign-up operation would create the user, but a sign-in operation might just update its last session timestamp. If two different users sign-up using the same e-mail address the data would be overridden if a store(Identifiable, Object) method is used.\"\n\nThis was our opinion, but if you consider it useful we can keep it.",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_a4362302",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/query/StoreQuery.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No need to add this comments. They will get out of date.",
+      "range": {
+        "startLine": 38,
+        "startChar": 50,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8431a70d",
+        "filename": "persistence-common/src/main/java/org/opendaylight/persistence/common/query/StoreQuery.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No need to add this comments. They will get out of date.",
+      "range": {
+        "startLine": 42,
+        "startChar": 56,
+        "endLine": 42,
+        "endChar": 63
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_443b9feb",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/JpaDataStore.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "The only change is a comment that does not describe the problem. I would revert this class.",
+      "range": {
+        "startLine": 99,
+        "startChar": 79,
+        "endLine": 99,
+        "endChar": 86
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ae527a11",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/dao/JpaDao.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Just make sure we are not using tabs for indentation.",
+      "range": {
+        "startLine": 163,
+        "startChar": 6,
+        "endLine": 163,
+        "endChar": 12
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ce4a6655",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/dao/JpaQueryPredicateGenerator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class. I would revert it.",
+      "range": {
+        "startLine": 39,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 39
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ee47224a",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/entity/BaseVersionedEntity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8e745e9d",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlComparability.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ae791a95",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlEqualityCondition.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_4e6e56cb",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlIntervalCondition.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 27
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_6e7312b2",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlQueryPredicateGenerator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 30,
+        "startChar": 13,
+        "endLine": 30,
+        "endChar": 40
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0e684eb9",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlSetCondition.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 22
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_2e650ae1",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/jpql/JpqlStringCondition.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 27,
+        "startChar": 6,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ce6106d5",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Identifiable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Is there a reason to re-introduce this interface? There is already an Identifiable in yangtools and we decided to use that one instead as a convenience to integrate with MD-SAL in the future.",
+      "range": {
+        "startLine": 17,
+        "startChar": 17,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ee5e4212",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Restartable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadocs are missing.",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8e9bfec8",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Startable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadocs are missing.",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_aea03af5",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Stoppable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadocs are missing.",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8e821e51",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/Util.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "This class was not introduced because google guava already provides a method to compare two objects. Google Guava is already part of the dependencies, so you should be able to use Objects.equal(...)",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ae87da60",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/converter/ObjectToStringConverter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "This class was not introduced because google guava already provides a method to generate a string representation of an object. Google Guava is already part of the dependencies, so you should be able to use Objects.toStringHelper(obj).",
+      "range": {
+        "startLine": 67,
+        "startChar": 19,
+        "endLine": 67,
+        "endChar": 42
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_4e7c1673",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/io/FileUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadocs missing.",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ee8c0282",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/io/FileUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadoc needs fixing",
+      "range": {
+        "startLine": 43,
+        "startChar": 14,
+        "endLine": 43,
+        "endChar": 15
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8ee9be1c",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/io/IoUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Missing Javadoc",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_aeeefa20",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/io/IoUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Javadoc needs fixing",
+      "range": {
+        "startLine": 76,
+        "startChar": 15,
+        "endLine": 76,
+        "endChar": 26
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_6ef8f2e5",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/log/AbstractLogger.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "We also decided not to include anything related to Logging from the prototype. We are using directly Logger and LoggerFactory from slf4j. I thinks this is the way logging is handled in ODL, if it is not, we should use the same mechanism for logging.",
+      "range": {
+        "startLine": 11,
+        "startChar": 22,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0eddae70",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/log/Log.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "We also decided not to include anything related to Logging from the prototype. We are using directly Logger and LoggerFactory from slf4j. I thinks this is the way logging is handled in ODL, if it is not, we should use the same mechanism for logging.",
+      "range": {
+        "startLine": 17,
+        "startChar": 13,
+        "endLine": 17,
+        "endChar": 16
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_eee3a231",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/log/Logger.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "We also decided not to include anything related to Logging from the prototype. We are using directly Logger and LoggerFactory from slf4j. I thinks this is the way logging is handled in ODL, if it is not, we should use the same mechanism for logging.",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_4ecad6a2",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/log/LoggerProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "We also decided not to include anything related to Logging from the prototype. We are using directly Logger and LoggerFactory from slf4j. I thinks this is the way logging is handled in ODL, if it is not, we should use the same mechanism for logging.",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0ec4ce90",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/log/Slf4jLoggerProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "We also decided not to include anything related to Logging from the prototype. We are using directly Logger and LoggerFactory from slf4j. I thinks this is the way logging is handled in ODL, if it is not, we should use the same mechanism for logging.",
+      "range": {
+        "startLine": 3,
+        "startChar": 13,
+        "endLine": 3,
+        "endChar": 32
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_2ec18a80",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/model/AbstractIdentifiable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "See comment on Identifiable.",
+      "range": {
+        "startLine": 20,
+        "startChar": 22,
+        "endLine": 20,
+        "endChar": 42
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_cebd8604",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/model/SerializableAbstractIdentifiable.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "See comment on Identifiable.",
+      "range": {
+        "startLine": 10,
+        "startChar": 22,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_eebac209",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/Id.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "See comment on Identifiable",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8e377eb0",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/Property.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "I think this is not needed if ObjectToStringConverter is not used. See comments there.",
+      "range": {
+        "startLine": 13,
+        "startChar": 19,
+        "endLine": 13,
+        "endChar": 27
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_29ce645b",
+        "filename": "persistence-util/persistence-util-common/src/main/java/org/opendaylight/persistence/util/common/type/SortSpecification.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Is there a reason to bring this class back? It was replaced by Sort. A SortSpecification should be equivalent to a List of Sort.",
+      "range": {
+        "startLine": 9,
+        "startChar": 13,
+        "endLine": 9,
+        "endChar": 30
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e9d71cec",
+        "filename": "test-app/test-app-bl-api/src/main/java/org/opendaylight/testapp/persistence/bl/NetworkDeviceService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Missing Javadoc",
+      "range": {
+        "startLine": 11,
+        "startChar": 17,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_8904587f",
+        "filename": "test-app/test-app-bl-api/src/main/java/org/opendaylight/testapp/persistence/bl/NetworkDeviceService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "I would remove this empty comment",
+      "range": {
+        "startLine": 27,
+        "startChar": 90,
+        "endLine": 27,
+        "endChar": 92
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_a9091497",
+        "filename": "test-app/test-app-bl-api/src/main/java/org/opendaylight/testapp/persistence/bl/NetworkDeviceService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "I would remove this comment.",
+      "range": {
+        "startLine": 35,
+        "startChar": 88,
+        "endLine": 35,
+        "endChar": 101
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_49fe506d",
+        "filename": "test-app/test-app-bl-api/src/main/java/org/opendaylight/testapp/persistence/bl/UserService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Missing Javadoc",
+      "range": {
+        "startLine": 11,
+        "startChar": 17,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_09f8487b",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/model/FreeFormNetworkDeviceFilter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes on this class; I would revert it.",
+      "range": {
+        "startLine": 28,
+        "startChar": 13,
+        "endLine": 28,
+        "endChar": 40
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_29f50483",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/model/NetworkDeviceFilter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 25,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 32
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_c9f10097",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/model/UserFilter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "No changes in this class; I would revert it.",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_892bf8ea",
+        "filename": "test-app/test-app-common/src/main/java/org/opendaylight/testapp/common/type/Property.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "I think this class is used in ObjectToStringCoverter, which should be replaced by MoreObjects from Google Wava.",
+      "range": {
+        "startLine": 5,
+        "startChar": 19,
+        "endLine": 5,
+        "endChar": 27
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_293c242f",
+        "filename": "test-app/test-app-persistence-jpa-impl/src/main/java/org/opendaylight/testapp/persistence/model/persistence/jpa/query/JpaQueryFactory.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3205
+      },
+      "writtenOn": "2015-05-18T23:20:34Z",
+      "side": 1,
+      "message": "Query factories are meant to be replaced by Object Stores. There are Object Store interfaces and abstract implementations.",
+      "range": {
+        "startLine": 27,
+        "startChar": 13,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "d06b7d7db16dd1c1f032324cfb4f063db8c5bae1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
