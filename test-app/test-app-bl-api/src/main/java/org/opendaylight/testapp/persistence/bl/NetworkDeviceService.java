@@ -8,6 +8,12 @@ import org.opendaylight.testapp.common.type.IpAddress;
 import org.opendaylight.testapp.common.type.Location;
 import org.opendaylight.testapp.common.type.SerialNumber;
 
+/**
+ * Provides all functionalities for the Network Device.
+ * Provides methods to discover a network device,
+ * get all the reachable or unreachable devices,
+ * get devices by location etc. 
+ */
 public interface NetworkDeviceService {
 
     /**
@@ -24,7 +30,7 @@ public interface NetworkDeviceService {
      * @param id id of the device to update
      * @param friendlyName friendly name
      */
-    public void setFriendlyName(Id<NetworkDevice, SerialNumber> id, String friendlyName); //
+    public void setFriendlyName(Id<NetworkDevice, SerialNumber> id, String friendlyName); 
 
     /**
      * Sets the device's friendly name.
@@ -32,7 +38,7 @@ public interface NetworkDeviceService {
      * @param id id of the device to update
      * @param location location
      */
-    public void setLocation(Id<NetworkDevice, SerialNumber> id, Location location);//Id<NetworkDevice, SerialNumber> id
+    public void setLocation(Id<NetworkDevice, SerialNumber> id, Location location);
 
     /**
      * Gets the reachable devices.

@@ -1,5 +1,9 @@
 package org.opendaylight.persistence.util.common;
 
+/**
+ * Interface to stop operations.
+ * 
+ */
 public interface Stoppable {
 
     /**

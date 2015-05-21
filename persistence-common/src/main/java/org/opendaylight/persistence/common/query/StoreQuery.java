@@ -8,9 +8,9 @@ import org.opendaylight.persistence.dao.BaseDao;
 //import org.opendaylight.persistence.util.common.Identifiable;
 import org.opendaylight.yangtools.concepts.Identifiable;
 
-public class StoreQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<Void, C> { // Changed from T extends Identifiable<? super T,I>
+public class StoreQuery<I extends Serializable, T extends Identifiable<I>, C> implements Query<Void, C> {
     private T identifiable;
-    private I id;// added id to use it for exist method
+    private I id;
     private BaseDao<I, T, C> dao;
 
     private StoreQuery(I id, T identifiable, BaseDao<I, T, C> dao) {
@@ -35,11 +35,11 @@ public class StoreQuery<I extends Serializable, T extends Identifiable<I>, C> im
 
     @Override
     public Void execute(C context) throws PersistenceException {
-        if (this.dao.exist(this.id, context)) { //changed from this.identifiable.<T> getId() 
+        if (this.dao.exist(this.id, context)) { 
             this.dao.update(this.identifiable, context);
         }
         else {
-            this.dao.add(this.identifiable, context);// changed create to add method name
+            this.dao.add(this.identifiable, context);
         }
         return null;
     }

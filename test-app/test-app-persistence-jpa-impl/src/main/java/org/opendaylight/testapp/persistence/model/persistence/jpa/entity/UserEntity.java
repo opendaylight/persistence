@@ -6,11 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
 import org.opendaylight.testapp.common.type.Email;
 import org.opendaylight.testapp.common.type.Password;
 import org.opendaylight.testapp.common.type.Username;
+
+import com.google.common.base.Objects;
 
 
 /**
@@ -139,14 +139,10 @@ public final class UserEntity {
     
 
     @Override
-    public String toString() {
-        return ObjectToStringConverter.toString(
-                this,
-                Property.valueOf("id", getId()),
-                Property.valueOf("password", this.password),
-                Property.valueOf("email", this.email),
-                Property.valueOf("description", this.description),
-                Property.valueOf("isEnabled", Boolean.valueOf(this.enabled))
-        );
-    }
+	public String toString() {
+		return Objects.toStringHelper(this.getClass()).add("id", getId())
+				.add("password", this.password).add("email", this.email)
+				.add("description", this.description)
+				.add("isEnabled", this.enabled).toString();
+	}
 }

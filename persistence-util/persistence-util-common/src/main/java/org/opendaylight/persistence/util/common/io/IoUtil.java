@@ -7,6 +7,11 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Provides all the methods required for Input/output
+ * For example, reads the content of the given input stream,
+ * Copies the content of the given input stream.
+ */
 public class IoUtil {
 
     private static final int BUFFER_SIZE = 1024;
@@ -73,11 +78,6 @@ public class IoUtil {
      * @param length maximum number of bytes to read
      * @return the content
      * @throws IOException if errors occur while readingimport java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
      */
     public static byte[] read(InputStream input, int length) throws IOException {
         return read(input, length, new byte[BUFFER_SIZE]);

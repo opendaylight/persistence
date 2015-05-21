@@ -8,6 +8,11 @@ import org.opendaylight.testapp.common.type.Email;
 import org.opendaylight.testapp.common.type.Password;
 import org.opendaylight.testapp.common.type.Username;
 
+/**
+ * Provides all the methods related to a user.
+ * Provides methods to create a user, authenticate a user,
+ * disable a user, get the list of all enabled and disabled users. 
+ */
 public interface UserService {
 
     /**

@@ -22,7 +22,6 @@ import org.opendaylight.testapp.persistence.QueryFactory;
 import org.opendaylight.testapp.persistence.model.persistence.jpa.dao.NetworkDeviceDao;
 import org.opendaylight.testapp.persistence.model.persistence.jpa.dao.UserDao;
 
-//import org.opendaylight.testapp.persistence.api.
 
 public class JpaQueryFactory implements QueryFactory<JpaContext>{
 
@@ -80,22 +79,20 @@ public class JpaQueryFactory implements QueryFactory<JpaContext>{
 
         @Override
         public Query<Void, JpaContext> store(NetworkDevice device) {
-        	System.out.println("NetworkDeviceFactoryImpl: this.dao>>> "+ this.dao);
             return StoreQuery.createQuery(device.getIdentifier(), device, this.dao);
         }
 
-        public Query<NetworkDevice, JpaContext> get(Id<NetworkDevice, SerialNumber> id) { //Id<NetworkDevice, SerialNumber> id
-            return GetQuery.createQuery(id.getValue(), this.dao); // revisit getValue()
+        public Query<NetworkDevice, JpaContext> get(Id<NetworkDevice, SerialNumber> id) { 
+            return GetQuery.createQuery(id.getValue(), this.dao); 
         }
 
         public Query<List<NetworkDevice>, JpaContext> find(NetworkDeviceFilter filter,
         		List<Sort<NetworkDeviceSortKey>> sortSpecification) {
             return FindQuery.createQuery(filter, sortSpecification, this.dao);
-        	//return null;
         }
 
         public Query<Void, JpaContext> delete(Id<NetworkDevice, SerialNumber> id) {
-            return DeleteByIdQuery.createQuery(id.getValue(), this.dao);// revisit getValue()
+            return DeleteByIdQuery.createQuery(id.getValue(), this.dao);
         }
     }
 
@@ -113,7 +110,7 @@ public class JpaQueryFactory implements QueryFactory<JpaContext>{
 
         @Override
         public Query<User, JpaContext> get(Id<User, Username> id) {
-            return GetQuery.createQuery(id.getValue(), this.dao);// revisit getValue()
+            return GetQuery.createQuery(id.getValue(), this.dao);
         }
 
         @Override
@@ -123,7 +120,7 @@ public class JpaQueryFactory implements QueryFactory<JpaContext>{
 
         @Override
         public Query<Void, JpaContext> delete(Id<User, Username> id) {
-            return DeleteByIdQuery.createQuery(id.getValue(), this.dao);// revisit getValue()
+            return DeleteByIdQuery.createQuery(id.getValue(), this.dao);
         }
     }
 }

@@ -6,13 +6,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
-import org.opendaylight.persistence.util.common.type.Property;
 import org.opendaylight.testapp.common.type.IpAddress;
 import org.opendaylight.testapp.common.type.Location;
 import org.opendaylight.testapp.common.type.MacAddress;
 import org.opendaylight.testapp.common.type.ReachabilityStatus;
 import org.opendaylight.testapp.common.type.SerialNumber;
+
+import com.google.common.base.Objects;
 
 /**
  * Network device entity.
@@ -163,15 +163,13 @@ public class NetworkDeviceEntity {
     }
 
     @Override
-    public String toString() {
-        return ObjectToStringConverter.toString(
-                this,
-                Property.valueOf("id", getId()),
-                Property.valueOf("macAddress", this.macAddress),
-                Property.valueOf("ipAddress", this.ipAddress),
-                Property.valueOf("location", this.location),
-                Property.valueOf("friendlyName", this.friendlyName),
-                Property.valueOf("reachabilityStatus", this.reachabilityStatus)
-        );
-    }
+	public String toString() {
+		return Objects.toStringHelper(this.getClass()).add("id", getId())
+				.add("macAddress", this.macAddress)
+				.add("ipAddress", this.ipAddress)
+				.add("location", this.location)
+				.add("friendlyName", this.friendlyName)
+				.add("reachabilityStatus", this.reachabilityStatus).toString();
+
+	}
 }

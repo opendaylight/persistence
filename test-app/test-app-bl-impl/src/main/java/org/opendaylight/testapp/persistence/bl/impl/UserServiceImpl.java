@@ -4,9 +4,9 @@ package org.opendaylight.testapp.persistence.bl.impl;
 import java.util.List;
 
 import org.opendaylight.persistence.PersistenceException;
-import org.opendaylight.persistence.util.common.Util;
-import org.opendaylight.persistence.util.common.log.Logger;
-import org.opendaylight.persistence.util.common.log.LoggerProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.opendaylight.persistence.util.common.DuplicateException;
 import org.opendaylight.persistence.util.common.type.Id;
 import org.opendaylight.testapp.common.model.User;
 import org.opendaylight.testapp.common.model.UserFilter;
@@ -25,22 +25,16 @@ public class UserServiceImpl implements UserService {
     private final PersistenceService persistenceService;
     private final Logger logger;
 
-    public UserServiceImpl() {
-        this.persistenceService = null;
-        this.logger = null;
-    }
-
-    /*
-    public UserServiceImpl(PersistenceService persistenceService, LoggerProvider<Class<?>> loggerProvider) {
+    public UserServiceImpl(PersistenceService persistenceService) {
         this.persistenceService = persistenceService;
-        this.logger = loggerProvider.getLogger(getClass());
+        this.logger = LoggerFactory.getLogger(getClass());
     }
-    */
+    
 
     @Override
-    public User signUp(Username username, Password password, Email email) throws Exception { // revisit DuplicateException
+    public User signUp(Username username, Password password, Email email) throws DuplicateException {
         Id<User, Username> id = Id.valueOf(username);
-        User user = new User(id.getValue()); // revisited
+        User user = new User(id.getValue());
         user.setPassword(password);
         user.setEmail(email);
         user.setEnabled(true);
@@ -70,7 +64,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("Unable to retrieve user with id " + id);
         }
 
-        if (Util.equals(password, user.getPassword())) {
+        if (password!=null && password.equals(user.getPassword())) {
             return user;
         }
 

@@ -1,5 +1,9 @@
 package org.opendaylight.persistence.util.common;
 
+/**
+ * Interface to start operations.
+ * 
+ */
 public interface Startable {
 
     /**

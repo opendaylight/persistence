@@ -4,9 +4,9 @@ package org.opendaylight.persistence.util.common.model;
 import java.io.Serializable;
 
 import org.opendaylight.persistence.util.common.Identifiable;
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
 import org.opendaylight.persistence.util.common.type.Id;
-import org.opendaylight.persistence.util.common.type.Property;
+
+import com.google.common.base.Objects;
 
 
 /**
@@ -79,11 +79,9 @@ public abstract class AbstractIdentifiable<T, I extends Serializable> implements
     }
 
     @Override
-    public String toString() {
-        return ObjectToStringConverter.toString(
-                this, 
-                Property.valueOf("id", this.id)
-            );
-    }
+	public String toString() {
+		return Objects.toStringHelper(this.getClass()).add("id", this.id)
+				.toString();
+	}
 }
 

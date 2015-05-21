@@ -2,7 +2,7 @@ package org.opendaylight.persistence.util.common.type;
 
 import java.io.Serializable;
 
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
+import com.google.common.base.Objects;
 
 /**
  * Immutable version of {@link java.util.Date}.
@@ -112,10 +112,9 @@ public final class Date implements Serializable, Comparable<Date> {
 
     @Override
     public String toString() {
-        return ObjectToStringConverter.toString(
-                this,
-                Property.valueOf("value", toDate())
-        );
+        return Objects.toStringHelper(this.getClass()).add("value", toDate())
+				.toString(); 
+        		
     }
 }
 

@@ -1,21 +1,15 @@
 package org.opendaylight.testapp.persistence.bl.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.opendaylight.persistence.PersistenceException;
-import org.opendaylight.persistence.util.common.log.Logger;
-import org.opendaylight.persistence.util.common.log.LoggerProvider;
 import org.opendaylight.persistence.util.common.type.Id;
-import org.opendaylight.persistence.util.common.type.Sort;
-import org.opendaylight.persistence.util.common.type.SortOrder;
 import org.opendaylight.persistence.util.common.type.SortSpecification;
 import org.opendaylight.testapp.common.model.NetworkDevice;
 import org.opendaylight.testapp.common.model.NetworkDeviceFilter;
 import org.opendaylight.testapp.common.model.NetworkDeviceSortKey;
-//import org.opendaylight.testapp.common.model.NetworkDeviceFilter;
 import org.opendaylight.testapp.common.type.IpAddress;
 import org.opendaylight.testapp.common.type.Location;
 import org.opendaylight.testapp.common.type.MacAddress;
@@ -23,6 +17,8 @@ import org.opendaylight.testapp.common.type.ReachabilityStatus;
 import org.opendaylight.testapp.common.type.SerialNumber;
 import org.opendaylight.testapp.persistence.PersistenceService;
 import org.opendaylight.testapp.persistence.bl.NetworkDeviceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class NetworkDeviceServiceImpl implements NetworkDeviceService {
@@ -31,22 +27,14 @@ public class NetworkDeviceServiceImpl implements NetworkDeviceService {
     private final AtomicLong idCount;
     private final Random random;
     private final Logger logger;
-
-    public NetworkDeviceServiceImpl() {
-        this.persistenceService = null;
-        this.idCount = new AtomicLong(1);
-        this.random = new Random();
-        this.logger = null;
-    }
-
-    /*
-    public NetworkDeviceServiceImpl(PersistenceService persistenceService, LoggerProvider<Class<?>> loggerProvider) {
+     
+    public NetworkDeviceServiceImpl(PersistenceService persistenceService) {
         this.persistenceService = persistenceService;
         this.idCount = new AtomicLong(1);
         this.random = new Random();
-        this.logger = loggerProvider.getLogger(getClass());
+        this.logger = LoggerFactory.getLogger(getClass());
     }
-    */
+    
 
     @Override
     public NetworkDevice discover(IpAddress ipAddress) {

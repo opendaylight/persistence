@@ -12,13 +12,11 @@ import java.io.Serializable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.opendaylight.persistence.util.common.converter.ObjectToStringConverter;
 import org.opendaylight.persistence.util.common.model.SerializableAbstractIdentifiable;
 import org.opendaylight.persistence.util.common.type.Id;
 import org.opendaylight.testapp.common.type.IpAddress;
 import org.opendaylight.testapp.common.type.Location;
 import org.opendaylight.testapp.common.type.MacAddress;
-import org.opendaylight.testapp.common.type.Property;
 import org.opendaylight.testapp.common.type.ReachabilityStatus;
 import org.opendaylight.testapp.common.type.SerialNumber;
 import org.opendaylight.yangtools.concepts.Identifiable;

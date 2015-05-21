@@ -17,6 +17,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Provides all the features related to files.
+ * For example, loads the file from the resources dir,
+ * gets the path, reads the file, writes to file,
+ * deletes a file and a directory of files recursively.
+ */
 public class FileUtil {
 
     // To deal with files see java.nio.file.Files
@@ -40,21 +46,7 @@ public class FileUtil {
      * </pre>
      *
      * @param path relative path import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.FileVisitResult;
-import java.nio.file.FileVisitor;
-import java.nio.file.Files;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;excluding "resources" path. For example, to load a file located at
+	 * excluding "resources" path. For example, to load a file located at
      *            {@code .../mymodule/src/test/resources/mydir/file} use {@code mydir/file}
      * @return an input stream of file specified by the given path if it exists, {@code null} if the
      *         file does not exists
