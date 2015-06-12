@@ -4,19 +4,19 @@
     <parent>
         <artifactId>persistence-root</artifactId>
         <groupId>org.opendaylight.persistence</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
     <artifactId>features-persistence</artifactId>
     <packaging>jar</packaging>
 
     <properties>
         <features.file>features.xml</features.file>
-        <branding.version>1.2.0-SNAPSHOT</branding.version>
-        <karaf.resources.version>1.5.0-SNAPSHOT</karaf.resources.version>
-        <feature.test.version>1.5.0-SNAPSHOT</feature.test.version>
-        <karaf.empty.version>1.5.0-SNAPSHOT</karaf.empty.version>
+        <branding.version>1.3.0-SNAPSHOT</branding.version>
+        <karaf.resources.version>1.6.0-SNAPSHOT</karaf.resources.version>
+        <feature.test.version>1.6.0-SNAPSHOT</feature.test.version>
+        <karaf.empty.version>1.6.0-SNAPSHOT</karaf.empty.version>
         <surefire.version>2.16</surefire.version>
-        <yangtools.version>0.7.0-SNAPSHOT</yangtools.version>
+        <yangtools.version>0.8.0-SNAPSHOT</yangtools.version>
         <configfile.directory>etc/opendaylight/karaf</configfile.directory>
     </properties>
 
