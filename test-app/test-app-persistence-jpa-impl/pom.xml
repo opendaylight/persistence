@@ -41,12 +41,6 @@
 			<version>${project.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>${hsqldb.version}</version>
-		</dependency>
-
 <!-- Added Following 2 dependencies -->
 	<dependency>
 		<groupId>org.osgi</groupId>
@@ -122,7 +116,7 @@
                     <Export-Package>org.opendaylight.testapp.persistence.*</Export-Package>
                     <Private-Package>org.opendaylight.testapp.persistence.model.persistence.jpa.query.*</Private-Package>
                     <Export-Service>org.opendaylight.testapp.persistence.bl.NetworkDeviceService</Export-Service>
-                    <Bundle-Activator>org.opendaylight.testapp.persistence.model.persistence.jpa.query.PersistenceActivator</Bundle-Activator>
+                    <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
                 </instructions>
             </configuration>
         </plugin>
