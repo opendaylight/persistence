@@ -22,7 +22,6 @@
 
 # Generated stuff
 target/
-META-INF/
 *.iml
 .DS_Store
 log
