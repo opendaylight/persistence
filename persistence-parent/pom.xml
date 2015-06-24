@@ -28,8 +28,7 @@
 
     <easymock.version>3.0</easymock.version>
     <jscience.version>4.3.1</jscience.version>
-    <hsqldb.version>2.0.0</hsqldb.version>
-    <hibernate.version>4.1.11.Final</hibernate.version>
+    <hibernate.version>4.3.6.Final</hibernate.version>
     <eclipselink.version>2.5.0</eclipselink.version>
     <sqlite-jdbc.version>3.8.7</sqlite-jdbc.version>
 
