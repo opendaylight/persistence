@@ -1,12 +1,27 @@
 <blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.0.0"
+           xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.0.0"
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
-    <bean id="networkDeviceServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.NetworkDeviceServiceImpl" />
+    <bean id="jpaDataStore" class="org.opendaylight.persistence.jpa.JpaDataStore">
+        <jpa:context unitname="testapp" property="entityManager"/>
+        <tx:transaction method="*" value="Required"/>
+    </bean>
+
+    <bean id="persistenceService" class="org.opendaylight.testapp.persistence.model.persistence.jpa.query.JpaPersistenceService">
+        <argument ref="jpaDataStore" />
+    </bean>
+
+    <bean id="networkDeviceServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.NetworkDeviceServiceImpl">
+        <argument ref="persistenceService" />
+    </bean>
 
     <service id="networkDeviceService" ref="networkDeviceServiceImpl" interface="org.opendaylight.testapp.persistence.bl.NetworkDeviceService" />
 
-    <bean id="userServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.UserServiceImpl" />
+    <bean id="userServiceImpl" class="org.opendaylight.testapp.persistence.bl.impl.UserServiceImpl">
+        <argument ref="persistenceService" />
+    </bean>
 
     <service id="userService" ref="userServiceImpl" interface="org.opendaylight.testapp.persistence.bl.UserService" />
 

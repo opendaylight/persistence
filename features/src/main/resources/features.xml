@@ -22,13 +22,13 @@
             <bundle>mvn:org.opendaylight.yangtools/concepts/${yangtools.version}</bundle>
         <bundle>mvn:org.opendaylight.persistence/persistence-common/${project.version}</bundle>
     </feature>
-    <!-- FIXME: The feature odl-persistence-test-app only works if you manually load odl-persistence-jpa-impl before -->
     <feature name='odl-persistence-test-app' version='${project.version}' description='Opendaylight :: persistence :: Test App '>
         <feature version='${project.version}'>odl-persistence-jpa-impl</feature>
         <feature version="4.3.6.Final">hibernate</feature>
         <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
         <bundle>mvn:org.opendaylight.persistence/test-app-common/${project.version}</bundle>
         <bundle>mvn:org.opendaylight.persistence/test-app-persistence-jpa-impl/${project.version}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/test-app-bl-impl/${project.version}</bundle>
     </feature>
     <feature name='odl-persistence-jpa-impl' version='${project.version}' description='Opendaylight :: persistene :: JPA implementation '>
         <feature>jndi</feature>
