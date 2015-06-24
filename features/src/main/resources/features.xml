@@ -29,6 +29,7 @@
         <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
         <bundle>mvn:org.opendaylight.persistence/test-app-common/${project.version}</bundle>
         <bundle>mvn:org.opendaylight.persistence/test-app-persistence-jpa-impl/${project.version}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/test-app-bl-impl/${project.version}</bundle>
     </feature>
     <feature name='odl-persistence-jpa-impl' version='${project.version}' description='Opendaylight :: persistene :: JPA implementation '>
         <feature>jndi</feature>

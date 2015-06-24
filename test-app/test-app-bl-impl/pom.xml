@@ -50,6 +50,10 @@
 				<instructions>
 					<!-- <DynamicImport-Package>org.opendaylight.testapp.persistence.bl.impl.*;org.opendaylight.testapp.persistence.impl.*;*</DynamicImport-Package> -->
 					<Export-Package>org.opendaylight.testapp.persistence.bl.impl.*</Export-Package>
+					<Import-Package>
+						javax.persistence,
+						*
+					</Import-Package>
 				</instructions>
 			</configuration>
 		</plugin>
