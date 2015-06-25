@@ -68,17 +68,15 @@ public class JpaDataStore implements DataStore<JpaContext> {
      * implementation: Session session = (Session)entityManager.getDelegate();
      */
 
-    private EntityManagerFactory entityManagerFactory;
+    private EntityManager entityManager;
 
     /**
-     * Creates a new data store implementation based on JPA.
+     * Sets entity manager.
      *
-     * @param persistenceUnitName
-     *            persistence unit name.
+     * @param entityManager the entity manager
      */
-    public JpaDataStore(String persistenceUnitName) {
-        this.entityManagerFactory = Persistence
-                .createEntityManagerFactory(persistenceUnitName);
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override
@@ -92,13 +90,11 @@ public class JpaDataStore implements DataStore<JpaContext> {
         EntityTransaction entityTransaction = null;
 
         try {
-            EntityManager entityManager = this.entityManagerFactory
-                    .createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
             T result = queryDecorator.execute(new JpaContext(entityManager));//problem
             entityTransaction.commit();
-            entityManager.close();
+            entityManager.flush();
             return result;
         } catch (Exception e) {
             if (entityTransaction != null && entityTransaction.isActive()) {

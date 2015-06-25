@@ -13,16 +13,8 @@ public class JpaPersistenceService extends PersistenceServiceImpl<JpaContext> {
      * 
      * @param loggerProvider logger provider
      */
-    public JpaPersistenceService() {
-        super(DataStoreProvider.createDataStore(), new JpaQueryFactory());
-    }
-
-    private static class DataStoreProvider {
-        private static final String PERSISTENCE_UNIT = "testapp";
-
-        public static DataStore<JpaContext> createDataStore() {
-            return new JpaDataStore(PERSISTENCE_UNIT);// revisit: Removed loggerProvider from arguments
-        }
+    public JpaPersistenceService(JpaDataStore jpaDataStore) {
+        super(jpaDataStore, new JpaQueryFactory());
     }
 
 	@Override
