@@ -22,6 +22,30 @@
       "revId": "951ff80fedecfd05f6966ca05889468e1136c456",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_2f6415b8",
+        "filename": "persistence-jpa/src/main/java/org/opendaylight/persistence/jpa/JpaDataStore.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 3706
+      },
+      "writtenOn": "2015-06-25T18:37:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a7fa997_494b9159",
+      "range": {
+        "startLine": 73,
+        "startChar": 16,
+        "endLine": 73,
+        "endChar": 32
+      },
+      "revId": "951ff80fedecfd05f6966ca05889468e1136c456",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
