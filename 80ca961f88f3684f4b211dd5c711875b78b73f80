@@ -1,0 +1,8 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: My Trinh <mydung.thi.trinh@hp.com>
+Code-Review+2: Fabiel Zuniga <fabiel.zuniga@hp.com>
+Submitted-by: Fabiel Zuniga <fabiel.zuniga@hp.com>
+Submitted-at: Thu, 25 Jun 2015 21:42:05 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/23146
+Project: persistence
+Branch: refs/heads/stable/lithium
