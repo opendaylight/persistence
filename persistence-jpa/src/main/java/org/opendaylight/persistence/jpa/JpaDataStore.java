@@ -8,9 +8,6 @@
 package org.opendaylight.persistence.jpa;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 import org.opendaylight.persistence.DataStore;
 import org.opendaylight.persistence.PersistenceException;
@@ -87,20 +84,8 @@ public class JpaDataStore implements DataStore<JpaContext> {
         final Query<T, JpaContext> queryDecorator = new QueryLoggerDecorator<T, JpaContext>(
                 query);
 
-        EntityTransaction entityTransaction = null;
-
-        try {
-            entityTransaction = entityManager.getTransaction();
-            entityTransaction.begin();
-            T result = queryDecorator.execute(new JpaContext(entityManager));//problem
-            entityTransaction.commit();
-            entityManager.flush();
-            return result;
-        } catch (Exception e) {
-            if (entityTransaction != null && entityTransaction.isActive()) {
-                entityTransaction.rollback();
-            }
-            throw e;
-        }
+        T result = queryDecorator.execute(new JpaContext(entityManager));//problem
+        entityManager.flush();
+        return result;
     }
 }
