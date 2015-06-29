@@ -25,4 +25,66 @@
 
     <service id="userService" ref="userServiceImpl" interface="org.opendaylight.testapp.persistence.bl.UserService" />
 
+    <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
+
+        <!-- NetworkDeviceService -->
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceDiscoverCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceSetFriendlyNameCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceSetLocationCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceGetReachableCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceGetUnreachableCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.NetworkDeviceGetByLocationCommand">
+                <argument ref="networkDeviceServiceImpl" />
+            </action>
+        </command>
+
+        <!-- UserService -->
+        <command>
+            <action class="org.opendaylight.testapp.cli.UserSignUpCommand">
+                <argument ref="userServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.UserSignInCommand">
+                <argument ref="userServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.UserDisableCommand">
+                <argument ref="userServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.UserGetEnabledCommand">
+                <argument ref="userServiceImpl" />
+            </action>
+        </command>
+        <command>
+            <action class="org.opendaylight.testapp.cli.UserGetDisabledCommand">
+                <argument ref="userServiceImpl" />
+            </action>
+        </command>
+
+    </command-bundle>
 </blueprint>
