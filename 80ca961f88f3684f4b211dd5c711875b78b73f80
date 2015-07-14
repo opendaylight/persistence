@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a7fa997_69b898e5",
+        "filename": "features/src/main/resources/features.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2015-07-14T14:33:47Z",
+      "side": 1,
+      "message": "This artifact is built, installed locally and uploaded to Nexus during processing persistence-jpa/pom.xml\n\nBut features/pom.xml does NOT list this artifact as dependency.\n\nIn the current state SingleFeatureTest passes during persistence-merge job just due to the local install.\n\nIf any feature depending on this config artifact was added to Integration, SingleFeatureTest would fail (as distribution build does download only dependencies from Nexus).",
+      "range": {
+        "startLine": 42,
+        "startChar": 69,
+        "endLine": 42,
+        "endChar": 147
+      },
+      "revId": "80ca961f88f3684f4b211dd5c711875b78b73f80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
