@@ -1,5 +1,12 @@
-package org.opendaylight.persistence.util.common.model;
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
 
+package org.opendaylight.persistence.util.common.model;
 
 import java.io.Serializable;
 
@@ -11,7 +18,7 @@ import com.google.common.base.Objects;
 
 /**
  * Abstract identifiable.
- * 
+ *
  * @param <T> type of the identified object
  * @param <I> type of the id. This type should be immutable and it is critical it implements
  *            {@link Object#equals(Object)} and {@link Object#hashCode()} correctly.
@@ -30,7 +37,7 @@ public abstract class AbstractIdentifiable<T, I extends Serializable> implements
 
     /**
      * Creates an identifiable object.
-     * 
+     *
      * @param id object's id
      */
     protected AbstractIdentifiable(Id<? extends T, I> id) {

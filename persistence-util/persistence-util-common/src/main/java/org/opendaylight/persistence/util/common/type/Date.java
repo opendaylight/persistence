@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.persistence.util.common.type;
 
 import java.io.Serializable;
@@ -8,7 +16,7 @@ import com.google.common.base.Objects;
  * Immutable version of {@link java.util.Date}.
  * <p>
  * This version of Date can be safely returned in getters without making a copy.
- * 
+ *
  * @author Fabiel Zuniga
  */
 public final class Date implements Serializable, Comparable<Date> {
@@ -22,7 +30,7 @@ public final class Date implements Serializable, Comparable<Date> {
 
     /**
      * Creates a date using the same implementation than {@link java.util.Date#Date(long)}.
-     * 
+     *
      * @param date the milliseconds since January 1, 1970, 00:00:00 GMT.
      * @return a date
      */
@@ -35,7 +43,7 @@ public final class Date implements Serializable, Comparable<Date> {
      * <p>
      * If the argument {@code date} is {@code null} this method returns {@code null} as a
      * convenience for dates conversions.
-     * 
+     *
      * @param date {@link java.util.Date date}
      * @return a date object if the argument is not {@code null}, {@code null} otherwise
      */
@@ -48,7 +56,7 @@ public final class Date implements Serializable, Comparable<Date> {
 
     /**
      * Creates a date with the current time.
-     * 
+     *
      * @return a date
      */
     public static Date currentTime() {
@@ -57,7 +65,7 @@ public final class Date implements Serializable, Comparable<Date> {
 
     /**
      * Returns the time using the same implementation than {@link java.util.Date#getTime()}.
-     * 
+     *
      * @return the number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this
      *         date.
      */
@@ -67,7 +75,7 @@ public final class Date implements Serializable, Comparable<Date> {
 
     /**
      * Converts this Date to {@link java.util.Date}.
-     * 
+     *
      * @return a {@link java.util.Date date}
      */
     public java.util.Date toDate() {
@@ -78,7 +86,7 @@ public final class Date implements Serializable, Comparable<Date> {
     public int compareTo(Date o) {
         return Long.compare(this.value, o.value);
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -113,8 +121,8 @@ public final class Date implements Serializable, Comparable<Date> {
     @Override
     public String toString() {
         return Objects.toStringHelper(this.getClass()).add("value", toDate())
-				.toString(); 
-        		
+				.toString();
+
     }
 }
 
