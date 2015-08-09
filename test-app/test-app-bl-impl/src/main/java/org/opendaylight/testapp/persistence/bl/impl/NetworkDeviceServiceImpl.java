@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.testapp.persistence.bl.impl;
 
 import java.util.List;
@@ -27,14 +35,14 @@ public class NetworkDeviceServiceImpl implements NetworkDeviceService {
     private final AtomicLong idCount;
     private final Random random;
     private final Logger logger;
-     
+
     public NetworkDeviceServiceImpl(PersistenceService persistenceService) {
         this.persistenceService = persistenceService;
         this.idCount = new AtomicLong(1);
         this.random = new Random();
         this.logger = LoggerFactory.getLogger(getClass());
     }
-    
+
 
     @Override
     public NetworkDevice discover(IpAddress ipAddress) {
@@ -120,7 +128,7 @@ public class NetworkDeviceServiceImpl implements NetworkDeviceService {
         try {
         	SortSpecification<NetworkDeviceSortKey> sortSpecification = null;
             sortSpecification = new SortSpecification<NetworkDeviceSortKey>();
-        	
+
             return this.persistenceService.networkDevice().find(filter, sortSpecification.getSortComponents());
         }
         catch (PersistenceException e) {
