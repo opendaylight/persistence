@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.persistence.util.common.io;
 
 import java.io.FileNotFoundException;
@@ -222,11 +230,11 @@ public class FileUtil {
      * <p>
      * The implementation of this method is based on {@link Path#resolve(Path)} and
      * {@link Path#relativize(Path)}. Example:
-     * 
+     *
      * <pre>
      * Path targetDescendant = target.resolve(source.relativize(sourceDescendant));
      * </pre>
-     * 
+     *
      * @param descendant path to translate
      * @param ancestor reference ancestor
      * @param translatedAncestor translated reference
@@ -265,7 +273,7 @@ public class FileUtil {
 
     /**
      * Deletes a file or recursively deletes a directory.
-     * 
+     *
      * @param path path to delete
      * @throws IOException if I/O errors occur while executing the operation
      */
@@ -309,7 +317,7 @@ public class FileUtil {
     /**
      * Copies a file or recursively copies a directory. If the target file exists it will be
      * replaced.
-     * 
+     *
      * @param source path to copy
      * @param target path to copy to
      * @param copyOption copy option
