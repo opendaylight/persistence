@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.testapp.persistence.bl;
 
 import java.util.List;
@@ -11,13 +19,13 @@ import org.opendaylight.testapp.common.type.Username;
 /**
  * Provides all the methods related to a user.
  * Provides methods to create a user, authenticate a user,
- * disable a user, get the list of all enabled and disabled users. 
+ * disable a user, get the list of all enabled and disabled users.
  */
 public interface UserService {
 
     /**
      * Creates a user.
-     * 
+     *
      * @param username username
      * @param password password
      * @param email user's e-mail
@@ -27,7 +35,7 @@ public interface UserService {
     public User signUp(Username username, Password password, Email email) throws Exception;
     /**
      * Authenticates a user.
-     * 
+     *
      * @param username username
      * @param password password
      * @return the user if the authentication is valid and the user is enabled
@@ -36,7 +44,7 @@ public interface UserService {
 
     /**
      * Disables a user.
-     * 
+     *
      * @param id id of the user to disable
      * @return the updated user
      */
@@ -44,14 +52,14 @@ public interface UserService {
 
     /**
      * Gets all enabled users.
-     * 
+     *
      * @return enabled users
      */
     public List<User> getEnabled();
 
     /**
      * Gets all disabled users.
-     * 
+     *
      * @return disabled users
      */
     public List<User> getDisabled();

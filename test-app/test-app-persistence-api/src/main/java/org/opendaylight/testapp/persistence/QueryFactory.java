@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.testapp.persistence;
 
 import java.util.List;
@@ -19,35 +27,35 @@ public interface QueryFactory<C> {
 
     /**
      * Gets the configuration query factory.
-     * 
+     *
      * @return the network device query factory
      */
     public ConfigurationFactory<C> configuration();
 
     /**
      * Gets the network device query factory.
-     * 
+     *
      * @return the network device query factory
      */
     public NetworkDeviceFactory<C> networkDevice();
 
     /**
      * Gets the user query factory.
-     * 
+     *
      * @return the user query factory
      */
     public UserFactory<C> user();
 
     /**
      * Configuration factory.
-     * 
+     *
      * @param <C> type of the context provided to queries to enable execution
      */
     public static interface ConfigurationFactory<C> {
 
         /**
          * Creates a query to create the database schema.
-         * 
+         *
          * @return a query
          */
         public Query<Void, C> createSchema();
@@ -55,14 +63,14 @@ public interface QueryFactory<C> {
 
     /**
      * Network device factory.
-     * 
+     *
      * @param <C> type of the context provided to queries to enable execution
      */
     public static interface NetworkDeviceFactory<C> {
 
         /**
          * Creates a query to store a network device.
-         * 
+         *
          * @param device device to store
          * @return a query
          */
@@ -70,7 +78,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to load a network device.
-         * 
+         *
          * @param id device's id
          * @return a query
          */
@@ -78,7 +86,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to find network devices.
-         * 
+         *
          * @param filter filter
          * @param sortSpecification sort specification
          * @return a query
@@ -89,7 +97,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to delete a network device.
-         * 
+         *
          * @param id device's id
          * @return a query
          */
@@ -98,14 +106,14 @@ public interface QueryFactory<C> {
 
     /**
      * User factory.
-     * 
+     *
      * @param <C> type of the context provided to queries to enable execution
      */
     public static interface UserFactory<C> {
 
         /**
          * Creates a query to store a user.
-         * 
+         *
          * @param user user to store
          * @return a query
          */
@@ -113,7 +121,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to load a user.
-         * 
+         *
          * @param id user's id
          * @return a query
          */
@@ -121,7 +129,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to find users.
-         * 
+         *
          * @param filter filter
          * @return a query
          */
@@ -129,7 +137,7 @@ public interface QueryFactory<C> {
 
         /**
          * Creates a query to delete a user.
-         * 
+         *
          * @param id user's id
          * @return a query
          */
