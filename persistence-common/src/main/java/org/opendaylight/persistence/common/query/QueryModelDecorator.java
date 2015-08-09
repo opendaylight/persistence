@@ -1,9 +1,11 @@
-/**
- * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others. All rights reserved.
- * This program and the accompanying materials are made available under the terms of the Eclipse
- * Public License v1.0 which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.persistence.common.query;
 
 import javax.annotation.Nonnull;
@@ -26,7 +28,7 @@ import org.opendaylight.persistence.util.common.Subroutine;
  * Using this decorator the pre-processing and post-processing logic is executed in the context of
  * the query, which in most cases will be executed in a database transaction if transactions are
  * supported.
- * 
+ *
  * @param <T> type of the query result
  * @param <C> type of the query's execution context; the context managed by the {@link DataStore}
  * @author Fabiel Zuniga
@@ -40,7 +42,7 @@ public final class QueryModelDecorator<T, C> implements Query<T, C> {
 
     /**
      * Creates a write query decorator.
-     * 
+     *
      * @param delegate query delegate
      * @param preProcessing pre-processing
      * @param postProcessing post-processing
