@@ -79,7 +79,7 @@ public interface PersistenceService {
          * Finds network devices.
          * 
          * @param filter filter
-         * @param sortSpecification sort specification
+         * @param sort sort specification
          * @return found devices
          * @throws PersistenceException if persistence errors occur while executing the operation
          */
