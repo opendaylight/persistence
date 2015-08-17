@@ -11,7 +11,6 @@ public class JpaPersistenceService extends PersistenceServiceImpl<JpaContext> {
     /**
      * Creates a JPA Persistence Service
      * 
-     * @param loggerProvider logger provider
      */
     public JpaPersistenceService(JpaDataStore jpaDataStore) {
         super(jpaDataStore, new JpaQueryFactory());
