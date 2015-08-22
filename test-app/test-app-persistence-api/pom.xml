@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.opendaylight.persistence</groupId>
     <artifactId>test-app</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-Lithium-SR1</version>
     <relativePath>../</relativePath>
   </parent>
 
