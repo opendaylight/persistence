@@ -4,19 +4,19 @@
     <parent>
         <artifactId>persistence-root</artifactId>
         <groupId>org.opendaylight.persistence</groupId>
-        <version>1.0.1-Lithium-SR1</version>
+        <version>1.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>features-persistence</artifactId>
     <packaging>jar</packaging>
 
     <properties>
         <features.file>features.xml</features.file>
-        <branding.version>1.2.1-Lithium-SR1</branding.version>
-        <karaf.resources.version>1.5.1-Lithium-SR1</karaf.resources.version>
-        <feature.test.version>1.5.1-Lithium-SR1</feature.test.version>
-        <karaf.empty.version>1.5.1-Lithium-SR1</karaf.empty.version>
+        <branding.version>1.2.2-SNAPSHOT</branding.version>
+        <karaf.resources.version>1.5.2-SNAPSHOT</karaf.resources.version>
+        <feature.test.version>1.5.2-SNAPSHOT</feature.test.version>
+        <karaf.empty.version>1.5.2-SNAPSHOT</karaf.empty.version>
         <surefire.version>2.16</surefire.version>
-        <yangtools.version>0.7.1-Lithium-SR1</yangtools.version>
+        <yangtools.version>0.7.2-SNAPSHOT</yangtools.version>
         <configfile.directory>etc/opendaylight/karaf</configfile.directory>
     </properties>
 
@@ -37,7 +37,7 @@
 		<dependency>
       <groupId>org.opendaylight.yangtools</groupId>
       <artifactId>concepts</artifactId>
-      <version>0.7.1-Lithium-SR1</version>
+      <version>0.7.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
       <groupId>com.google.guava</groupId>
@@ -47,17 +47,17 @@
 	<dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>persistence-api</artifactId>
-      <version>1.0.1-Lithium-SR1</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>persistence-common</artifactId>
-      <version>1.0.1-Lithium-SR1</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
      <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>persistence-util-common</artifactId>
-      <version>1.0.1-Lithium-SR1</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

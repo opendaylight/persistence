@@ -6,14 +6,14 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>1.5.1-Lithium-SR1</version>
+    <version>1.5.2-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
   <groupId>org.opendaylight.persistence</groupId>
   <artifactId>persistence-root</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.1-Lithium-SR1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <name>persistence</name> <!-- Used by Sonar to set project name -->
 
   <modules>
