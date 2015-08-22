@@ -1,5 +1,12 @@
-package org.opendaylight.testapp.persistence.model.persistence.jpa.entity;
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
 
+package org.opendaylight.testapp.persistence.model.persistence.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +22,7 @@ import com.google.common.base.Objects;
 
 /**
  * User.
- * 
+ *
  * @author Fabiel Zuniga
  */
 @Entity
@@ -48,7 +55,7 @@ public final class UserEntity {
 
     /**
      * Creates an user
-     * 
+     *
      * @param username username
      */
     public UserEntity(Username username) {
@@ -57,7 +64,7 @@ public final class UserEntity {
 
     /**
      * Returns the id
-     * 
+     *
      * @return the id
      */
     public Username getId() {
@@ -136,7 +143,7 @@ public final class UserEntity {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-    
+
 
     @Override
 	public String toString() {

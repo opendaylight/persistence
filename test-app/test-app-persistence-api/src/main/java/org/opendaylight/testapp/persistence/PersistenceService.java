@@ -1,9 +1,11 @@
-/**
- * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others. All rights reserved.
- * This program and the accompanying materials are made available under the terms of the Eclipse
- * Public License v1.0 which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.testapp.persistence;
 
 import java.util.List;
@@ -25,7 +27,7 @@ import org.opendaylight.testapp.common.type.Username;
 
 /**
  * Persistence Service.
- * 
+ *
  * @author Fabiel Zuniga
  * @author Nachiket Abhyankar
  */
@@ -33,21 +35,21 @@ public interface PersistenceService {
 
     /**
      * Gets the network device persistence service.
-     * 
+     *
      * @return the network device persistence service
      */
     NetworkDevicePersistenceService networkDevice();
 
     /**
      * Gets the user persistence service.
-     * 
+     *
      * @return the user persistence service
      */
     UserPersistenceService user();
 
     /**
      * Gets the TSDR metric persistence service.
-     * 
+     *
      * @return the TSDR metric persistence service
      */
     TsdrMetricPersistenceService tsdrMetric();
@@ -60,7 +62,7 @@ public interface PersistenceService {
 
         /**
          * Stores a network device.
-         * 
+         *
          * @param device device to store
          * @throws PersistenceException if persistence errors occur while executing the operation
          */
@@ -68,7 +70,7 @@ public interface PersistenceService {
 
         /**
          * Loads a network device.
-         * 
+         *
          * @param id device's id
          * @return the device if found, {@code null} otherwise
          * @throws PersistenceException if persistence errors occur while executing the operation
@@ -77,7 +79,7 @@ public interface PersistenceService {
 
         /**
          * Finds network devices.
-         * 
+         *
          * @param filter filter
          * @param sort sort specification
          * @return found devices
@@ -89,7 +91,7 @@ public interface PersistenceService {
 
         /**
          * Deletes a network device.
-         * 
+         *
          * @param id device's id
          * @throws PersistenceException if persistence errors occur while executing the operation
          */
@@ -100,10 +102,10 @@ public interface PersistenceService {
      * User persistence service.
      */
     public interface UserPersistenceService extends ObjectStore<Username, User, UserFilter, Void> {
-        
+
         /**
          * Stores a user.
-         * 
+         *
          * @param user user to store
          * @throws PersistenceException if persistence errors occur while executing the operation
          */
@@ -111,7 +113,7 @@ public interface PersistenceService {
 
         /**
          * Loads a user.
-         * 
+         *
          * @param id user's id
          * @return the user if found, {@code null} otherwise
          * @throws PersistenceException if persistence errors occur while executing the operation
@@ -120,7 +122,7 @@ public interface PersistenceService {
 
         /**
          * Find users.
-         * 
+         *
          * @param filter filter
          * @return found users
          * @throws PersistenceException if persistence errors occur while executing the operation
@@ -129,7 +131,7 @@ public interface PersistenceService {
 
         /**
          * Deletes a user.
-         * 
+         *
          * @param id user's id
          * @throws PersistenceException if persistence errors occur while executing the operation
          */

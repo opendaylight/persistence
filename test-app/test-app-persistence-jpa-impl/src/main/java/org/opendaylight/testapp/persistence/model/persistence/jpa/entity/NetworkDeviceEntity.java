@@ -1,4 +1,13 @@
+/*
+ * Copyright (c) 2015 Hewlett-Packard Development Company, L.P. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+
 package org.opendaylight.testapp.persistence.model.persistence.jpa.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,7 +27,7 @@ import com.google.common.base.Objects;
  * Network device entity.
  * <p>
  * This class is not thread safe.
- * 
+ *
  * @author Fabiel Zuniga
  */
 @Entity
@@ -56,7 +65,7 @@ public class NetworkDeviceEntity {
 
     /**
      * Create a network device entity
-     * 
+     *
      * @param id id
      * @param macAddress MAC address
      * @param reachabilityStatus reachability status
@@ -82,7 +91,7 @@ public class NetworkDeviceEntity {
 
     /**
      * Returns the id
-     * 
+     *
      * @return the id
      */
     public SerialNumber getId() {
