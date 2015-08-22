@@ -22,9 +22,10 @@ public interface UserService {
      * @param password password
      * @param email user's e-mail
      * @return the created user
-     * @throws Exception if a user with the given {@code username} already exists
+     * @throws DuplicateException if a user with the given {@code username} already exists
      */
-    public User signUp(Username username, Password password, Email email) throws Exception;
+    public User signUp(Username username, Password password, Email email) throws Exception; // Change to DuplicateException later
+
     /**
      * Authenticates a user.
      * 

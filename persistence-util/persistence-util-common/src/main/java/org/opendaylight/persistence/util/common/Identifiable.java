@@ -23,10 +23,12 @@ public interface Identifiable<T, I extends Serializable> {
      * might be inheritable. For example, assume {@code Employee} extends from {@code Person} and
      * {@code Person} implements {@code Identifiable<Person, Long>}. The following code would be
      * possible.
-     * </p>
+     * 
+     * <pre>
      * Id&lt;Person, Long&gt; id = employee.getId();
      * Id&lt;Employee, Long&gt; id = employee.getId();
      * 
+     * <pre>
      * 
      * @return the id of this object
      */

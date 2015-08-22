@@ -63,8 +63,5 @@
 		</plugin>
 	</plugins>
 </build>
-<properties>
-              <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-</properties>
 
 </project>
