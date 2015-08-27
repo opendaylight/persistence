@@ -62,22 +62,22 @@
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>test-app-common</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>test-app-persistence-jpa-impl</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>test-app-bl-impl</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.persistence</groupId>
       <artifactId>persistence-jpa</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
