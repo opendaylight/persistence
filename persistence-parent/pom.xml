@@ -43,13 +43,6 @@
     <hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
     <hibernate3-maven-plugin.version>3.0</hibernate3-maven-plugin.version>
     <maven-replacer-plugin.version>1.4.1</maven-replacer-plugin.version>
-
-
-    <!-- Sonar config -->
-    <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
-    <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-    <sonar.jacoco.reportPath>target/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
-    <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
   </properties>
 
   <dependencies>
@@ -99,11 +92,6 @@
             <target>${java.version.target}</target>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${jacoco.version}</version>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -111,30 +99,6 @@
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
         <version>${maven.bundle.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <configuration>
-          <includes>
-            <include>org.opendaylight.persistence.*</include>
-          </includes>
-        </configuration>
-        <executions>
-          <execution>
-            <id>pre-test</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>post-test</id>
-            <goals>
-              <goal>report</goal>
-            </goals>
-            <phase>test</phase>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <!--
