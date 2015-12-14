@@ -16,19 +16,19 @@
             <feature version='${project.version}'>odl-persistence-jpa-impl</feature>
     </feature>
     <feature name='odl-persistence-api' version='${project.version}' description='Opendaylight :: persistence :: API '>
-            <bundle>mvn:org.opendaylight.persistence/persistence-api/${project.version}</bundle>
-            <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
-            <bundle>mvn:org.opendaylight.persistence/persistence-util-common/${project.version}</bundle>
-            <bundle>mvn:org.opendaylight.yangtools/concepts/${yangtools.version}</bundle>
-        <bundle>mvn:org.opendaylight.persistence/persistence-common/${project.version}</bundle>
+            <bundle>mvn:org.opendaylight.persistence/persistence-api/{{VERSION}}</bundle>
+            <bundle>mvn:com.google.guava/guava/{{VERSION}}</bundle>
+            <bundle>mvn:org.opendaylight.persistence/persistence-util-common/{{VERSION}}</bundle>
+            <bundle>mvn:org.opendaylight.yangtools/concepts/{{VERSION}}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/persistence-common/{{VERSION}}</bundle>
     </feature>
     <feature name='odl-persistence-test-app' version='${project.version}' description='Opendaylight :: persistence :: Test App '>
         <feature version='${project.version}'>odl-persistence-jpa-impl</feature>
         <feature version="4.3.6.Final">hibernate</feature>
-        <bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
-        <bundle>mvn:org.opendaylight.persistence/test-app-common/${project.version}</bundle>
-        <bundle>mvn:org.opendaylight.persistence/test-app-persistence-jpa-impl/${project.version}</bundle>
-        <bundle>mvn:org.opendaylight.persistence/test-app-bl-impl/${project.version}</bundle>
+        <bundle>mvn:com.google.guava/guava/{{VERSION}}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/test-app-common/{{VERSION}}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/test-app-persistence-jpa-impl/{{VERSION}}</bundle>
+        <bundle>mvn:org.opendaylight.persistence/test-app-bl-impl/{{VERSION}}</bundle>
     </feature>
     <feature name='odl-persistence-jpa-impl' version='${project.version}' description='Opendaylight :: persistene :: JPA implementation '>
         <feature>jndi</feature>
@@ -38,7 +38,7 @@
         <feature>pax-jdbc-config</feature>
         <feature version='2.1.0'>jpa</feature>
         <feature version='${project.version}'>odl-persistence-api</feature>
-        <bundle>mvn:org.opendaylight.persistence/persistence-jpa/${project.version}</bundle>
-        <configfile finalname="etc/org.ops4j.datasource-testapp.cfg">mvn:org.opendaylight.persistence/persistence-jpa/${project.version}/xml/config</configfile>
+        <bundle>mvn:org.opendaylight.persistence/persistence-jpa/{{VERSION}}</bundle>
+        <configfile finalname="etc/org.ops4j.datasource-testapp.cfg">mvn:org.opendaylight.persistence/persistence-jpa/{{VERSION}}/xml/config</configfile>
     </feature>
 </features>
