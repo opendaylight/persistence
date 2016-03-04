@@ -6,14 +6,14 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>1.5.4-SNAPSHOT</version>
+    <version>1.5.4-Lithium-SR4</version>
     <relativePath/>
   </parent>
 
   <groupId>org.opendaylight.persistence</groupId>
   <artifactId>persistence.project</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.4-Lithium-SR4</version>
 
   <prerequisites>
     <maven>3.0.4</maven>
@@ -34,8 +34,8 @@
 
     <!-- ODL Dependencies -->
 
-    <yangtools.version>0.7.4-SNAPSHOT</yangtools.version>
-    <mdsal.version>1.3.4-SNAPSHOT</mdsal.version>
+    <yangtools.version>0.7.4-Lithium-SR4</yangtools.version>
+    <mdsal.version>1.3.4-Lithium-SR4</mdsal.version>
     <configfile.directory>etc/opendaylight/karaf</configfile.directory>
 
     <!-- Plugins -->
